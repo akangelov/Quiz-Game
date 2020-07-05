@@ -1,0 +1,10 @@
+_site/
+.jekyll-metadata
+.jekyll-cache
+.sass-cache
+node_modules
+package-lock.json
+package.json
+Gemfile
+Gemfile.lock
+gulpfile.js
