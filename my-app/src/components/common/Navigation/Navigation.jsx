@@ -15,6 +15,7 @@ const Navigation = () => {
       <Link className={styles.link} to="/userprofile">Profile</Link>
       <Link className={styles.link} to="/register">Register</Link>
       <Link className={styles.link} to="/login">Login</Link>
+      <Link className={styles.link} to="/origamis">Origamis</Link>
     </ul>
       </nav>
   )

@@ -15,6 +15,7 @@ import Rules from "./components/rules/Rules";
 import Register from "./components/user/Register";
 import Login from "./components/user/Login";
 import ListQuestions from "./components/questions/read/ListQuestions";
+import Origamis from "./components/origamis/Origami";
 import UserProfile from "./components/user/UserProfile";
 
 
@@ -32,6 +33,7 @@ class App extends Component {
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
         <Route path="/userprofile" component={UserProfile} />
+        <Route path="/origamis" component={Origamis} />
         
          </Switch>
         

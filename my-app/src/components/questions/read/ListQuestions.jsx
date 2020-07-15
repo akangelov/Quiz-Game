@@ -3,7 +3,7 @@ import styles from './ListQuestions.module.css';
 
 const ListQuestions = () => {
     return (
-        <p>List of Questions</p>
+        <p>List of Questions lalal</p>
     )
 }
 
