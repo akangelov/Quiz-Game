@@ -10,10 +10,10 @@ const origamiSchema = new Schema({
         required: true,
     },
 
-    // author: {
-    //     type: ObjectId,
-    //     ref: "User"
-    // }
+    author: {
+        type: ObjectId,
+        ref: "User"
+    }
 
 });
 
