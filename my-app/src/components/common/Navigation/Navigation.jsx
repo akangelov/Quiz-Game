@@ -28,7 +28,7 @@ class Navigation extends React.Component {
     </ul>
       </nav>
   )
-}
+ }
 }
 
 export default Navigation;
