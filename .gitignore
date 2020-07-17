@@ -4,7 +4,6 @@ _site/
 .sass-cache
 node_modules
 package-lock.json
-package.json
 Gemfile
 Gemfile.lock
 gulpfile.js
