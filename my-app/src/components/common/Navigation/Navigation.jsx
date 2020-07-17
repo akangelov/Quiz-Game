@@ -1,10 +1,18 @@
 import React from 'react'
 // import Link from '../link'
 import styles from './Navigation.module.css'
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import userService from '../../../services/userService';
 // import logo from '../../images/white-origami-bird.png'
 
-const Navigation = () => {
+class Navigation extends React.Component {
+
+  logout = () => {
+    userService.logout()
+  }
+
+  render() {
+
   return (
     
       <nav className={styles.navigation}>
@@ -16,9 +24,11 @@ const Navigation = () => {
       <Link className={styles.link} to="/register">Register</Link>
       <Link className={styles.link} to="/login">Login</Link>
       <Link className={styles.link} to="/origamis">Origamis</Link>
+      <button className={styles.link} onClick={this.logout}>Logout</button>
     </ul>
       </nav>
   )
+}
 }
 
 export default Navigation;

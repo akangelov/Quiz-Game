@@ -16,7 +16,7 @@ const userService = {
         headers: {
           'Content-type': 'application/json'
         },
-        // credentials: 'include'
+        credentials: 'include'
       }).then(res => res.text());
     },
   
