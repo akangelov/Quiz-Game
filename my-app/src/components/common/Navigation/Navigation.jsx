@@ -5,30 +5,28 @@ import { Link } from "react-router-dom";
 import userService from '../../../services/userService';
 // import logo from '../../images/white-origami-bird.png'
 
-class Navigation extends React.Component {
+const Navigation = props => {
 
-  logout = () => {
-    userService.logout()
-  }
-
-  render() {
+  const {logout, isLogged } = props;
+  console.log(props)
 
   return (
     
       <nav className={styles.navigation}>
       <ul>
-      {this.props.isLogged && <Link className={styles.link} to="/about">About</Link>}
-      {this.props.isLogged && <Link className={styles.link} to="/rules">Rules</Link>}
-      {this.props.isLogged && <Link className={styles.link} to="/">Questions</Link>}
-      {this.props.isLogged && <Link className={styles.link} to="/userprofile">Profile</Link>}
-      {!this.props.isLogged && <Link className={styles.link} to="/register">Register</Link>}
-      {!this.props.isLogged && <Link className={styles.link} to="/login">Login</Link>}
+      {isLogged && (<Link className={styles.link} to="/about">About</Link>)}
+      {isLogged && <Link className={styles.link} to="/rules">Rules</Link>}
+      {isLogged && <Link className={styles.link} to="/">Questions</Link>}
+      {isLogged && <Link className={styles.link} to="/userprofile">Profile</Link>}
+      {!isLogged && <Link className={styles.link} to="/register">Register</Link>}
+      {!isLogged && <Link className={styles.link} to="/login">Login</Link>}
       <Link className={styles.link} to="/origamis">Origamis</Link>
-      {this.props.isLogged && <button className={styles.link} onClick={this.logout}>Logout</button>}
+      {/* {this.props.isLogged && <Link className={styles.link} to="/logout">Logout</Link>} */}
+      {isLogged && <button className={styles.link} onClick={logout}>Logout</button>}
     </ul>
       </nav>
   )
  }
-}
+
 
 export default Navigation;

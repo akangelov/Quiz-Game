@@ -1,24 +1,19 @@
 import React from "react";
 import { useFormik } from 'formik';
 import userService from '../../services/userService';
-
+import { useHistory } from 'react-router-dom';
  
  const Login = () => {
-   // Notice that we have to initialize ALL of fields with values. These
-   // could come from props, but since we don't want to prefill this form,
-   // we just use an empty string. If you don't do this, React will yell
-   // at you.
+  let history = useHistory();
+
    const formik = useFormik({
      initialValues: {
        username: '',
        password: ''
      },
-    //  onSubmit: values => {
-    //    alert(JSON.stringify(values, null, 2));
-    //  },
      onSubmit: values => {
       userService.login(values).then(() => {
-        console.log("done")
+        history.push("/");
       });
     },
    });
@@ -40,14 +35,6 @@ import userService from '../../services/userService';
          onChange={formik.handleChange}
          value={formik.values.password}
        />
-       {/* <label htmlFor="email">Email Address</label>
-       <input
-         id="email"
-         name="email"
-         type="email"
-         onChange={formik.handleChange}
-         value={formik.values.email}
-       /> */}
        <button type="submit">Submit</button>
      </form>
    );
