@@ -1,13 +1,15 @@
 import React from "react";
 import { useFormik } from 'formik';
 import userService from '../../services/userService';
+import { withRouter } from 'react-router';
 
  
- const Register = () => {
+ const Register = (history) => {
    // Notice that we have to initialize ALL of fields with values. These
    // could come from props, but since we don't want to prefill this form,
    // we just use an empty string. If you don't do this, React will yell
    // at you.
+   
    const formik = useFormik({
      initialValues: {
        username: '',
@@ -22,7 +24,9 @@ import userService from '../../services/userService';
       });
     },
    });
+   
    return (
+    <withRouter>
      <form onSubmit={formik.handleSubmit}>
        <label htmlFor="username">Username</label>
        <input
@@ -50,7 +54,8 @@ import userService from '../../services/userService';
        /> */}
        <button type="submit">Submit</button>
      </form>
+     </withRouter>
    );
  };
 
-  export default Register;
+  export default Register

@@ -17,14 +17,14 @@ class Navigation extends React.Component {
     
       <nav className={styles.navigation}>
       <ul>
-      <Link className={styles.link} to="/about">About</Link>
-      <Link className={styles.link} to="/rules">Rules</Link>
-      <Link className={styles.link} to="/">Questions</Link>
-      <Link className={styles.link} to="/userprofile">Profile</Link>
-      <Link className={styles.link} to="/register">Register</Link>
-      <Link className={styles.link} to="/login">Login</Link>
+      {this.props.isLogged && <Link className={styles.link} to="/about">About</Link>}
+      {this.props.isLogged && <Link className={styles.link} to="/rules">Rules</Link>}
+      {this.props.isLogged && <Link className={styles.link} to="/">Questions</Link>}
+      {this.props.isLogged && <Link className={styles.link} to="/userprofile">Profile</Link>}
+      {!this.props.isLogged && <Link className={styles.link} to="/register">Register</Link>}
+      {!this.props.isLogged && <Link className={styles.link} to="/login">Login</Link>}
       <Link className={styles.link} to="/origamis">Origamis</Link>
-      <button className={styles.link} onClick={this.logout}>Logout</button>
+      {this.props.isLogged && <button className={styles.link} onClick={this.logout}>Logout</button>}
     </ul>
       </nav>
   )
