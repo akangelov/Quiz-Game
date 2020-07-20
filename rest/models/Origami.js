@@ -5,7 +5,27 @@ const { String, Number, Boolean, ObjectId } = Schema.Types;
 
 const origamiSchema = new Schema({
 
-    description: {
+    question: {
+        type: String,
+        required: true,
+    },
+
+    answerA: {
+        type: String,
+        required: true,
+    },
+
+    answerB: {
+        type: String,
+        required: true,
+    },
+
+    answerC: {
+        type: String,
+        required: true,
+    },
+
+    answerD: {
         type: String,
         required: true,
     },

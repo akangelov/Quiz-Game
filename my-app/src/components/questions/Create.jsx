@@ -9,15 +9,16 @@ import postService from '../../services/postService';
 
    const formik = useFormik({
      initialValues: {
-         description: ""
-    //    question: '',
-    //    answerA: '',
-    //    answerB: '',
-    //    answerC: '',
-    //    answerD: ''
+        //  description: ""
+       question: '',
+       answerA: '',
+       answerB: '',
+       answerC: '',
+       answerD: ''
      },
      onSubmit: values => {
         postService.create(values).then(() => {
+            console.log(values)
             console.log("done")
         //   history.push('/login')
         })
@@ -25,15 +26,15 @@ import postService from '../../services/postService';
    });
    return (
      <form onSubmit={formik.handleSubmit}>
-         <label htmlFor="description">Description</label>
+         {/* <label htmlFor="description">Description</label>
        <input
          id="description"
          name="description"
          type="text"
          onChange={formik.handleChange}
          value={formik.values.description}
-       />
-       {/* <label htmlFor="question">Question</label>
+       /> */}
+       <label htmlFor="question">Question</label>
        <input
          id="question"
          name="question"
@@ -72,7 +73,7 @@ import postService from '../../services/postService';
          type="text"
          onChange={formik.handleChange}
          value={formik.values.answerD}
-       /> */}
+       />
        <button type="submit">Submit</button>
      </form>
    );
