@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
-import { BrowserRouter as Switch, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router';
 // import { ToastContainer, toast } from "react-toastify";
 import './App.css';
 
@@ -23,7 +24,7 @@ function parseCookeis() {
   }, {})
 }
 
-class App extends Component {
+class App extends React.Component {
 
   constructor(props) {
     super(props);
@@ -36,15 +37,15 @@ class App extends Component {
   login = (values) => {
     userService.login(values).then(() => {
       this.setState({ isLogged: true });
-      // this.props.push('/about');
+      this.props.history.push('/about');
       console.log("done")
     })
   }
 
-  logout = (history) => {
+  logout = () => {
     userService.logout().then(() => {
       this.setState({ isLogged: false });
-      // history.push('/login');
+      this.props.history.push('/login');
       return null;
     });
   }
@@ -87,4 +88,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
