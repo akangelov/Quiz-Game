@@ -34,12 +34,12 @@ class App extends Component {
     this.state = { isLogged };
   }
 
-  register = (values) => {
-    userService.register(values).then(() => {
-      this.setState({ isLogged: true });
-      console.log("done")
-    })
-  }
+  // register = (values) => {
+  //   userService.register(values).then(() => {
+  //     this.setState({ isLogged: true });
+  //     console.log("done")
+  //   })
+  // }
 
   logout = (history) => {
     userService.logout().then(() => {
@@ -66,7 +66,13 @@ class App extends Component {
         <Route exact path="/" component={ListQuestions} isLogged={isLogged}/>
         <Route path="/about" component={About} isLogged={isLogged}/>
         <Route path="/rules" component={Rules} isLogged={isLogged}/>
-        <Route path="/register" component={Register} isLogged={isLogged} />
+        <Route path="/register"
+        render={()=> (
+          <Register
+          isLogged={this.isLogged}
+          />
+        )}
+        />
         <Route path="/login" component={Login} isLogged={isLogged}/>
         <Route path="/userprofile" component={UserProfile} isLogged={isLogged}/>
         <Route path="/origamis" component={Origamis} isLogged={isLogged}/>

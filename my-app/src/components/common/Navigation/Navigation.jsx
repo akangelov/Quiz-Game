@@ -8,7 +8,7 @@ import userService from '../../../services/userService';
 const Navigation = props => {
 
   const {logout, isLogged } = props;
-  console.log(props)
+  // console.log(props)
 
   return (
     
