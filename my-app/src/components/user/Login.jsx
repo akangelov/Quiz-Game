@@ -3,7 +3,11 @@ import { useFormik } from 'formik';
 import userService from '../../services/userService';
 import { useHistory } from 'react-router-dom';
  
- const Login = () => {
+ const Login = (props) => {
+  
+  // const login = props;
+  // console.log(props)
+
   let history = useHistory();
 
    const formik = useFormik({
@@ -12,8 +16,8 @@ import { useHistory } from 'react-router-dom';
        password: ''
      },
      onSubmit: values => {
-      userService.login(values).then(() => {
-        history.push("/");
+        props.login(values).then(() => {
+        history.push("/about");
       });
     },
    });

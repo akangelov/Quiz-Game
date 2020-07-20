@@ -1,7 +1,6 @@
 import React from "react";
 import { useFormik } from 'formik';
 import userService from '../../services/userService';
-import { withRouter } from 'react-router';
 import { useHistory } from 'react-router'
  
  const Register = (props) => {
@@ -21,7 +20,6 @@ import { useHistory } from 'react-router'
    });
    
    return (
-    <withRouter>
      <form onSubmit={formik.handleSubmit}>
        <label htmlFor="username">Username</label>
        <input
@@ -41,7 +39,6 @@ import { useHistory } from 'react-router'
        />
        <button type="submit">Submit</button>
      </form>
-     </withRouter>
    );
  };
 

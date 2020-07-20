@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { BrowserRouter as Router, Switch, Route, Link, Redirect, withRouter } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 // import { ToastContainer, toast } from "react-toastify";
 import './App.css';
 
@@ -34,12 +34,13 @@ class App extends Component {
     this.state = { isLogged };
   }
 
-  // register = (values) => {
-  //   userService.register(values).then(() => {
-  //     this.setState({ isLogged: true });
-  //     console.log("done")
-  //   })
-  // }
+  login = (values) => {
+    userService.login(values).then(() => {
+      this.setState({ isLogged: true });
+      // history.push('/about');
+      console.log("done")
+    })
+  }
 
   logout = (history) => {
     userService.logout().then(() => {
@@ -59,21 +60,23 @@ class App extends Component {
         <Navigation
         {...this.props}
          isLogged={isLogged}
-         logout={this.logout} 
+         logout={this.logout}
+         login={this.login } 
          />
          <Switch>
         
         <Route exact path="/" component={ListQuestions} isLogged={isLogged}/>
         <Route path="/about" component={About} isLogged={isLogged}/>
         <Route path="/rules" component={Rules} isLogged={isLogged}/>
-        <Route path="/register"
+        <Route path="/register" component={Register} isLogged={isLogged}/>
+        <Route path="/login"
         render={()=> (
-          <Register
-          isLogged={this.isLogged}
+          <Login
+          isLogged={isLogged}
+          login={this.login}
           />
         )}
         />
-        <Route path="/login" component={Login} isLogged={isLogged}/>
         <Route path="/userprofile" component={UserProfile} isLogged={isLogged}/>
         <Route path="/origamis" component={Origamis} isLogged={isLogged}/>
         
