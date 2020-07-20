@@ -2,7 +2,7 @@ import React from 'react'
 // import Link from '../link'
 import styles from './Navigation.module.css'
 import { Link } from "react-router-dom";
-import userService from '../../../services/userService';
+// import userService from '../../../services/userService';
 // import logo from '../../images/white-origami-bird.png'
 
 const Navigation = props => {
@@ -27,6 +27,5 @@ const Navigation = props => {
       </nav>
   )
  }
-
 
 export default Navigation;

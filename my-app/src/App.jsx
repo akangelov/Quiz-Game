@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
+import { BrowserRouter as Switch, Route } from "react-router-dom";
 // import { ToastContainer, toast } from "react-toastify";
 import './App.css';
 
@@ -9,7 +9,6 @@ import About from "./components/about/About";
 import Rules from "./components/rules/Rules";
 import Register from "./components/user/Register";
 import Login from "./components/user/Login";
-import Logout from "./components/user/Logout";
 import ListQuestions from "./components/questions/read/ListQuestions";
 import Origamis from "./components/origamis/Origami";
 import UserProfile from "./components/user/UserProfile";
@@ -37,7 +36,7 @@ class App extends Component {
   login = (values) => {
     userService.login(values).then(() => {
       this.setState({ isLogged: true });
-      // history.push('/about');
+      // this.props.push('/about');
       console.log("done")
     })
   }
@@ -45,7 +44,7 @@ class App extends Component {
   logout = (history) => {
     userService.logout().then(() => {
       this.setState({ isLogged: false });
-      // history.push('/');
+      // history.push('/login');
       return null;
     });
   }
