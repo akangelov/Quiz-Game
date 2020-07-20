@@ -5,6 +5,11 @@ const { String, Number, Boolean, ObjectId } = Schema.Types;
 
 const origamiSchema = new Schema({
 
+    category: {
+        type: String,
+        required: true,
+    },
+
     question: {
         type: String,
         required: true,

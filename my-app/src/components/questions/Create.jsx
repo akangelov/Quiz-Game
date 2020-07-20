@@ -9,7 +9,7 @@ import postService from '../../services/postService';
 
    const formik = useFormik({
      initialValues: {
-        //  description: ""
+       category: "",
        question: '',
        answerA: '',
        answerB: '',
@@ -26,14 +26,14 @@ import postService from '../../services/postService';
    });
    return (
      <form onSubmit={formik.handleSubmit}>
-         {/* <label htmlFor="description">Description</label>
+         <label htmlFor="category">Category</label>
        <input
-         id="description"
-         name="description"
+         id="category"
+         name="category"
          type="text"
          onChange={formik.handleChange}
-         value={formik.values.description}
-       /> */}
+         value={formik.values.category}
+       />
        <label htmlFor="question">Question</label>
        <input
          id="question"
