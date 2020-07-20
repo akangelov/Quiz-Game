@@ -10,7 +10,7 @@ import Rules from "./components/rules/Rules";
 import Register from "./components/user/Register";
 import Login from "./components/user/Login";
 import CreateQuestion from "./components/questions/Create";
-import ReadQuestions from "./components/questions/Read";
+import Questions from "./components/questions/Questions";
 import Origamis from "./components/origamis/Origami";
 import UserProfile from "./components/user/UserProfile";
 import userService from './services/userService';
@@ -62,7 +62,7 @@ class App extends React.Component {
          />
          <Switch>
         
-        <Route exact path="/" component={ReadQuestions} isLogged={isLogged}/>
+        <Route exact path="/" component={Questions} isLogged={isLogged}/>
         <Route path="/about" component={About} isLogged={isLogged}/>
         <Route path="/rules" component={Rules} isLogged={isLogged}/>
         <Route path="/create" component={CreateQuestion} isLogged={isLogged}/>
