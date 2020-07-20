@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { withRouter } from 'react-router';
+import { Route, Switch, withRouter } from 'react-router-dom';
 // import { ToastContainer, toast } from "react-toastify";
 import './App.css';
 
@@ -10,7 +9,8 @@ import About from "./components/about/About";
 import Rules from "./components/rules/Rules";
 import Register from "./components/user/Register";
 import Login from "./components/user/Login";
-import ListQuestions from "./components/questions/read/ListQuestions";
+import CreateQuestion from "./components/questions/Create";
+import ReadQuestions from "./components/questions/Read";
 import Origamis from "./components/origamis/Origami";
 import UserProfile from "./components/user/UserProfile";
 import userService from './services/userService';
@@ -29,7 +29,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     const cookies = parseCookeis();
-    // console.log(cookies)
     const isLogged = !!cookies['x-auth-token'];
     this.state = { isLogged };
   }
@@ -38,7 +37,6 @@ class App extends React.Component {
     userService.login(values).then(() => {
       this.setState({ isLogged: true });
       this.props.history.push('/about');
-      console.log("done")
     })
   }
 
@@ -53,7 +51,6 @@ class App extends React.Component {
   render() {
 
     const { isLogged } = this.state;
-    // console.log(isLogged);
 
     return (
       <Fragment>
@@ -65,9 +62,10 @@ class App extends React.Component {
          />
          <Switch>
         
-        <Route exact path="/" component={ListQuestions} isLogged={isLogged}/>
+        <Route exact path="/" component={ReadQuestions} isLogged={isLogged}/>
         <Route path="/about" component={About} isLogged={isLogged}/>
         <Route path="/rules" component={Rules} isLogged={isLogged}/>
+        <Route path="/create" component={CreateQuestion} isLogged={isLogged}/>
         <Route path="/register" component={Register} isLogged={isLogged}/>
         <Route path="/login"
         render={()=> (

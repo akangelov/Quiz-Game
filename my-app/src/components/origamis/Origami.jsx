@@ -4,18 +4,13 @@ import Origam from './Origam';
 class Origamis extends Component {
     constructor(props) {
       super(props)
-  
-      this.state = {
-        origamis: []
-      }
+      this.state = { origamis: [] }
     }
   
     getOrigamis = async () => {
       const promise = await fetch('http://localhost:9999/api/origami')
       const origamis = await promise.json()
-      this.setState({
-        origamis
-      })
+      this.setState({ origamis })
       console.log(origamis)
     }
   

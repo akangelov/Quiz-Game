@@ -18,11 +18,11 @@ const Navigation = props => {
       {isLogged && <Link className={styles.link} to="/rules">Rules</Link>}
       {isLogged && <Link className={styles.link} to="/">Questions</Link>}
       {isLogged && <Link className={styles.link} to="/userprofile">Profile</Link>}
+      {isLogged && <Link className={styles.link} to="/create">Add new question</Link>}
+      {isLogged && <button className={styles.link} onClick={logout}>Logout</button>}
+      <Link className={styles.link} to="/origamis">Origamis</Link>
       {!isLogged && <Link className={styles.link} to="/register">Register</Link>}
       {!isLogged && <Link className={styles.link} to="/login">Login</Link>}
-      <Link className={styles.link} to="/origamis">Origamis</Link>
-      {/* {this.props.isLogged && <Link className={styles.link} to="/logout">Logout</Link>} */}
-      {isLogged && <button className={styles.link} onClick={logout}>Logout</button>}
     </ul>
       </nav>
   )

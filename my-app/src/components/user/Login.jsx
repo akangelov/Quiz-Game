@@ -1,14 +1,11 @@
 import React from "react";
 import { useFormik } from 'formik';
-import { useHistory } from 'react-router-dom';
 // import userService from '../../services/userService';
  
  const Login = (props) => {
   
   // const login = props;
   // console.log(props)
-
-  let history = useHistory();
 
    const formik = useFormik({
      initialValues: {
