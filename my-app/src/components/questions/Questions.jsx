@@ -10,26 +10,22 @@ class Questions extends React.Component {
         this.state = { questions: [] }
       }
 
-    getQuestions = async () => {
-     const questions = await postService.load();
-     this.setState({questions})
-    //  console.log(questions)
-    }       
-
     componentDidMount() {
-      // const id = this.props.match.params.id;
-      // console.log(id)
-        this.getQuestions()
+
+        this.getQuestions(this.props.match.params.id)
       }
+
+    getQuestions = async (id) => {
+      const response = await fetch(`http://localhost:9999/api/origami?category=${id}`)
+      const questions = await response.json()
+      this.setState({questions})
+    }       
 
     render() {
 
         const { questions } = this.state;
-        console.log(questions)
+        
         return <Fragment>
-
-              <Link to="/question/:id">Biology</Link>
-          
 
             {   questions ?
                  <div className="Posts">
@@ -37,6 +33,7 @@ class Questions extends React.Component {
                    <Question key={question._id} {...question}></Question>)}
                </div> : <div>Loading...</div>
             }
+
             </Fragment>
     }
 

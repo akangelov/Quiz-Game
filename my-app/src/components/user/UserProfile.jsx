@@ -6,21 +6,8 @@ class UserProfile extends React.Component {
     
         this.state = {
           username: null
-          // users : []
         }
       }
-
-      // getUsers = async () => {
-      //   const promise = await fetch('http://localhost:9999/api/user')
-      //   const origamis = await promise.json()
-      //   this.setState({ origamis })
-      //   console.log(origamis)
-      // }
-
-      // componentDidMount() {
-      //   console.log(this.props.match.params.id)
-      //   this.getUsers()
-      // }
 
       componentDidMount() {
         this.getUser(this.props.match.params.id)
@@ -28,7 +15,6 @@ class UserProfile extends React.Component {
 
       getUser = async (id) => {
         const response = await fetch(`http://localhost:9999/api/user?id=${id}`)
-        console.log(response)
     
         if(!response.ok) {
             console.log('not ok')
@@ -44,9 +30,7 @@ class UserProfile extends React.Component {
 
       render() {
           
-        const {
-          username,
-        } = this.state
+        const { username } = this.state
 
         return (
               <div>

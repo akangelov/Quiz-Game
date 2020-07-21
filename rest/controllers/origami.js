@@ -3,6 +3,9 @@ const models = require('../models');
 module.exports = {
   get: (req, res, next) => {
     const id = req.query.id
+    // console.log(req.body)
+    const category = req.query.category
+    // console.log(category)
     const limit = +req.query.limit;
     if (limit) {
       models.Origami.find().populate('author').sort({ _id: -1 }).limit(limit)
@@ -10,12 +13,17 @@ module.exports = {
         .catch(next);
       return;
     }
+    // if (category) {
+    //   models.Origami.find({'category': category})
+    //   .then((origamis) => res.send(origamis))
+    //   .catch(next);
+    // }
     if (id) {
       models.Origami.findById(id)
       .then((origami) => res.send(origami))
       .catch(next);
     }
-    models.Origami.find().populate('author')
+    models.Origami.find({ category: `${category}` }).populate('author')
       .then((origamies) => res.send(origamies))
       .catch(next);
   },

@@ -8,11 +8,11 @@ class Detail extends React.Component {
   };
 
   componentDidMount() {
-    this.getQuestion(this.props.match.params.id)
+    this.getQuestion(this.props.match.params.id2)
   }
 
-  getQuestion = async (id) => {
-    const response = await fetch(`http://localhost:9999/api/origami?id=${id}`)
+  getQuestion = async (id2) => {
+    const response = await fetch(`http://localhost:9999/api/origami?id=${id2}`)
     console.log(response)
 
     if(!response.ok) {
