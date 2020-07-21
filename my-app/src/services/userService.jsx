@@ -1,4 +1,8 @@
 const userService = {
+  load: function () {
+    return fetch(`http://localhost:9999/api/user`)
+    .then(res => res.json());
+  },
     register: function (data) {
       return fetch(`http://localhost:9999/api/user/register`, {
         body: JSON.stringify(data),

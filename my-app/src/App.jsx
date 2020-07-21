@@ -72,6 +72,7 @@ class App extends React.Component {
         <Route path="/questions" component={Questions} isLogged={isLogged}/>
         <Route path="/question/:id" component={Detail} isLogged={isLogged} />
         <Route path="/register" component={Register} isLogged={isLogged}/>
+        <Route path="/userprofile/:id" component={UserProfile} isLogged={isLogged}/>
         <Route path="/login"
         render={()=> (
           <Login
@@ -80,7 +81,6 @@ class App extends React.Component {
           />
         )}
         />
-        <Route path="/userprofile" component={UserProfile} isLogged={isLogged}/>
         <Route path="/origamis" component={Origamis} isLogged={isLogged}/>
         
          </Switch>

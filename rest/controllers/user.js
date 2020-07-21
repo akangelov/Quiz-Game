@@ -4,8 +4,10 @@ const utils = require('../utils');
 
 module.exports = {
   get: (req, res, next) => {
-    models.User.find()
-      .then((users) => res.send(users))
+    const id = req.query.id
+    console.log(id)
+    models.User.findById(id)
+      .then((user) => res.send(user))
       .catch(next)
   },
 
