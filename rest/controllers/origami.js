@@ -2,12 +2,18 @@ const models = require('../models');
 
 module.exports = {
   get: (req, res, next) => {
+    const id = req.query.id
     const limit = +req.query.limit;
     if (limit) {
       models.Origami.find().populate('author').sort({ _id: -1 }).limit(limit)
         .then((origamies) => res.send(origamies))
         .catch(next);
       return;
+    }
+    if (id) {
+      models.Origami.findById(id)
+      .then((origami) => res.send(origami))
+      .catch(next);
     }
     models.Origami.find().populate('author')
       .then((origamies) => res.send(origamies))

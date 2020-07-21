@@ -33,8 +33,7 @@ class UserProfile extends React.Component {
         if(!response.ok) {
             console.log('not ok')
         //   this.props.history.push('/error')
-        }
-    
+        }   
         const user = await response.json()
         console.log(user)
         this.setState({

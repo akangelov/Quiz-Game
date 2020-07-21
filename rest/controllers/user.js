@@ -5,7 +5,7 @@ const utils = require('../utils');
 module.exports = {
   get: (req, res, next) => {
     const id = req.query.id
-    console.log(id)
+    // console.log(id)
     models.User.findById(id)
       .then((user) => res.send(user))
       .catch(next)
