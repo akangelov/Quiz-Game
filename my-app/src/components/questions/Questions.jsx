@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
+import { Link } from "react-router-dom";
 import postService from '../../services/postService';
 import Question from './Question';
+
 
 class Questions extends React.Component {
     constructor(props) {
@@ -15,6 +17,8 @@ class Questions extends React.Component {
     }       
 
     componentDidMount() {
+      // const id = this.props.match.params.id;
+      // console.log(id)
         this.getQuestions()
       }
 
@@ -23,6 +27,10 @@ class Questions extends React.Component {
         const { questions } = this.state;
         console.log(questions)
         return <Fragment>
+
+              <Link to="/question/:id">Biology</Link>
+          
+
             {   questions ?
                  <div className="Posts">
                  {questions.map((question) =>

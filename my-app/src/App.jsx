@@ -11,9 +11,12 @@ import Register from "./components/user/Register";
 import Login from "./components/user/Login";
 import CreateQuestion from "./components/questions/Create";
 import Questions from "./components/questions/Questions";
+import Question from "./components/questions/Question";
+import Detail from "./components/questions/Detail";
 import Origamis from "./components/origamis/Origami";
 import UserProfile from "./components/user/UserProfile";
 import userService from './services/userService';
+import Category from "./components/questions/Category";
 
 
 function parseCookeis() {
@@ -62,10 +65,12 @@ class App extends React.Component {
          />
          <Switch>
         
-        <Route exact path="/" component={Questions} isLogged={isLogged}/>
+        <Route exact path="/" component={Category} isLogged={isLogged}/>
         <Route path="/about" component={About} isLogged={isLogged}/>
         <Route path="/rules" component={Rules} isLogged={isLogged}/>
         <Route path="/create" component={CreateQuestion} isLogged={isLogged}/>
+        <Route path="/questions" component={Questions} isLogged={isLogged}/>
+        <Route path="/question/:id" component={Detail} isLogged={isLogged} />
         <Route path="/register" component={Register} isLogged={isLogged}/>
         <Route path="/login"
         render={()=> (

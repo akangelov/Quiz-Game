@@ -1,0 +1,13 @@
+.categoryContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    grid-gap: 10px;
+}
+
+.categoryItem {
+    border: 1px solid black;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 10px;
+}

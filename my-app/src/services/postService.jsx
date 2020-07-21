@@ -3,6 +3,10 @@ const postService = {
       return fetch(`http://localhost:9999/api/origami`)
       .then(res => res.json());
     },
+    loadCategory: function (category) {
+      return fetch(`http://localhost:9999/api/origami${`/${category}`}`)
+      .then(res => res.json());
+    },
   // load: function (id, limit) {
   //   return fetch(`http://localhost:9999/api/origami${id ? `/${id}` : ''}${limit ? `?limit=${limit}` : ''}`).then(res => res.json());
   // },
