@@ -4,9 +4,7 @@ class UserProfile extends React.Component {
     constructor(props) {
         super(props)
     
-        this.state = {
-          username: null
-        }
+        this.state = { username: null }
       }
 
       componentDidMount() {

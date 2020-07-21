@@ -3,6 +3,7 @@ const models = require('../models');
 module.exports = {
   get: (req, res, next) => {
     const id = req.query.id
+    console.log(id)
     // console.log(req.body)
     const category = req.query.category
     // console.log(category)
@@ -22,6 +23,7 @@ module.exports = {
       models.Origami.findById(id)
       .then((origami) => res.send(origami))
       .catch(next);
+      return;
     }
     models.Origami.find({ category: `${category}` }).populate('author')
       .then((origamies) => res.send(origamies))

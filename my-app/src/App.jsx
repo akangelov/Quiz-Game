@@ -70,7 +70,7 @@ class App extends React.Component {
         <Route path="/rules" component={Rules} isLogged={isLogged}/>
         <Route path="/create" component={CreateQuestion} isLogged={isLogged}/>
         <Route path="/questions/:id" component={Questions} isLogged={isLogged}/>
-        <Route path="/question/:id/:id2" component={Detail} isLogged={isLogged} />
+        <Route path="/question/:id" component={Detail} isLogged={isLogged} />
         <Route path="/userprofile/:id" component={UserProfile} isLogged={isLogged}/>
         <Route path="/register" component={Register} isLogged={isLogged}/>
         <Route path="/login"
