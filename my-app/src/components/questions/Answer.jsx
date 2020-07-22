@@ -5,20 +5,24 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Answer = (props) => {
 
+    // function notify() {
+    //     toast("Wow so easy !");
+    // } 
+
     function handleClick(e) {
         
         if (e.target.innerText === props.correctAnswer) {
-            console.log("correct")
+            // console.log("correct")
+            toast("Correct Answer!")
         } else {
-            console.log("not correct")
+            // console.log("not correct")
+            toast("This answer is not correct :/ Please try again! :)")
         }
         // console.log(e.currentTarget.innerText);
         // console.log(this.props.correctAnswer);
     }
 
-    function notify() {
-        toast("Wow so easy !");
-    } 
+    
 
     return(
         <>
@@ -31,10 +35,10 @@ const Answer = (props) => {
         </section>
         <h3>{props.question}</h3>
         <section className={styles.answersContainer}>
-            <button onClick={(e) => { handleClick(e); notify() }} className={styles.answerItem}>{props.answerA}</button>
-            <button onClick={(e) => { handleClick(e); notify() }} className={styles.answerItem}>{props.answerB}</button>
-            <button onClick={(e) => { handleClick(e); notify() }} className={styles.answerItem}>{props.answerC}</button>
-            <button onClick={(e) => { handleClick(e); notify() }} className={styles.answerItem}>{props.answerD}</button>
+            <button onClick={(e) => { handleClick(e) }} className={styles.answerItem}>{props.answerA}</button>
+            <button onClick={(e) => { handleClick(e) }} className={styles.answerItem}>{props.answerB}</button>
+            <button onClick={(e) => { handleClick(e) }} className={styles.answerItem}>{props.answerC}</button>
+            <button onClick={(e) => { handleClick(e) }} className={styles.answerItem}>{props.answerD}</button>
             <ToastContainer />
         </section>
         </>
