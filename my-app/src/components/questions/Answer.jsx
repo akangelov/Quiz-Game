@@ -1,10 +1,12 @@
 import React, { Fragment } from "react";
-import Question from './Question';
 
-const Answer = () => {
+const Answer = (props) => {
     return(
-        
-
+        <>
+        <div>{props.answerA}</div>
+        </>
     )
 
 }
+
+export default Answer;
