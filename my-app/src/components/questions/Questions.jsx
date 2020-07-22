@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import styles from './Questions.module.css'
-import { Link } from "react-router-dom";
+import Link from '../common/Link/Link';
+// import { Link } from "react-router-dom";
 import postService from '../../services/postService';
 import Question from './Question';
 
