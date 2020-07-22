@@ -1,38 +1,96 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Lato');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+    font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 60;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    word-spacing: 0.12em;
+    text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* *, *:before, *:after {
+    box-sizing: inherit;
+} */
+
+html {
+    margin: 0;
+    padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media (max-width: 600px) {
+    html {
+        font-size: 12px;
+    }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media (min-width: 600px) {
+    html {
+        font-size: 14px;
+    }
 }
 
-.App-link {
-  color: #61dafb;
+@media (min-width: 900px) {
+    html {
+        font-size: 16px;
+    }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (min-width: 1200px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1920px) {
+    html {
+        font-size: 21px;
+    }
+}
+
+body, input, textarea, select, option, button {
+    font: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.6;
+    font-weight: normal;
+    margin-bottom: 0.5em;
+    padding: 10px;
+}
+
+main {
+    font-size: 1.1em;
+}
+
+article {
+    font-size: 1.2rem;
+}
+
+h1 {
+    font-size: 2.2em;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+h4 {
+    font-size: 1.4em;
+}
+
+h5 {
+    font-size: 1.2em;
+}
+
+h6 {
+    font-size: 1.0em;
 }
