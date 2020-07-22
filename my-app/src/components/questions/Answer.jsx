@@ -1,26 +1,28 @@
-import React, { Fragment } from "react";
+import React from "react";
 import styles from './Answer.module.css'
 
+class Answer extends React.Component {
 
-const Answer = (props) => {
+    render() {
+
     return(
         <>
         <h3>Jokers</h3>
         <section className={styles.jokersContainer}>    
-            <div className={styles.jokerItem}>Call a friend</div>
-            <div className={styles.jokerItem}>50:50</div>
-            <div className={styles.jokerItem}>Google Search</div>
+            <button className={styles.jokerItem}>Call a friend</button>
+            <button className={styles.jokerItem}>50:50</button>
+            <button className={styles.jokerItem}>Google Search</button>
         </section>
-        <h3>{props.question}</h3>
+        <h3>{this.props.question}</h3>
         <section className={styles.answersContainer}>
-            <div className={styles.answerItem}>{props.answerA}</div>
-            <div className={styles.answerItem}>{props.answerB}</div>
-            <div className={styles.answerItem}>{props.answerC}</div>
-            <div className={styles.answerItem}>{props.answerD}</div>
+            <button className={styles.answerItem}>{this.props.answerA}</button>
+            <button className={styles.answerItem}>{this.props.answerB}</button>
+            <button className={styles.answerItem}>{this.props.answerC}</button>
+            <button className={styles.answerItem}>{this.props.answerD}</button>
         </section>
         </>
     )
-
+    }
 }
 
 export default Answer;
