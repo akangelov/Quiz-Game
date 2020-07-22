@@ -1,10 +1,13 @@
 import React from "react";
 import styles from './Answer.module.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-class Answer extends React.Component {
+const Answer = (props) => {
 
-    handleClick = (e) => {
-        if (e.currentTarget.innerText === this.props.correctAnswer) {
+    function handleClick(e) {
+        
+        if (e.target.innerText === props.correctAnswer) {
             console.log("correct")
         } else {
             console.log("not correct")
@@ -13,27 +16,29 @@ class Answer extends React.Component {
         // console.log(this.props.correctAnswer);
     }
 
-    render() {
+    function notify() {
+        toast("Wow so easy !");
+    } 
 
     return(
         <>
-        <p>{this.props.correctAnswer}</p>
+        <p>{props.correctAnswer}</p>
         <h3>Jokers</h3>
         <section className={styles.jokersContainer}>    
             <button className={styles.jokerItem}>Call a friend</button>
             <button className={styles.jokerItem}>50:50</button>
             <button className={styles.jokerItem}>Google Search</button>
         </section>
-        <h3>{this.props.question}</h3>
+        <h3>{props.question}</h3>
         <section className={styles.answersContainer}>
-            <button onClick={this.handleClick} className={styles.answerItem}>{this.props.answerA}</button>
-            <button onClick={this.handleClick} className={styles.answerItem}>{this.props.answerB}</button>
-            <button onClick={this.handleClick} className={styles.answerItem}>{this.props.answerC}</button>
-            <button onClick={this.handleClick} className={styles.answerItem}>{this.props.answerD}</button>
+            <button onClick={(e) => { handleClick(e); notify() }} className={styles.answerItem}>{props.answerA}</button>
+            <button onClick={(e) => { handleClick(e); notify() }} className={styles.answerItem}>{props.answerB}</button>
+            <button onClick={(e) => { handleClick(e); notify() }} className={styles.answerItem}>{props.answerC}</button>
+            <button onClick={(e) => { handleClick(e); notify() }} className={styles.answerItem}>{props.answerD}</button>
+            <ToastContainer />
         </section>
         </>
     )
-    }
 }
 
 export default Answer;
