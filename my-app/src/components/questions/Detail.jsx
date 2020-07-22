@@ -24,12 +24,10 @@ class Detail extends React.Component {
 
   render() {
     const { question } = this.state;
-    const data = {...question}
-    console.log(data)
+    console.log(question)
    
     return (
-      // <p>Hello</p>
-      <Answer {...data}/>
+      <Answer {...question}/>
     )
     
     // return question && <Question category={question.category} question={question.question} />

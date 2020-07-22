@@ -1,0 +1,25 @@
+.jokersContainer {
+    display: flex;
+}
+.jokerItem {
+    padding: 10px;
+    margin: 10px;;
+    border: 1px black solid;
+    border-radius: 10px;
+}
+.answersContainer {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 10px;
+    grid-gap: 10px;
+}
+.answerItem {
+    padding: 10px;
+    margin: 10px;
+    border: 1px black solid;
+    border-radius: 10px;  
+}
+.h3 {
+    padding: 10px;
+    margin: 10px;
+}
