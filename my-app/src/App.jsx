@@ -11,9 +11,7 @@ import Register from "./components/user/Register";
 import Login from "./components/user/Login";
 import CreateQuestion from "./components/questions/Create";
 import Questions from "./components/questions/Questions";
-import Question from "./components/questions/Question";
 import Detail from "./components/questions/Detail";
-import Origamis from "./components/origamis/Origami";
 import UserProfile from "./components/user/UserProfile";
 import userService from './services/userService';
 import Category from "./components/questions/Category";
@@ -39,7 +37,7 @@ class App extends React.Component {
   login = (values) => {
     userService.login(values).then(() => {
       this.setState({ isLogged: true });
-      this.props.history.push('/about');
+      this.props.history.push('/');
     })
   }
 
@@ -81,8 +79,6 @@ class App extends React.Component {
           />
         )}
         />
-        <Route path="/origamis" component={Origamis} isLogged={isLogged}/>
-        
          </Switch>
         
          <Footer/>     

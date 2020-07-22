@@ -6,12 +6,10 @@ import { Link } from "react-router-dom";
 
 const Question = ({ question, _id }) => {
   return (
-    <>
-      <p className={styles.categoryItem}>
-        {question} 
-        <Link to={`/question/${_id}`}>Answer</Link>
-      </p>
-      </>
+      <div className={styles.categoryItem}>
+        <p>{question}</p> 
+        <Link to={`/question/${_id}`}>Click here to answer</Link>
+      </div>
   )
 }
 
