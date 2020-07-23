@@ -1,5 +1,6 @@
 import React from "react";
 import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import userService from '../../services/userService';
 import { useHistory } from 'react-router'
  
@@ -12,6 +13,14 @@ import { useHistory } from 'react-router'
        username: '',
        password: ''
      },
+     validationSchema: Yup.object({
+      username: Yup.string()
+        .min(4, 'Must be 3 characters or more')
+        .required('Required'),
+      password: Yup.string()
+        .min(4, 'Must be 20 characters or more')
+        .required('Required'),
+    }),
      onSubmit: values => {
       userService.register(values).then(() => {
         history.push('/login')
@@ -20,6 +29,8 @@ import { useHistory } from 'react-router'
    });
    
    return (
+     <>
+     <h2>Register Form</h2>
      <form onSubmit={formik.handleSubmit}>
        <label htmlFor="username">Username</label>
        <input
@@ -29,6 +40,9 @@ import { useHistory } from 'react-router'
          onChange={formik.handleChange}
          value={formik.values.username}
        />
+       {formik.touched.username && formik.errors.username ? (
+         <div>{formik.errors.username}</div>
+       ) : null}
        <label htmlFor="password">Password</label>
        <input
          id="password"
@@ -37,8 +51,12 @@ import { useHistory } from 'react-router'
          onChange={formik.handleChange}
          value={formik.values.password}
        />
+       {formik.touched.password && formik.errors.password ? (
+         <div>{formik.errors.password}</div>
+       ) : null}
        <button type="submit">Submit</button>
      </form>
+     </>
    );
  };
 
