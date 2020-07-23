@@ -1,9 +1,10 @@
-import React from "react";
+import React, { Fragment } from "react";
 import styles from './Answer.module.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Answer = (props) => {
+    
  
     function checkAnswer(e) {     
         if (e.target.innerText === props.correctAnswer) {
@@ -14,7 +15,9 @@ const Answer = (props) => {
     function playJoker(e) {     
         if (e.target.textContent === "Google") {
             window.open(`http://google.com/search?q=${props.question}`)
-        } else { toast("This ") }
+        } else { 
+         
+         }
     }
 
     return (
