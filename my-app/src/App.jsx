@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Route, Switch, withRouter } from 'react-router-dom';
-// import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import './App.css';
 
 import Footer from "./components/common/Footer/Footer";
@@ -32,12 +32,16 @@ class App extends React.Component {
     const cookies = parseCookeis();
     const isLogged = !!cookies['x-auth-token'];
     this.state = { isLogged };
+    this.userId = {};
   }
 
   login = (values) => {
-    userService.login(values).then(() => {
+    userService.login(values).then((res) => {
+      if (res === undefined) {
+        console.log("Invalid username or password!")
+      } else {
       this.setState({ isLogged: true });
-      this.props.history.push('/');
+      this.props.history.push('/')};
     })
   }
 

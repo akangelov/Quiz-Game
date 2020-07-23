@@ -14,8 +14,8 @@ const Navigation = props => {
     
       <nav className={styles.navigation}>
       <ul>
-      {isLogged && (<Link className={styles.link} to="/about">About</Link>)}
-      {isLogged && <Link className={styles.link} to="/rules">Rules</Link>}
+      {<Link className={styles.link} to="/about">About</Link>}
+      {<Link className={styles.link} to="/rules">Rules</Link>}
       {isLogged && <Link className={styles.link} to="/">Questions</Link>}
       {isLogged && <Link className={styles.link} to="/userprofile/:id">Profile</Link>}
       {isLogged && <Link className={styles.link} to="/create">Add new question</Link>}
