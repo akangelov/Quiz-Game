@@ -5,13 +5,16 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Answer = (props) => {
  
-    function checkAnswer(e) {
-        
+    function checkAnswer(e) {     
         if (e.target.innerText === props.correctAnswer) {
             toast("Correct Answer!")
-        } else {
-            toast("This answer is not correct :/ Please try again! :)")
-        }
+        } else { toast("This answer is not correct :/ Please try again! :)") }
+    }
+
+    function playJoker(e) {     
+        if (e.target.textContent === "Google") {
+            window.open(`http://google.com/search?q=${props.question}`)
+        } else { toast("This ") }
     }
 
     return (
@@ -19,8 +22,8 @@ const Answer = (props) => {
         <p>{props.correctAnswer}</p>
         <h3>Jokers</h3>
         <section className={styles.jokersContainer}>    
-            <button className={styles.jokerItem}>50:50</button>
-            <button className={styles.jokerItem}>Google</button>
+            <button onClick={(e) => { playJoker(e) }} className={styles.jokerItem}>50:50</button>
+            <button onClick={(e) => { playJoker(e) }} className={styles.jokerItem}>Google</button>
         </section>
 
         <h3>{props.question}</h3>
