@@ -3,7 +3,7 @@ import styles from './About.module.css';
 
 const About = () => {
     return (
-        <div>
+        <div className={styles.about}>
             <p>Quiz game is an interactive game that checks your knowledge
                 in History, Biology, Math or Science.</p>
         </div>       

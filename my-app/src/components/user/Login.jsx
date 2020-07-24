@@ -1,6 +1,7 @@
 import React from "react";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { ToastContainer, toast } from "react-toastify";
 import styles from '../../shared//styles/UserForms.module.css'
  
  const Login = (props) => {
@@ -16,13 +17,14 @@ import styles from '../../shared//styles/UserForms.module.css'
      validationSchema: Yup.object({
       username: Yup.string()
         // .username('Invalid Username')
-        // .min(4, 'Must be 3 characters or more')
+        .min(4, 'Must be 4 characters or more')
         .required('Required'),
       password: Yup.string()
-        // .min(4, 'Must be 20 characters or more')
+        .min(3, 'Must be 3 characters or more')
         .required('Required'),
     }),
-     onSubmit: values => { props.login(values)},
+     onSubmit: values => { props.login(values).then(()=> {
+     })},
    });
    return (
      <>

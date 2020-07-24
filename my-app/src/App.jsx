@@ -38,8 +38,9 @@ class App extends React.Component {
   login = (values) => {
     userService.login(values).then((res) => {
       if (res === undefined) {
-        console.log("Invalid username or password!")
+        toast("Invalid username or password!")
       } else {
+        toast("User succesfully logged in!")
       this.setState({ isLogged: true });
       this.props.history.push('/')};
     })
@@ -85,7 +86,8 @@ class App extends React.Component {
         />
          </Switch>
         
-         <Footer/>     
+         <Footer/>
+         <ToastContainer />     
       </Fragment>
     )
   }

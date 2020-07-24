@@ -15,10 +15,10 @@ import styles from '../../shared//styles/UserForms.module.css'
      },
      validationSchema: Yup.object({
       username: Yup.string()
-        .min(4, 'Must be 3 characters or more')
+        .min(4, 'Must be 4 characters or more')
         .required('Required'),
       password: Yup.string()
-        .min(4, 'Must be 20 characters or more')
+        .min(3, 'Must be 3 characters or more')
         .required('Required'),
     }),
      onSubmit: values => {

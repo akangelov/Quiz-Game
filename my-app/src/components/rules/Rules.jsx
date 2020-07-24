@@ -3,7 +3,7 @@ import styles from "./Rules.module.css"
 
 const Rules = props => {
     return (
-    <div>
+    <div className={styles.rules}>
         <p>The rules of the game are simple.</p>
         <p>A player can choose a question from the list or can be assigned a random question 
             by clicking Random Question button.
