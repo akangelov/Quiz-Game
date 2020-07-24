@@ -2,6 +2,7 @@ import React from "react";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useHistory } from 'react-router'
+import styles from './Create.module.css'
 import postService from '../../services/postService';
  
  const CreateQuestion = (props) => {
@@ -42,7 +43,8 @@ import postService from '../../services/postService';
      }
    });
    return (
-     <form onSubmit={formik.handleSubmit}>
+     <form onSubmit={formik.handleSubmit} >
+       <div className={styles.container}>
          <label htmlFor="category">Category</label>
        <input
          id="category"
@@ -121,6 +123,7 @@ import postService from '../../services/postService';
          <div>{formik.errors.correctAnswer}</div>
        ) : null}
        <button type="submit">Submit</button>
+     </div>
      </form>
    );
  };
