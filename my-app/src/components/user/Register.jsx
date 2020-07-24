@@ -23,9 +23,12 @@ import styles from '../../shared//styles/UserForms.module.css'
         .required('Required'),
     }),
      onSubmit: values => {
-      userService.register(values).then(() => {
-        toast("User succesfully registered!")
-        history.push('/login')
+      userService.register(values).then((res) => {
+        if (res === undefined) {
+          toast("User already exists!")
+        } else {
+          toast("User succesfully registered!")
+          history.push('/login')}
       });
     },
    });

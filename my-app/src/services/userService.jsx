@@ -10,7 +10,8 @@ const userService = {
         headers: {
           'Content-type': 'application/json'
         }
-      }).then(res => res.json());
+      }).then(res => res.json())
+      .catch(e => {console.log(e)});
     },
   
     login: function (data) {
