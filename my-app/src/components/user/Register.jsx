@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import userService from '../../services/userService';
 import { useHistory } from 'react-router'
+import { ToastContainer, toast } from "react-toastify";
 import styles from '../../shared//styles/UserForms.module.css'
  
  const Register = (props) => {
@@ -23,6 +24,7 @@ import styles from '../../shared//styles/UserForms.module.css'
     }),
      onSubmit: values => {
       userService.register(values).then(() => {
+        toast("User succesfully registered!")
         history.push('/login')
       });
     },
@@ -58,7 +60,8 @@ import styles from '../../shared//styles/UserForms.module.css'
        <button type="submit">Submit</button>
        </div>
      </form>
-     </>
+     <ToastContainer /> 
+     </>  
    );
  };
 
