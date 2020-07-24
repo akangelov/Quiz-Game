@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
+import styles from "./Rules.module.css"
 
 const Rules = props => {
     return (
-        <Fragment>
+    <div>
         <p>The rules of the game are simple.</p>
         <p>A player can choose a question from the list or can be assigned a random question 
             by clicking Random Question button.
@@ -19,8 +20,7 @@ const Rules = props => {
                 <li>50/50</li>
             </ul>
         </p>
-        </Fragment>      
-        
+    </div>    
     )
 }
 
