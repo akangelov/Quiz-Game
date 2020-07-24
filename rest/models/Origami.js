@@ -9,37 +9,34 @@ const origamiSchema = new Schema({
         type: String,
         required: true,
     },
-
     question: {
         type: String,
         required: true,
     },
-
     answerA: {
         type: String,
         required: true,
     },
-
     answerB: {
         type: String,
         required: true,
     },
-
     answerC: {
         type: String,
         required: true,
     },
-
     answerD: {
         type: String,
         required: true,
     },
-
+    correctAnswer: {
+        type: String,
+        required: true,
+    },
     author: {
         type: ObjectId,
         ref: "User"
     }
-
 });
 
 module.exports = new Model('Origami', origamiSchema);

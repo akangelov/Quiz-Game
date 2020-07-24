@@ -3,10 +3,8 @@ const models = require('../models');
 module.exports = {
   get: (req, res, next) => {
     const id = req.query.id
-    console.log(id)
-    // console.log(req.body)
     const category = req.query.category
-    // console.log(category)
+
     const limit = +req.query.limit;
     if (limit) {
       models.Origami.find().populate('author').sort({ _id: -1 }).limit(limit)
@@ -31,10 +29,10 @@ module.exports = {
   },
 
   post: (req, res, next) => {
-    const { category, question, answerA, answerB, answerC, answerD } = req.body;
+    const { category, question, answerA, answerB, answerC, answerD, correctAnswer } = req.body;
     const { _id } = req.user;
 
-    models.Origami.create({ category, question, answerA, answerB, answerC, answerD, author: _id })
+    models.Origami.create({ category, question, answerA, answerB, answerC, answerD, correctAnswer, author: _id })
       .then((createdOrigami) => {
         return Promise.all([
           models.User.updateOne({ _id }, { $push: { posts: createdOrigami } }),
