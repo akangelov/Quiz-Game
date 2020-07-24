@@ -2,7 +2,7 @@ import React from "react";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useHistory } from 'react-router'
-import styles from './Create.module.css'
+import styles from '../../shared//styles/CreateForm.module.css'
 import postService from '../../services/postService';
  
  const CreateQuestion = (props) => {

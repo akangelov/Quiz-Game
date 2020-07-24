@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-// import userService from '../../services/userService';
+import styles from '../../shared//styles/UserForms.module.css'
  
  const Login = (props) => {
   
@@ -28,6 +28,7 @@ import * as Yup from 'yup';
      <>
      <h2>Login Form</h2>
      <form onSubmit={formik.handleSubmit}>
+     <div className={styles.container}>
        <label htmlFor="username">Username</label>
        <input
          id="username"
@@ -51,6 +52,7 @@ import * as Yup from 'yup';
          <div>{formik.errors.password}</div>
        ) : null}
        <button type="submit">Submit</button>
+       </div>
      </form>
      </>
    );
