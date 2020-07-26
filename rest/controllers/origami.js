@@ -5,18 +5,6 @@ module.exports = {
     const id = req.query.id
     const category = req.query.category
 
-    const limit = +req.query.limit;
-    if (limit) {
-      models.Origami.find().populate('author').sort({ _id: -1 }).limit(limit)
-        .then((origamies) => res.send(origamies))
-        .catch(next);
-      return;
-    }
-    // if (category) {
-    //   models.Origami.find({'category': category})
-    //   .then((origamis) => res.send(origamis))
-    //   .catch(next);
-    // }
     if (id) {
       models.Origami.findById(id)
       .then((origami) => res.send(origami))
@@ -58,7 +46,10 @@ module.exports = {
   },
 
   delete: (req, res, next) => {
+    // const id = req.body
     const id = req.params.id;
+    // const id = req.query.id;
+    console.log(id)
     models.Origami.deleteOne({ _id: id })
       .then((removedOrigami) => res.send(removedOrigami))
       .catch(next)
