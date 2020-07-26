@@ -6,37 +6,38 @@ import postService from '../../services/postService';
 import Question from './Question';
 
 
-class Questions extends React.Component {
+class EditQuestion extends React.Component {
     constructor(props) {
         super(props)
         this.state = { questions: [] }
       }
 
-    componentDidMount() { this.getQuestions(this.props.match.params.id)} //vrushta id-to, koeto e biology, science etc.
+    componentDidMount() { this.getQuestions()}
       
-
-    getQuestions = async (id) => {
-      const response = await fetch(`http://localhost:9999/api/origami?category=${id}`)
+    getQuestions = async () => {
+      const response = await fetch('http://localhost:9999/api/origami')
       const questions = await response.json()
-      this.setState({questions})
-    }       
-
+      console.log(questions)
+      this.setState({questions})  
+    }  
+    
     render() {
 
         const { questions } = this.state;
+        console.log(questions)
 
         return <Fragment>
-               <h3>Please select a question:</h3>
-            {   questions ?           
+               <h3>Please select a question: </h3>
+            {/* {   questions ?           
                  <div className={styles.categoryContainer}>               
                  {questions.map((question) =>
                    <Question key={question._id} {...question}></Question>)}
                </div> : <div>Loading...</div>
-            }
+            } */}
 
             </Fragment>
     }
 
 }
 
-export default Questions;
+export default EditQuestion;

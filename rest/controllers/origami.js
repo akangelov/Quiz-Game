@@ -23,9 +23,13 @@ module.exports = {
       .catch(next);
       return;
     }
-    models.Origami.find({ category: `${category}` }).populate('author')
+    if (category) { models.Origami.find({ category: `${category}` }).populate('author')
       .then((origamies) => res.send(origamies))
       .catch(next);
+    }
+    models.Origami.find().populate('author')
+    .then((origamies) => res.send(origamies))
+    .catch(next);
   },
 
   post: (req, res, next) => {
