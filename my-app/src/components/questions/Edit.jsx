@@ -3,10 +3,10 @@ import styles from './Questions.module.css'
 import Link from '../common/Link/Link';
 // import { Link } from "react-router-dom";
 import postService from '../../services/postService';
-import Question from './Question';
+import EditQuestion from './EditQuestion';
 
 
-class EditQuestion extends React.Component {
+class EditQuestions extends React.Component {
     constructor(props) {
         super(props)
         this.state = { questions: [] }
@@ -18,8 +18,10 @@ class EditQuestion extends React.Component {
       console.log(questions)
       this.setState({questions})  
     }  
-    
-    componentDidMount() { this.getQuestions()}
+
+    componentDidMount() { 
+        this.getQuestions()
+    }
 
     render() {
 
@@ -27,11 +29,11 @@ class EditQuestion extends React.Component {
         console.log(questions)
 
         return <Fragment>
-               <h3>Please select a question: </h3>
+               <h3>You can edit or delete a question below: </h3>
             {   questions ?           
                  <div className={styles.categoryContainer}>               
-                 {questions.map((question) =>
-                   <Question key={question._id} {...question}></Question>)}
+                 {questions.map((question) => 
+                  <EditQuestion key={question._id} {...question}></EditQuestion>)}
                </div> : <div>Loading...</div>
             }
 
@@ -40,4 +42,4 @@ class EditQuestion extends React.Component {
 
 }
 
-export default EditQuestion;
+export default EditQuestions;
