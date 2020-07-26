@@ -10,9 +10,7 @@ class EditQuestion extends React.Component {
     constructor(props) {
         super(props)
         this.state = { questions: [] }
-      }
-
-    componentDidMount() { this.getQuestions()}
+    }
       
     getQuestions = async () => {
       const response = await fetch('http://localhost:9999/api/origami')
@@ -21,6 +19,8 @@ class EditQuestion extends React.Component {
       this.setState({questions})  
     }  
     
+    componentDidMount() { this.getQuestions()}
+
     render() {
 
         const { questions } = this.state;
@@ -28,12 +28,12 @@ class EditQuestion extends React.Component {
 
         return <Fragment>
                <h3>Please select a question: </h3>
-            {/* {   questions ?           
+            {   questions ?           
                  <div className={styles.categoryContainer}>               
                  {questions.map((question) =>
                    <Question key={question._id} {...question}></Question>)}
                </div> : <div>Loading...</div>
-            } */}
+            }
 
             </Fragment>
     }
