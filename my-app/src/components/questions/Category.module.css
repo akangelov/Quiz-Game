@@ -2,12 +2,33 @@
     display: grid;
     grid-template-columns: auto auto;
     padding: 10px;
-    grid-gap: 10px;
+}
+
+.imageContainer {  
+    height: 505px;
+    width: 600px;
+    position: relative;
+   
+}
+
+.Image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    
 }
 
 .categoryItem {
-    border: 1px solid black;
-    text-align: center;
-    font-size: 30px;
-    border-radius: 10px;
+    z-index: 100;
+    position: absolute;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    left: 50px;
+    top: 50px;
 }
+
+.categoryItem:hover {
+    color: blue;
+}
+
