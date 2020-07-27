@@ -33,17 +33,21 @@ class App extends React.Component {
     super(props);
     const cookies = parseCookeis();
     const isLogged = !!cookies['x-auth-token'];
-    this.state = { isLogged };
-    this.userId = {};
+    this.state = { isLogged,
+                   userId: ""
+    };
   }
 
   login = (values) => {
     userService.login(values).then((res) => {
+      // console.log(res) 
+      // console.log(this.userId)
       if (res === undefined) {
         toast("Invalid username or password!")
       } else {
         toast("User succesfully logged in!")
       this.setState({ isLogged: true });
+      this.setState({ userId: res._id });
       this.props.history.push('/')};
     })
   }
@@ -58,16 +62,18 @@ class App extends React.Component {
   }
 
   render() {
-
+    console.log(this.state)
     const { isLogged } = this.state;
+    const {userId} = this.state;
+    console.log(this.props)
 
     return (
       <Fragment>
         <Navigation
-        {...this.props}
+        // {...this.props}
          isLogged={isLogged}
+         userId={this.state.userId}
          logout={this.logout}
-         login={this.login } 
          />
          <Switch>
         
@@ -79,10 +85,17 @@ class App extends React.Component {
         <Route path="/edit/:id" component={EditQuestionForm} isLogged={isLogged} />
         <Route path="/questions/:id" component={Questions} isLogged={isLogged}/>
         <Route path="/question/:id" component={Detail} isLogged={isLogged} />
-        <Route path="/userprofile/:id" component={UserProfile} isLogged={isLogged}/>
+        <Route path="/userprofile/:id"
+         render={()=> (
+          <UserProfile
+          isLogged={isLogged}
+          userId={userId}
+          />
+        )}
+        />
         <Route path="/register" component={Register} isLogged={isLogged}/>
         <Route path="/login"
-        render={()=> (
+         render={()=> (
           <Login
           isLogged={isLogged}
           login={this.login}

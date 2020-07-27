@@ -1,7 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import Answer from './Answer';
-import Question from './Question';
-import postService from '../../services/postService';
 
 class Detail extends React.Component {
   

@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 
 const Navigation = props => {
 
-  const {logout, isLogged } = props;
+  // console.log(props)
+  const {logout, isLogged, userId } = props;
   // console.log(props)
 
   return (
@@ -16,7 +17,7 @@ const Navigation = props => {
       <ul>
         {<Link className={styles.link} to="/about">About</Link>}
         {<Link className={styles.link} to="/rules">Rules</Link>}
-        {isLogged && <Link className={styles.link} to="/userprofile/:id">Profile</Link>}
+        {isLogged && <Link className={styles.link} to={`/userprofile/${userId}`}>Profile</Link>}
         {isLogged && <Link className={styles.link} to="/">Questions</Link>}
         {isLogged && <Link className={styles.link} to="/create">Add new question</Link>}
         {isLogged && <Link className={styles.link} to="/all">Edit Questions</Link>}
