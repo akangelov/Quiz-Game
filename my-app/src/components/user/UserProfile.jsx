@@ -9,7 +9,7 @@ class UserProfile extends React.Component {
     render() {
         return (
             <div>
-                <p>User: {this.props.userId}</p>
+                <p>User: {this.props.userName}</p>
             </div>
         )
     }

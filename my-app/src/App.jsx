@@ -34,13 +34,14 @@ class App extends React.Component {
     const cookies = parseCookeis();
     const isLogged = !!cookies['x-auth-token'];
     this.state = { isLogged,
-                   userId: ""
+                   userId: "",
+                   userName: ""
     };
   }
 
   login = (values) => {
     userService.login(values).then((res) => {
-      // console.log(res) 
+      console.log(res) 
       // console.log(this.userId)
     if (res === undefined) {
         toast("Invalid username or password!")
@@ -48,6 +49,7 @@ class App extends React.Component {
         toast("User succesfully logged in!")
         this.setState({ isLogged: true });
         this.setState({ userId: res._id });
+        this.setState({ userName: res.username });
         this.props.history.push('/')};
     })
   }
@@ -65,6 +67,7 @@ class App extends React.Component {
     console.log(this.state)
     const { isLogged } = this.state;
     const {userId} = this.state;
+    const {userName} = this.state;
     // console.log(this.props)
 
     return (
@@ -90,6 +93,7 @@ class App extends React.Component {
           <UserProfile
           isLogged={isLogged}
           userId={userId}
+          userName={userName}
           />
         )}
         />

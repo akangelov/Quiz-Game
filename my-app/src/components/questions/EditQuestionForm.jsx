@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import { ToastContainer, toast } from "react-toastify";
 import { useHistory } from 'react-router'
 import styles from '../../shared//styles/CreateForm.module.css'
-import postService from '../../services/postService';
+// import postService from '../../services/postService';
  
  const EditQuestionForm = (props) => {
     //  console.log(props)

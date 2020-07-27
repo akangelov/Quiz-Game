@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 import styles from './Questions.module.css'
-import Link from '../common/Link/Link';
-// import { Link } from "react-router-dom";
-import postService from '../../services/postService';
 import Question from './Question';
+// import { Link } from "react-router-dom";
+// import postService from '../../services/postService';
+// import Link from '../common/Link/Link';
 
 
 class Questions extends React.Component {
@@ -14,7 +14,6 @@ class Questions extends React.Component {
 
     componentDidMount() { this.getQuestions(this.props.match.params.id)} //vrushta id-to, koeto e biology, science etc.
       
-
     getQuestions = async (id) => {
       const response = await fetch(`http://localhost:9999/api/origami?category=${id}`)
       const questions = await response.json()
@@ -33,10 +32,8 @@ class Questions extends React.Component {
                    <Question key={question._id} {...question}></Question>)}
                </div> : <div>Loading...</div>
             }
-
             </Fragment>
     }
-
 }
 
 export default Questions;

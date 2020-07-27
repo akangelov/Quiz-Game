@@ -1,9 +1,9 @@
-import React, { Fragment } from "react";
+import React, {Fragment} from "react";
 import styles from './Questions.module.css'
-import Link from '../common/Link/Link';
-// import { Link } from "react-router-dom";
-import postService from '../../services/postService';
 import EditQuestion from './EditQuestion';
+// import Link from '../common/Link/Link';
+// import postService from '../../services/postService';
+// import { Link } from "react-router-dom";
 
 class AllQuestions extends React.Component {
     constructor(props) {
