@@ -6,14 +6,13 @@ class UserProfile extends React.Component {
         this.state = { username: null }
       }
 
-      render() {
-      console.log(this.props)
+    render() {
         return (
-              <div>
+            <div>
                 <p>User: {this.props.userId}</p>
-              </div>
-          )
-        }
+            </div>
+        )
+    }
 }
 
 export default UserProfile;

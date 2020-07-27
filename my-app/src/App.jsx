@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 import { Route, Switch, withRouter } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import './App.css';
@@ -42,13 +42,13 @@ class App extends React.Component {
     userService.login(values).then((res) => {
       // console.log(res) 
       // console.log(this.userId)
-      if (res === undefined) {
+    if (res === undefined) {
         toast("Invalid username or password!")
-      } else {
+    } else {
         toast("User succesfully logged in!")
-      this.setState({ isLogged: true });
-      this.setState({ userId: res._id });
-      this.props.history.push('/')};
+        this.setState({ isLogged: true });
+        this.setState({ userId: res._id });
+        this.props.history.push('/')};
     })
   }
 
@@ -65,7 +65,7 @@ class App extends React.Component {
     console.log(this.state)
     const { isLogged } = this.state;
     const {userId} = this.state;
-    console.log(this.props)
+    // console.log(this.props)
 
     return (
       <Fragment>
