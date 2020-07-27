@@ -1,6 +1,7 @@
 import React from "react";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { ToastContainer, toast } from "react-toastify";
 import { useHistory } from 'react-router'
 import styles from '../../shared//styles/CreateForm.module.css'
 import postService from '../../services/postService';
@@ -22,40 +23,41 @@ import postService from '../../services/postService';
 }
    const formik = useFormik({
      initialValues: {
-       category: "",
-       question: '',
-       answerA: '',
-       answerB: '',
-       answerC: '',
-       answerD: '',
-       correctAnswer: '',
+       category: `${props.category}`,
+       question: `${props.question}`,
+       answerA: `${props.answerA}`,
+       answerB: `${props.answerB}`,
+       answerC: `${props.answerC}`,
+       answerD: `${props.answerD}`,
+       correctAnswer: `${props.correctAnswer}`,
      },
-    //  validationSchema: Yup.object({
-    //   category: Yup.string()
-    //     .min(3, 'Must be 3 characters or more')
-    //     .required('Required'),
-    //   question: Yup.string()
-    //     .min(10, 'Must be 10 characters or more')
-    //     .required('Required'),
-    //   answerA: Yup.string()
-    //     .required('Required'),
-    //   answerB: Yup.string()
-    //     .required('Required'),
-    //   answerC: Yup.string()
-    //     .required('Required'),
-    //   answerD: Yup.string()
-    //     .required('Required'),
-    //   correctAnswer: Yup.string()
-    //     .required('Required'),
-    // }),
+     validationSchema: Yup.object({
+      category: Yup.string()
+        .min(3, 'Must be 3 characters or more')
+        .required('Required'),
+      question: Yup.string()
+        .min(10, 'Must be 10 characters or more')
+        .required('Required'),
+      answerA: Yup.string()
+        .required('Required'),
+      answerB: Yup.string()
+        .required('Required'),
+      answerC: Yup.string()
+        .required('Required'),
+      answerD: Yup.string()
+        .required('Required'),
+      correctAnswer: Yup.string()
+        .required('Required'),
+    }),
      onSubmit: values => {
         editPost(values).then(() => {
-            console.log("success")
-        //   history.push('/')
+          history.push('/all')
+          toast("Question editted!")
         })
      }
    });
    return (
+    <>
      <form onSubmit={formik.handleSubmit} >
        <div className={styles.container}>
          <label htmlFor="category">Category</label>
@@ -63,7 +65,6 @@ import postService from '../../services/postService';
          id="category"
          name="category"
          type="text"
-         placeholder={props.category}
          onChange={formik.handleChange}
          value={formik.values.category}
        />
@@ -75,7 +76,6 @@ import postService from '../../services/postService';
          id="question"
          name="question"
          type="text"
-         placeholder={props.question}
          onChange={formik.handleChange}
          value={formik.values.question}
        />
@@ -99,7 +99,6 @@ import postService from '../../services/postService';
          id="answerB"
          name="answerB"
          type="text"
-         placeholder={props.answerB}
          onChange={formik.handleChange}
          value={formik.values.answerB}
        />
@@ -111,7 +110,6 @@ import postService from '../../services/postService';
          id="answerC"
          name="answerC"
          type="text"
-         placeholder={props.answerC}
          onChange={formik.handleChange}
          value={formik.values.answerC}
        />
@@ -123,7 +121,6 @@ import postService from '../../services/postService';
          id="answerD"
          name="answerD"
          type="text"
-         placeholder={props.answerD}
          onChange={formik.handleChange}
          value={formik.values.answerD}
        />
@@ -135,7 +132,6 @@ import postService from '../../services/postService';
          id="correctAnswer"
          name="correctAnswer"
          type="text"
-        //  placeholder={props.correctAnswer}
          onChange={formik.handleChange}
          value={formik.values.correctAnswer}
        />
@@ -145,6 +141,8 @@ import postService from '../../services/postService';
        <button type="submit">Edit</button>
      </div>
      </form>
+     <ToastContainer /> 
+     </>
    );
  };
 
