@@ -6,8 +6,20 @@ import styles from '../../shared//styles/CreateForm.module.css'
 import postService from '../../services/postService';
  
  const EditQuestionForm = (props) => {
+    //  console.log(props)
   let history = useHistory();
-  
+  const id = props._id
+
+  const editPost = (data) => {
+    return fetch(`http://localhost:9999/api/origami/${id}`, {
+  method: 'PUT',
+  headers: {
+    'Content-type': 'application/json'
+  },
+  body: JSON.stringify(data),
+  credentials: 'include'
+})
+}
    const formik = useFormik({
      initialValues: {
        category: "",
@@ -18,27 +30,28 @@ import postService from '../../services/postService';
        answerD: '',
        correctAnswer: '',
      },
-     validationSchema: Yup.object({
-      category: Yup.string()
-        .min(3, 'Must be 3 characters or more')
-        .required('Required'),
-      question: Yup.string()
-        .min(10, 'Must be 10 characters or more')
-        .required('Required'),
-      answerA: Yup.string()
-        .required('Required'),
-      answerB: Yup.string()
-        .required('Required'),
-      answerC: Yup.string()
-        .required('Required'),
-      answerD: Yup.string()
-        .required('Required'),
-      correctAnswer: Yup.string()
-        .required('Required'),
-    }),
+    //  validationSchema: Yup.object({
+    //   category: Yup.string()
+    //     .min(3, 'Must be 3 characters or more')
+    //     .required('Required'),
+    //   question: Yup.string()
+    //     .min(10, 'Must be 10 characters or more')
+    //     .required('Required'),
+    //   answerA: Yup.string()
+    //     .required('Required'),
+    //   answerB: Yup.string()
+    //     .required('Required'),
+    //   answerC: Yup.string()
+    //     .required('Required'),
+    //   answerD: Yup.string()
+    //     .required('Required'),
+    //   correctAnswer: Yup.string()
+    //     .required('Required'),
+    // }),
      onSubmit: values => {
-        postService.create(values).then(() => {
-          history.push('/')
+        editPost(values).then(() => {
+            console.log("success")
+        //   history.push('/')
         })
      }
    });
@@ -50,6 +63,7 @@ import postService from '../../services/postService';
          id="category"
          name="category"
          type="text"
+         placeholder={props.category}
          onChange={formik.handleChange}
          value={formik.values.category}
        />
@@ -61,6 +75,7 @@ import postService from '../../services/postService';
          id="question"
          name="question"
          type="text"
+         placeholder={props.question}
          onChange={formik.handleChange}
          value={formik.values.question}
        />
@@ -72,6 +87,7 @@ import postService from '../../services/postService';
          id="answerA"
          name="answerA"
          type="text"
+         placeholder={props.answerA}
          onChange={formik.handleChange}
          value={formik.values.answerA}
        />
@@ -83,6 +99,7 @@ import postService from '../../services/postService';
          id="answerB"
          name="answerB"
          type="text"
+         placeholder={props.answerB}
          onChange={formik.handleChange}
          value={formik.values.answerB}
        />
@@ -94,6 +111,7 @@ import postService from '../../services/postService';
          id="answerC"
          name="answerC"
          type="text"
+         placeholder={props.answerC}
          onChange={formik.handleChange}
          value={formik.values.answerC}
        />
@@ -105,6 +123,7 @@ import postService from '../../services/postService';
          id="answerD"
          name="answerD"
          type="text"
+         placeholder={props.answerD}
          onChange={formik.handleChange}
          value={formik.values.answerD}
        />
@@ -116,13 +135,14 @@ import postService from '../../services/postService';
          id="correctAnswer"
          name="correctAnswer"
          type="text"
+        //  placeholder={props.correctAnswer}
          onChange={formik.handleChange}
          value={formik.values.correctAnswer}
        />
        {formik.touched.correctAnswer && formik.errors.correctAnswer ? (
          <div>{formik.errors.correctAnswer}</div>
        ) : null}
-       <button type="submit">Submit</button>
+       <button type="submit">Edit</button>
      </div>
      </form>
    );

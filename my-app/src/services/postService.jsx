@@ -19,7 +19,7 @@ const postService = {
       body: JSON.stringify(data),
       credentials: 'include'
     }).then(res => res.json());
-    }
+    },
 } 
 
 export default postService;

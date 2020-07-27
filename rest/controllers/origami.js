@@ -39,8 +39,8 @@ module.exports = {
 
   put: (req, res, next) => {
     const id = req.params.id;
-    const { description } = req.body;
-    models.Origami.updateOne({ _id: id }, { description })
+    const { category, question, answerA, answerB, answerC, answerD, correctAnswer } = req.body;
+    models.Origami.updateOne({ _id: id }, { category, question, answerA, answerB, answerC, answerD, correctAnswer })
       .then((updatedOrigami) => res.send(updatedOrigami))
       .catch(next)
   },

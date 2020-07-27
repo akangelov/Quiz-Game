@@ -19,7 +19,7 @@ const Navigation = props => {
         {isLogged && <Link className={styles.link} to="/userprofile/:id">Profile</Link>}
         {isLogged && <Link className={styles.link} to="/">Questions</Link>}
         {isLogged && <Link className={styles.link} to="/create">Add new question</Link>}
-        {isLogged && <Link className={styles.link} to="/edit">Edit Questions</Link>}
+        {isLogged && <Link className={styles.link} to="/all">Edit Questions</Link>}
         {isLogged && <button className={styles.button} onClick={logout}>Logout</button>}
         {!isLogged && <Link className={styles.link} to="/register">Register</Link>}
         {!isLogged && <Link className={styles.link} to="/login">Login</Link>}
