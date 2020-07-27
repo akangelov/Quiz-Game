@@ -10,7 +10,7 @@ import Rules from "./components/rules/Rules";
 import Register from "./components/user/Register";
 import Login from "./components/user/Login";
 import CreateQuestion from "./components/questions/Create";
-import EditQuestions from "./components/questions/Edit";
+import AllQuestions from "./components/questions/AllQuestions";
 import Questions from "./components/questions/Questions";
 import EditQuestionForm from "./components/questions/EditQuestionForm";
 import Detail from "./components/questions/Detail";
@@ -75,10 +75,10 @@ class App extends React.Component {
         <Route path="/about" component={About} isLogged={isLogged}/>
         <Route path="/rules" component={Rules} isLogged={isLogged}/>
         <Route path="/create" component={CreateQuestion} isLogged={isLogged}/>
-        <Route path="/edit" component={EditQuestions} isLogged={isLogged}/>
+        <Route path="/all" component={AllQuestions} isLogged={isLogged}/>
+        <Route path="/edit/:id" component={EditQuestionForm} isLogged={isLogged} />
         <Route path="/questions/:id" component={Questions} isLogged={isLogged}/>
         <Route path="/question/:id" component={Detail} isLogged={isLogged} />
-        <Route path="/editquestion/:id" component={EditQuestionForm} isLogged={isLogged} />
         <Route path="/userprofile/:id" component={UserProfile} isLogged={isLogged}/>
         <Route path="/register" component={Register} isLogged={isLogged}/>
         <Route path="/login"

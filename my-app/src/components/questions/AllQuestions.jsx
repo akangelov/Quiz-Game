@@ -5,8 +5,7 @@ import Link from '../common/Link/Link';
 import postService from '../../services/postService';
 import EditQuestion from './EditQuestion';
 
-
-class EditQuestions extends React.Component {
+class AllQuestions extends React.Component {
     constructor(props) {
         super(props)
         this.state = { questions: [] }
@@ -15,7 +14,6 @@ class EditQuestions extends React.Component {
     getQuestions = async () => {
       const response = await fetch('http://localhost:9999/api/origami')
       const questions = await response.json()
-      console.log(questions)
       this.setState({questions})  
     }  
 
@@ -26,7 +24,6 @@ class EditQuestions extends React.Component {
     render() {
 
         const { questions } = this.state;
-        console.log(questions)
 
         return <Fragment>
                <h3>You can edit or delete a question below: </h3>
@@ -36,10 +33,8 @@ class EditQuestions extends React.Component {
                   <EditQuestion key={question._id} {...question}></EditQuestion>)}
                </div> : <div>Loading...</div>
             }
-
             </Fragment>
     }
-
 }
 
-export default EditQuestions;
+export default AllQuestions;

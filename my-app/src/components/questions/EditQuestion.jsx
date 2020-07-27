@@ -25,7 +25,7 @@ render() {
         return (
             <div className={styles.categoryItem}>
               <p>{this.props.question}</p> 
-              <Link to={`/editquestion/${this.props._id}`}>Edit</Link>
+              <Link to={`/edit/${this.props._id}`}>Edit</Link>
               <button onClick={this.getQuestion}>Delete</button>
             </div>
         )
