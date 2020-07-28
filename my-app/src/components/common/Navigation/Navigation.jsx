@@ -17,13 +17,13 @@ const Navigation = props => {
             <ul>
                 {<Link className={styles.link} to="/about">About</Link>}
                 {<Link className={styles.link} to="/rules">Rules</Link>}
-                {isLogged && <Link className={styles.link} to={`/userprofile/${userId}`}>Profile</Link>}
-                {isLogged && <Link className={styles.link} to="/">Questions</Link>}
-                {isLogged && <Link className={styles.link} to="/create">Add new question</Link>}
-                {isLogged && <Link className={styles.link} to="/all">Edit Questions</Link>}
-                {isLogged && <button className={styles.button} onClick={logout}>Logout</button>}
-                {!isLogged && <Link className={styles.link} to="/register">Register</Link>}
-                {!isLogged && <Link className={styles.link} to="/login">Login</Link>}
+                {value.loggedIn && <Link className={styles.link} to={`/userprofile/${userId}`}>Profile</Link>}
+                {value.loggedIn && <Link className={styles.link} to="/">Questions</Link>}
+                {value.loggedIn && <Link className={styles.link} to="/create">Add new question</Link>}
+                {value.loggedIn && <Link className={styles.link} to="/all">Edit Questions</Link>}
+                {value.loggedIn && <button className={styles.button} onClick={logout}>Logout</button>}
+                {!value.loggedIn && <Link className={styles.link} to="/register">Register</Link>}
+                {!value.loggedIn && <Link className={styles.link} to="/login">Login</Link>}
             </ul>
         </nav>
     )

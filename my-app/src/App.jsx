@@ -48,7 +48,7 @@ class App extends React.Component {
         //   console.log(res) 
         // console.log(this.userId)
         this.context.logIn(res.username)
-        console.log(this.context)
+        // console.log(this.context)
     if (res === undefined) {
         toast("Invalid username or password!")
     } else {
