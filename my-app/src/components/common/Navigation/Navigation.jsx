@@ -1,9 +1,14 @@
 import React from 'react'
 import styles from './Navigation.module.css'
 import { Link } from "react-router-dom";
+import UserContext from '../../../services/Context';
 // import Link from '../link'
 
 const Navigation = props => {
+    // console.log(props)
+
+    const value = React.useContext(UserContext);
+    console.log(value)
   
     const {logout, isLogged, userId } = props;
 

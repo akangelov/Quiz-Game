@@ -17,6 +17,8 @@ import Detail from "./components/questions/Detail";
 import UserProfile from "./components/user/UserProfile";
 import userService from './services/userService';
 import Category from "./components/questions/Category";
+import UserContext from './services/Context';
+// import Auth from "./services/Auth";
 
 
 function parseCookeis() {
@@ -39,10 +41,14 @@ class App extends React.Component {
     };
   }
 
+  static contextType = UserContext;
+
   login = (values) => {
     userService.login(values).then((res) => {
-      console.log(res) 
-      // console.log(this.userId)
+        //   console.log(res) 
+        // console.log(this.userId)
+        this.context.logIn(res.username)
+        console.log(this.context)
     if (res === undefined) {
         toast("Invalid username or password!")
     } else {
@@ -64,7 +70,7 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    // console.log(this.state)
     const { isLogged } = this.state;
     const {userId} = this.state;
     const {userName} = this.state;
@@ -72,6 +78,7 @@ class App extends React.Component {
 
     return (
       <Fragment>
+        {/* <Auth> */}
         <Navigation
         // {...this.props}
          isLogged={isLogged}
@@ -109,7 +116,8 @@ class App extends React.Component {
          </Switch>
         
          <Footer/>
-         <ToastContainer />     
+         <ToastContainer />  
+         {/* </Auth>    */}
       </Fragment>
     )
   }

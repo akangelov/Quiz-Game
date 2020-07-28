@@ -1,5 +1,6 @@
 import React from 'react';
 import Answer from './Answer';
+import UserContext from '../../services/Context';
 
 class Detail extends React.Component {
   
@@ -8,8 +9,12 @@ class Detail extends React.Component {
     this.state = {category: null}
   }
 
+  static contextType = UserContext;
+  
+
   componentDidMount() { 
     this.getQuestions(this.props.match.params.id)
+    console.log(this.context)
     // console.log(this.props.match.params.id)
   }
 

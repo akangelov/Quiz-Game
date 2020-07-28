@@ -1,7 +1,10 @@
 import React from "react";
 
-const userContext = React.createContext({user: {}}); // Create a context object
+const UserContext = React.createContext({
+    loggedIn: false,
+    user: null,
+    logIn: () => {},
+    logOut: () => {},
+}); 
 
-export {
-  userContext // Export it so it can be used by other Components
-};
+export default UserContext;
