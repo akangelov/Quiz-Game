@@ -1,9 +1,7 @@
 .container {
-    display: flex;
-
-    /* grid-template-columns: auto auto; */
+    display: block;
+    height: 205px;
     padding: 10px;
-    /* grid-gap: 10px; */
     margin-top: 5em;
     border: 10px black
 }

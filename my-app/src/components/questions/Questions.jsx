@@ -25,7 +25,6 @@ class Questions extends React.Component {
         const { questions } = this.state;
 
         return <Fragment>
-               <h3>Please select a question:</h3>
             {   questions ?           
                  <div className={styles.categoryContainer}>               
                  {questions.map((question) =>

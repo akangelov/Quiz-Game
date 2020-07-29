@@ -1,12 +1,9 @@
 .footer {
     width: 100%;
-    height: 18vh;
-    background-color: #ffa000;
-    color: #234465;
-    border-top: 2px solid #234465;
-    border-bottom: 2px solid #234465;
-    /* margin-bottom: 1%; */
-    position: absolute;
+    height: 15vh;
+    background-color: #553fb6;
+    border-top: 2px solid #ffa000;
+    border-bottom: 2px solid #ffa000;
     left:0;
     right:0;
     bottom:0;
@@ -15,5 +12,5 @@
 
 .author {
     text-align: center;
-    font-weight: bold;;
+    font-weight: bold;
 }

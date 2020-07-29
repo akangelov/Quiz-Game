@@ -36,8 +36,8 @@ import styles from '../../shared//styles/UserForms.module.css'
    return (
      <>
      <h2>Register Form</h2>
-     <form onSubmit={formik.handleSubmit}>
      <div className={styles.container}>
+     <form onSubmit={formik.handleSubmit}>
        <label htmlFor="username">Username</label>
        <input
          id="username"
@@ -61,8 +61,8 @@ import styles from '../../shared//styles/UserForms.module.css'
          <div>{formik.errors.password}</div>
        ) : null}
        <button type="submit">Submit</button>
-       </div>
      </form>
+       </div>
      <ToastContainer /> 
      </>  
    );

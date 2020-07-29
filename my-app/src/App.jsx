@@ -55,7 +55,6 @@ class App extends React.Component {
     render() {
         return (
         <Fragment>
-           
             <Navigation
              userId={this.state.userId}
              logout={this.logout} />
@@ -74,7 +73,8 @@ class App extends React.Component {
                 <Route path="/login" render={()=> (<Login login={this.login} /> )} />
             </Switch>
             
-            <Footer/>        
+            <Footer/>  
+                
         
         <ToastContainer />  
       

@@ -1,6 +1,7 @@
 .categoryItem {
-    border: 1px solid black;
+    border: 2px solid black;
     text-align: left;
     font-size: 20px;
     border-radius: 10px;
+    padding: 10px;
 }

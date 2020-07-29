@@ -6,7 +6,6 @@ const Category = () => {
 
     return (
         <>
-        <h2>Please choose a category:</h2>
         <section className = {styles.categoryContainer}>
           <div className = {styles.imageContainer}>
               <img className= {styles.Image} src ="https://res.cloudinary.com/dq336pwqs/image/upload/v1595758389/biology_yt6fju.jpg" alt="biology"/>

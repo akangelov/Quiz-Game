@@ -1,27 +1,28 @@
 .navigation {
-    /* display: flex; */
+    /* position: absolute; */
     width: 100%;
-    height: 10vh;
-    background-color: #234465;
-    color: black;
-    /* position: fixed; */
+    height: 16vh;
+    background-color: #553fb6;
     top: 0;
     border-bottom: 2px solid #ffa000;
     border-top: 2px solid #ffa000;
   }
   
   ul {
-    color: green;
-    padding: 0.7em;
+    padding: 1.2em;
   }
 
   .link {
-    color: yellow;
+    color: black;
     margin: 1em;
+    font-weight: 550;
+    font-size: 25px;
     /* padding: 1em; */
   }
 
   .button {
-    color: yellow;
-    background-color: #234465;
+    color: black;
+    background-color: #553fb6;
+    border-radius: 10px;
+    padding: 5px;
   }

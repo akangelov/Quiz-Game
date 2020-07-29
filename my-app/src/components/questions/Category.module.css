@@ -1,37 +1,36 @@
 .categoryContainer {
     display: grid;
     grid-template-columns: auto auto;
-    padding: 10px;
+    /* padding: 10px; */
+    position: relative;
 }
 
 .imageContainer {  
-    height: 510px;
-    width: 610px;
-    position: relative;
-   
+    height: 505px;
+    width: 630px;
+    position: relative;  
 }
 
 .Image {
     position: absolute;
     left: 0;
     top: 0; 
-    /* transition: transform .2s;   */
-}
-.Image:hover {
-    /* transform: scale(1.2); */
 }
 
 .categoryItem {
     /* z-index: 100; */
     position: absolute;
     color: white;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 50px;
     font-weight: bold;
     left: 50px;
     top: 50px;
+     transition: transform .2s;  
 }
 
 .categoryItem:hover {
     color: blue;
+    transform: scale(1.2);
 }
 

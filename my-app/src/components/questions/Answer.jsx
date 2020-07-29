@@ -4,7 +4,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Answer = (props) => {
-    
  
     function checkAnswer(e) {     
         if (e.target.innerText === props.correctAnswer) {
@@ -22,7 +21,7 @@ const Answer = (props) => {
 
     return (
         <>
-        <p>{props.correctAnswer}</p>
+        <div className={styles.container}>
         <h3>Jokers</h3>
         <section className={styles.jokersContainer}>    
             <button onClick={(e) => { playJoker(e) }} className={styles.jokerItem}>50:50</button>
@@ -35,8 +34,9 @@ const Answer = (props) => {
             <button onClick={(e) => { checkAnswer(e) }} className={styles.answerItem}>{props.answerB}</button>
             <button onClick={(e) => { checkAnswer(e) }} className={styles.answerItem}>{props.answerC}</button>
             <button onClick={(e) => { checkAnswer(e) }} className={styles.answerItem}>{props.answerD}</button>
-            <ToastContainer />
         </section>
+        </div>
+            <ToastContainer />
         </>
     )
 }
