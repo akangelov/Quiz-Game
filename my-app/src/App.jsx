@@ -62,7 +62,9 @@ class App extends React.Component {
 
   logout = () => {
     userService.logout().then(() => {
+    this.context.logOut()
       toast("Logout succesful!")
+      console.log(this.context)
       this.setState({ isLogged: false });
       this.props.history.push('/login');
       return null;

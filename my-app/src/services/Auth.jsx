@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import UserContext from './Context'
+import { ToastContainer, toast } from "react-toastify";
 
 function getCookie(name) {
     const cookieValue = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
