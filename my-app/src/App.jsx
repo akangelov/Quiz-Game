@@ -3,21 +3,21 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import './App.css';
 
-import Footer from "./components/common/Footer/Footer";
-import Navigation from "./components/common/Navigation/Navigation";
 import About from "./components/about/About";
+import AllQuestions from "./components/questions/AllQuestions";
+import Category from "./components/questions/Category";
+import CreateQuestion from "./components/questions/Create";
+import Detail from "./components/questions/Detail";
+import EditQuestionForm from "./components/questions/EditQuestionForm";
+import Footer from "./components/common/Footer/Footer";
+import Login from "./components/user/Login";
+import Navigation from "./components/common/Navigation/Navigation";
+import Questions from "./components/questions/Questions";
 import Rules from "./components/rules/Rules";
 import Register from "./components/user/Register";
-import Login from "./components/user/Login";
-import CreateQuestion from "./components/questions/Create";
-import AllQuestions from "./components/questions/AllQuestions";
-import Questions from "./components/questions/Questions";
-import EditQuestionForm from "./components/questions/EditQuestionForm";
-import Detail from "./components/questions/Detail";
+import UserContext from './services/Context';
 import UserProfile from "./components/user/UserProfile";
 import userService from './services/userService';
-import Category from "./components/questions/Category";
-import UserContext from './services/Context';
 
 class App extends React.Component {
 
