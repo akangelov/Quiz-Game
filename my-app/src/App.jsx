@@ -18,109 +18,68 @@ import UserProfile from "./components/user/UserProfile";
 import userService from './services/userService';
 import Category from "./components/questions/Category";
 import UserContext from './services/Context';
-// import Auth from "./services/Auth";
-
-
-function parseCookeis() {
-  return document.cookie.split('; ').reduce((acc, cookie) => {
-    const [cookieName, cookieValue] = cookie.split('=');
-    acc[cookieName] = cookieValue;
-    return acc;
-  }, {})
-}
 
 class App extends React.Component {
 
-  constructor(props) {
-    super(props);
-    const cookies = parseCookeis();
-    const isLogged = !!cookies['x-auth-token'];
-    this.state = { isLogged,
-                   userId: "",
-                   userName: ""
-    };
-  }
+    constructor(props) {
+      super(props);
+      this.state = { userId: "", userName: "" };
+    } 
 
-  static contextType = UserContext;
+    static contextType = UserContext; 
 
-  login = (values) => {
-    userService.login(values).then((res) => {
-        //   console.log(res) 
-        // console.log(this.userId)
-        this.context.logIn(res.username)
-        // console.log(this.context)
-    if (res === undefined) {
-        toast("Invalid username or password!")
-    } else {
-        toast("User succesfully logged in!")
-        this.setState({ isLogged: true });
-        this.setState({ userId: res._id });
-        this.setState({ userName: res.username });
-        this.props.history.push('/')};
-    })
-  }
+    login = (values) => {
+      userService.login(values).then((res) => {
+          this.context.logIn(res.username)
+      if (res === undefined) {
+          toast("Invalid username or password!")
+      } else {
+          toast("User succesfully logged in!")
+          this.setState({ userId: res._id });
+          this.setState({ userName: res.username });
+          this.props.history.push('/')};
+      })
+    }
 
-  logout = () => {
-    userService.logout().then(() => {
-    this.context.logOut()
-      toast("Logout succesful!")
-      console.log(this.context)
-      this.setState({ isLogged: false });
-      this.props.history.push('/login');
-      return null;
-    });
-  }
+    logout = () => {
+      userService.logout().then(() => {
+      this.context.logOut()
+        toast("Logout succesful!")
+        console.log(this.context)
+        this.setState({ isLogged: false });
+        this.props.history.push('/login');
+        return null;
+      });
+    }
 
-  render() {
-    // console.log(this.state)
-    const { isLogged } = this.state;
-    const {userId} = this.state;
-    const {userName} = this.state;
-    // console.log(this.props)
+    render() {
+        return (
+        <Fragment>
 
-    return (
-      <Fragment>
-        {/* <Auth> */}
-        <Navigation
-        // {...this.props}
-         isLogged={isLogged}
-         userId={this.state.userId}
-         logout={this.logout}
-         />
-         <Switch>
+            <Navigation
+             userId={this.state.userId}
+             logout={this.logout} />
+
+            <Switch>
+                <Route exact path="/" component={Category}/>
+                <Route path="/about" component={About} />
+                <Route path="/rules" component={Rules} />
+                <Route path="/create" component={CreateQuestion} />
+                <Route path="/all" component={AllQuestions} />
+                <Route path="/edit/:id" component={EditQuestionForm} />
+                <Route path="/questions/:id" component={Questions} />
+                <Route path="/question/:id" component={Detail} />
+                <Route path="/userprofile/:id" component={UserProfile} />
+                <Route path="/register" component={Register} />
+                <Route path="/login" render={()=> (<Login login={this.login} /> )} />
+            </Switch>
+
+            <Footer/>        
         
-        <Route exact path="/" component={Category}/>
-        <Route path="/about" component={About} />
-        <Route path="/rules" component={Rules} />
-        <Route path="/create" component={CreateQuestion} />
-        <Route path="/all" component={AllQuestions} />
-        <Route path="/edit/:id" component={EditQuestionForm} />
-        <Route path="/questions/:id" component={Questions} />
-        <Route path="/question/:id" component={Detail} />
-        <Route path="/userprofile/:id"
-         render={()=> (
-          <UserProfile
-          userId={userId}
-          userName={userName}
-          />
-        )}
-        />
-        <Route path="/register" component={Register} />
-        <Route path="/login"
-         render={()=> (
-          <Login
-          login={this.login}
-          />
-        )}
-        />
-         </Switch>
-        
-         <Footer/>
-         <ToastContainer />  
-         {/* </Auth>    */}
-      </Fragment>
-    )
-  }
-}
+        <ToastContainer />  
+        </Fragment>
+        )
+      }
+    }
 
 export default withRouter(App);
