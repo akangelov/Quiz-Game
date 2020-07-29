@@ -10,7 +10,7 @@ const Navigation = props => {
     const value = React.useContext(UserContext);
     console.log(value)
   
-    const {logout, isLogged, userId } = props;
+    const {logout, userId } = props;
 
     return (
         <nav className={styles.navigation}>

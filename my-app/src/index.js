@@ -6,10 +6,11 @@ import { BrowserRouter } from 'react-router-dom';
 import Auth from "./services/Auth";
 
 
+
 ReactDOM.render(
   <BrowserRouter>
     <Auth>
-        <App />
+        <App />      
     </Auth>
     </BrowserRouter>,
   document.getElementById('root')

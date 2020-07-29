@@ -5,8 +5,8 @@
 }
 
 .imageContainer {  
-    height: 505px;
-    width: 600px;
+    height: 510px;
+    width: 610px;
     position: relative;
    
 }
@@ -14,11 +14,15 @@
 .Image {
     position: absolute;
     left: 0;
-    top: 0;   
+    top: 0; 
+    /* transition: transform .2s;   */
+}
+.Image:hover {
+    /* transform: scale(1.2); */
 }
 
 .categoryItem {
-    z-index: 100;
+    /* z-index: 100; */
     position: absolute;
     color: white;
     font-size: 50px;

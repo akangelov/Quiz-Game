@@ -13,13 +13,18 @@
     text-decoration: none;
 }
 
-/* *, *:before, *:after {
+*, *:before, *:after {
     box-sizing: inherit;
-} */
+}
 
-html {
+/* body > #root > div {
+    height: 100vh;
+  } */
+
+html, body {
     margin: 0;
     padding: 0;
+    height: 100%
 }
 
 @media (max-width: 600px) {
@@ -54,6 +59,7 @@ html {
 
 body, input, textarea, select, option, button {
     font: inherit;
+    height: 100%
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -93,4 +99,17 @@ h5 {
 
 h6 {
     font-size: 1.0em;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+}
+
+.footer {
+    position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 150%;
+  /* height: 2.5rem; */
 }
