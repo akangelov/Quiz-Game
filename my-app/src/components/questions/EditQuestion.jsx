@@ -9,7 +9,7 @@ import EditQuestionForm from './EditQuestionForm';
 
 class EditQuestion extends React.Component {
 
-getQuestion = async () => {
+deleteQuestion = async () => {
     const id = this.props._id 
     return fetch(`http://localhost:9999/api/origami/${id}`, {
         method: 'DELETE',
@@ -26,7 +26,7 @@ render() {
             <div className={styles.categoryItem}>
               <p>{this.props.question}</p> 
               <EditQuestionForm {...this.props}></EditQuestionForm>
-              <button onClick={this.getQuestion}>Delete</button>
+              <button onClick={this.deleteQuestion}>Delete</button>
             </div>
             
             </>
