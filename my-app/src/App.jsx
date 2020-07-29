@@ -89,28 +89,26 @@ class App extends React.Component {
          />
          <Switch>
         
-        <Route exact path="/" component={Category} isLogged={isLogged}/>
-        <Route path="/about" component={About} isLogged={isLogged}/>
-        <Route path="/rules" component={Rules} isLogged={isLogged}/>
-        <Route path="/create" component={CreateQuestion} isLogged={isLogged}/>
-        <Route path="/all" component={AllQuestions} isLogged={isLogged}/>
-        <Route path="/edit/:id" component={EditQuestionForm} isLogged={isLogged} />
-        <Route path="/questions/:id" component={Questions} isLogged={isLogged}/>
-        <Route path="/question/:id" component={Detail} isLogged={isLogged} />
+        <Route exact path="/" component={Category}/>
+        <Route path="/about" component={About} />
+        <Route path="/rules" component={Rules} />
+        <Route path="/create" component={CreateQuestion} />
+        <Route path="/all" component={AllQuestions} />
+        <Route path="/edit/:id" component={EditQuestionForm} />
+        <Route path="/questions/:id" component={Questions} />
+        <Route path="/question/:id" component={Detail} />
         <Route path="/userprofile/:id"
          render={()=> (
           <UserProfile
-          isLogged={isLogged}
           userId={userId}
           userName={userName}
           />
         )}
         />
-        <Route path="/register" component={Register} isLogged={isLogged}/>
+        <Route path="/register" component={Register} />
         <Route path="/login"
          render={()=> (
           <Login
-          isLogged={isLogged}
           login={this.login}
           />
         )}
