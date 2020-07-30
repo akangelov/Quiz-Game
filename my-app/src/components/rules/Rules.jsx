@@ -5,20 +5,19 @@ const Rules = () => {
     return (
         <>
     <div className={styles.rules}>
-        <p>The rules of the game are simple.</p>
-        <p>A player can choose a question from the list or can be assigned a random question 
-            by clicking Random Question button.
-        </p>
-        <p>
-            Each question brings one point. A player wins if he gathers 5 points or loses if he has a total 
-            of 3 wrong answers.
-        </p>
-        <p>There are 3 jockers that the player can use</p>
-            <ul>
-                <li>Call a friend</li>
-                <li>Google Search</li>
-                <li>50/50</li>
-            </ul>
+        <ul className={styles.lists}>
+            <li><span>A player can choose a question from one of the four categories - Biology, History, Geography or Science</span></li>
+            <li><span>Each correct answer earns one point</span></li>
+            <li><span>A player wins the game if he gathers 5 points</span></li>
+            <li><span>A game is lost by giving 3 wrong answers</span></li>
+        </ul>
+
+        <p>Three Jokers</p>
+        <ul className={styles.lists}>
+            <li><span>Call a friend</span></li>
+            <li><span>Google Search</span></li>
+            <li><span>50/50</span></li>
+        </ul>
     </div> 
     </>   
     )
