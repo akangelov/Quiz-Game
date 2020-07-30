@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import userService from '../../utils/services/userService';
 import { useHistory } from 'react-router'
 import { ToastContainer, toast } from "react-toastify";
-import styles from '../../shared//styles/UserForms.module.css'
+import styles from './UserForms.module.css'
  
 const Register = () => {
 

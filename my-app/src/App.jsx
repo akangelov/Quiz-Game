@@ -5,14 +5,14 @@ import './App.css';
 
 import About from "./pages/about/About";
 import AllQuestions from "./components/questions/AllQuestions";
-import CreateQuestion from "./components/questions/Create";
-import Detail from "./components/questions/Detail";
+import CreateQuestion from "./components/questions/CreateQuestion";
+import Answer from "./components/questions/Answer";
 import HomePage from "./pages/home/Home";
 import EditQuestionForm from "./components/questions/EditQuestionForm";
 import Footer from "./components/common/Footer/Footer";
 import Login from "./pages/user/Login";
 import Navigation from "./components/common/Navigation/Navigation";
-import Questions from "./components/questions/Questions";
+import Questions from "./components/questions/QuestionsByCategory";
 import Rules from "./pages/rules/Rules";
 import Register from "./pages/user/Register";
 import UserContext from './utils/services/Context';
@@ -67,7 +67,7 @@ class App extends React.Component {
                 <Route path="/all" component={AllQuestions} />
                 <Route path="/edit/:id" component={EditQuestionForm} />
                 <Route path="/questions/:id" component={Questions} />
-                <Route path="/question/:id" component={Detail} />
+                <Route path="/question/:id" component={Answer} />
                 <Route path="/userprofile/:id" component={UserProfile} />
                 <Route path="/register" component={Register} />
                 <Route path="/login" render={()=> (<Login login={this.login} /> )} />

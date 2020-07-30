@@ -1,44 +1,31 @@
-import React from "react";
-import styles from './Answer.module.css'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React from 'react';
+import AnswerForm from './AnswerForm';
+import UserContext from '../../utils/services/Context';
 
-const Answer = (props) => {
- 
-    function checkAnswer(e) {     
-        if (e.target.innerText === props.correctAnswer) {
-            toast("Correct Answer!")
-        } else { toast("This answer is not correct :/ Please try again! :)") }
-    }
+class Answer extends React.Component {
+  
+constructor(props) {
+    super(props)
+    this.state = {category: null}
+}
 
-    function playJoker(e) {     
-        if (e.target.textContent === "Google") {
-            window.open(`http://google.com/search?q=${props.question}`)
-        } else { 
-         
-        }
-    }
+    static contextType = UserContext;
+  
+componentDidMount() { 
+    this.getQuestions(this.props.match.params.id)
+}
 
+getQuestions = async (id) => {
+    const response = await fetch(`http://localhost:9999/api/origami?id=${id}`)
+    const question = await response.json()
+    this.setState({question})
+}
+render() {
+    const { question } = this.state;
     return (
-        <>
-        <div className={styles.container}>
-        <h3>Jokers</h3>
-        <section className={styles.jokersContainer}>    
-            <button onClick={(e) => { playJoker(e) }} className={styles.jokerItem}>50:50</button>
-            <button onClick={(e) => { playJoker(e) }} className={styles.jokerItem}>Google</button>
-        </section>
-
-        <h3>{props.question}</h3>
-        <section className={styles.answersContainer}>
-            <button onClick={(e) => { checkAnswer(e) }} className={styles.answerItem}>{props.answerA}</button>
-            <button onClick={(e) => { checkAnswer(e) }} className={styles.answerItem}>{props.answerB}</button>
-            <button onClick={(e) => { checkAnswer(e) }} className={styles.answerItem}>{props.answerC}</button>
-            <button onClick={(e) => { checkAnswer(e) }} className={styles.answerItem}>{props.answerD}</button>
-        </section>
-        </div>
-            <ToastContainer />
-        </>
+      <AnswerForm {...question}/>
     )
+}
 }
 
 export default Answer;

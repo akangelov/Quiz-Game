@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { ToastContainer, toast } from "react-toastify";
 import { useHistory } from 'react-router'
-import styles from '../../shared//styles/CreateForm.module.css'
+import styles from './CreateEditQuestion.module.css'
  
 const EditQuestionForm = (props) => {
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import styles from '../../shared//styles/UserForms.module.css'
+import styles from './UserForms.module.css'
  
 const Login = (props) => {
 
