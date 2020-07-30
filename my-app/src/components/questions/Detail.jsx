@@ -1,6 +1,6 @@
 import React from 'react';
 import Answer from './Answer';
-import UserContext from '../../services/Context';
+import UserContext from '../../utils/services/Context';
 
 class Detail extends React.Component {
   

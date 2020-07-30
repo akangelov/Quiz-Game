@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-import styles from './Category.module.css'
+import styles from './Home.module.css'
 
-const Category = () => {
+const HomePage = () => {
 
     return (
         <>
@@ -28,4 +28,4 @@ const Category = () => {
     )
 }
 
-export default Category;
+export default HomePage;

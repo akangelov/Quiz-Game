@@ -5,9 +5,9 @@ import './App.css';
 
 import About from "./pages/about/About";
 import AllQuestions from "./components/questions/AllQuestions";
-import Category from "./components/questions/Category";
 import CreateQuestion from "./components/questions/Create";
 import Detail from "./components/questions/Detail";
+import HomePage from "./pages/home/Home";
 import EditQuestionForm from "./components/questions/EditQuestionForm";
 import Footer from "./components/common/Footer/Footer";
 import Login from "./pages/user/Login";
@@ -15,9 +15,9 @@ import Navigation from "./components/common/Navigation/Navigation";
 import Questions from "./components/questions/Questions";
 import Rules from "./pages/rules/Rules";
 import Register from "./pages/user/Register";
-import UserContext from './services/Context';
+import UserContext from './utils/services/Context';
 import UserProfile from "./pages/user/UserProfile";
-import userService from './services/userService';
+import userService from './utils/services/userService';
 
 class App extends React.Component {
 
@@ -60,7 +60,7 @@ class App extends React.Component {
              logout={this.logout} />
 
             <Switch>
-                <Route exact path="/" component={Category}/>
+                <Route exact path="/" component={HomePage}/>
                 <Route path="/about" component={About} />
                 <Route path="/rules" component={Rules} />
                 <Route path="/create" component={CreateQuestion} />
