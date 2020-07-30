@@ -1,10 +1,10 @@
 import React from 'react'
-import styles from './Question.module.css'
-import EditQuestionForm from './EditQuestionForm';
+import styles from './CreateEditQuestion.module.css'
+import EditDelQuestionForm from './EditDelQuestionForm';
 import { withRouter } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 
-class EditQuestion extends React.Component {
+class EditDelQuestion extends React.Component {
 
 deleteQuestion = async () => {
     const id = this.props._id 
@@ -25,7 +25,7 @@ render() {
             <>
             <div className={styles.categoryItem}>
               <p>{this.props.question}</p> 
-              <EditQuestionForm {...this.props}></EditQuestionForm>
+              <EditDelQuestionForm {...this.props}></EditDelQuestionForm>
               <button onClick={this.deleteQuestion}>Delete</button>
             </div>
             <ToastContainer /> 
@@ -34,4 +34,4 @@ render() {
     }
 }
 
-export default withRouter(EditQuestion);
+export default withRouter(EditDelQuestion);

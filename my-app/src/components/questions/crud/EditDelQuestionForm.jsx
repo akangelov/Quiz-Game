@@ -5,7 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useHistory } from 'react-router'
 import styles from './CreateEditQuestion.module.css'
  
-const EditQuestionForm = (props) => {
+const EditDelQuestionForm = (props) => {
 
     let history = useHistory();
     const id = props._id
@@ -147,4 +147,4 @@ return (
     );
 };
 
-export default EditQuestionForm;
+export default EditDelQuestionForm;

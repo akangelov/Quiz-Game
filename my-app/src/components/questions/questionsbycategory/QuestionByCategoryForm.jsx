@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from './Question.module.css'
-import Link from '../common/Link/Link';
+import styles from './QuestionByCategory.module.css'
+import Link from '../../common/Link/Link';
 
 const Question = ({ question, _id }) => {
     return (

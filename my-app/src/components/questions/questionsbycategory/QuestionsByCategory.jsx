@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import styles from './Questions.module.css'
+import styles from './QuestionsByCategory.module.css'
 import Question from './QuestionByCategoryForm';
 
 class Questions extends React.Component {
