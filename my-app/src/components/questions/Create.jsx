@@ -2,6 +2,7 @@ import React from "react";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useHistory } from 'react-router'
+import { ToastContainer, toast } from "react-toastify";
 import styles from '../../shared//styles/CreateForm.module.css'
 import postService from '../../services/postService';
  
@@ -38,7 +39,8 @@ import postService from '../../services/postService';
     }),
      onSubmit: values => {
         postService.create(values).then(() => {
-          history.push('/')
+            toast("New question added!")
+            history.push('/')
         })
      }
    });
@@ -124,7 +126,8 @@ import postService from '../../services/postService';
        ) : null}
        <button type="submit">Submit</button>
      </div>
-     </form>
+     <ToastContainer />
+     </form> 
    );
  };
 
