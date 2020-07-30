@@ -1,9 +1,6 @@
 import React, {Fragment} from "react";
 import styles from './Questions.module.css'
 import EditQuestion from './EditQuestion';
-// import Link from '../common/Link/Link';
-// import postService from '../../services/postService';
-// import { Link } from "react-router-dom";
 
 class AllQuestions extends React.Component {
     constructor(props) {
@@ -31,7 +28,7 @@ class AllQuestions extends React.Component {
                  <div className={styles.categoryContainer}>               
                  {questions.map((question) => 
                   <EditQuestion key={question._id} {...question}></EditQuestion>)}
-               </div> : <div>Loading...</div>
+                </div> : <div>Loading...</div>
             }
             </Fragment>
     }

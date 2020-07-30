@@ -3,20 +3,20 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import './App.css';
 
-import About from "./components/about/About";
+import About from "./pages/about/About";
 import AllQuestions from "./components/questions/AllQuestions";
 import Category from "./components/questions/Category";
 import CreateQuestion from "./components/questions/Create";
 import Detail from "./components/questions/Detail";
 import EditQuestionForm from "./components/questions/EditQuestionForm";
 import Footer from "./components/common/Footer/Footer";
-import Login from "./components/user/Login";
+import Login from "./pages/user/Login";
 import Navigation from "./components/common/Navigation/Navigation";
 import Questions from "./components/questions/Questions";
-import Rules from "./components/rules/Rules";
-import Register from "./components/user/Register";
+import Rules from "./pages/rules/Rules";
+import Register from "./pages/user/Register";
 import UserContext from './services/Context';
-import UserProfile from "./components/user/UserProfile";
+import UserProfile from "./pages/user/UserProfile";
 import userService from './services/userService';
 
 class App extends React.Component {

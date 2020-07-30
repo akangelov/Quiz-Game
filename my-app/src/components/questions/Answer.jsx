@@ -16,7 +16,7 @@ const Answer = (props) => {
             window.open(`http://google.com/search?q=${props.question}`)
         } else { 
          
-         }
+        }
     }
 
     return (

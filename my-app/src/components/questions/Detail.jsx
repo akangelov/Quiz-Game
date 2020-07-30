@@ -4,37 +4,28 @@ import UserContext from '../../services/Context';
 
 class Detail extends React.Component {
   
-  constructor(props) {
+constructor(props) {
     super(props)
     this.state = {category: null}
-  }
+}
 
-  static contextType = UserContext;
+    static contextType = UserContext;
   
-
-  componentDidMount() { 
+componentDidMount() { 
     this.getQuestions(this.props.match.params.id)
-    console.log(this.context)
-    // console.log(this.props.match.params.id)
-  }
+}
 
-  getQuestions = async (id) => {
+getQuestions = async (id) => {
     const response = await fetch(`http://localhost:9999/api/origami?id=${id}`)
     const question = await response.json()
-    // console.log(question)
     this.setState({question})
-  }
-
-  render() {
+}
+render() {
     const { question } = this.state;
-    console.log(question)
-   
     return (
       <Answer {...question}/>
     )
-    
-    // return question && <Question category={question.category} question={question.question} />
-  }
+}
 }
 
 export default Detail;
