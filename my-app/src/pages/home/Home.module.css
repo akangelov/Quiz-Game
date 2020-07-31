@@ -6,9 +6,10 @@
 }
 
 .imageContainer {  
-    height: 505px;
-    width: 630px;
-    position: relative;  
+    height: 212px;
+    width: 200x;
+    position: relative; 
+    overflow: hidden; 
 }
 
 .Image {
@@ -17,10 +18,10 @@
     top: 0; 
 }
 
-.categoryItem {
+.categoryItem1 {
     /* z-index: 100; */
     position: absolute;
-    color: white;
+    color: #121a24;
     font-family: 'Courier New', Courier, monospace;
     font-size: 50px;
     font-weight: bold;
@@ -29,8 +30,38 @@
      transition: transform .2s;  
 }
 
+.categoryItem {
+    position: absolute; 
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    font-weight: bold;
+    left: 50px;
+    top: 50px;
+     transition: transform .2s;  
+}
+
+.biology {
+    color: white;
+}
+
+.history {
+    color:yellow;
+}
+
+.geography {
+    color: turquoise;
+}
+
+.science {
+    color: brown;
+}
+
 .categoryItem:hover {
     color: blue;
     transform: scale(1.2);
+}
+
+#link1 {
+    color:yellow;
 }
 
