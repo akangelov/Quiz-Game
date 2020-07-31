@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import userService from '../../utils/services/userService';
+import userService from '../../utils/userService';
 import { useHistory } from 'react-router'
 import { ToastContainer, toast } from "react-toastify";
 import styles from './UserForms.module.css'
@@ -39,8 +39,9 @@ const Register = () => {
         <h2>Register Form</h2>
         <div className={styles.container}>
         <form onSubmit={formik.handleSubmit}>
-            <label htmlFor="username">Username</label>
+            <label className={styles.label} htmlFor="username">Username</label>
             <input
+                className={styles.input} 
                 id="username"
                 name="username"
                 type="text"
@@ -50,8 +51,9 @@ const Register = () => {
             {formik.touched.username && formik.errors.username ? (
                 <div>{formik.errors.username}</div>) 
                 : null}
-            <label htmlFor="password">Password</label>
+            <label className={styles.label} htmlFor="password">Password</label>
             <input
+                className={styles.input} 
                 id="password"
                 name="password"
                 type="text"
@@ -61,7 +63,7 @@ const Register = () => {
             {formik.touched.password && formik.errors.password ? (
                 <div>{formik.errors.password}</div>
                 ) : null}
-          <button type="submit">Submit</button>
+          <button className={styles.button} type="submit">Submit</button>
         </form>
         </div>
         <ToastContainer /> 

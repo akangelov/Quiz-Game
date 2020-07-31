@@ -25,29 +25,31 @@ const formik = useFormik({
         <h2>Login Form</h2>
         <div className={styles.container}>
         <form onSubmit={formik.handleSubmit} >
-            <label htmlFor="username">Username</label>
+            <label className={styles.label} htmlFor="username">Username</label>
             <input
-              id="username"
-              name="username"
-              type="text"
-              onChange={formik.handleChange}
-              value={formik.values.username}
+                className={styles.input}              
+                id="username"
+                name="username"
+                type="text"
+                onChange={formik.handleChange}
+                value={formik.values.username}
             />
             {formik.touched.username && formik.errors.username ? (
               <div>{formik.errors.username}</div>
             ) : null}
-            <label htmlFor="password">Password</label>
+            <label className={styles.label} htmlFor="password">Password</label>
             <input
-              id="password"
-              name="password"
-              type="text"
-              onChange={formik.handleChange}
-              value={formik.values.password}
+                className={styles.input} 
+                id="password"
+                name="password"
+                type="text"
+                onChange={formik.handleChange}
+                value={formik.values.password}
             />
             {formik.touched.password && formik.errors.password ? (
               <div>{formik.errors.password}</div>
             ) : null}
-            <button type="submit">Submit</button>
+            <button className={styles.button}  type="submit">Submit</button>
         </form>
         </div>
         </>

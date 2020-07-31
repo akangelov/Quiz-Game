@@ -15,9 +15,9 @@ import Navigation from "./components/common/Navigation/Navigation";
 import Questions from "./components/questions/questionsbycategory/QuestionsByCategory";
 import Rules from "./pages/rules/Rules";
 import Register from "./pages/user/Register";
-import UserContext from './utils/services/Context';
+import UserContext from './utils/Context';
 import UserProfile from "./pages/user/UserProfile";
-import userService from './utils/services/userService';
+import userService from './utils/userService';
 
 class App extends React.Component {
 
