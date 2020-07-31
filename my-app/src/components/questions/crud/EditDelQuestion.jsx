@@ -23,11 +23,14 @@ deleteQuestion = async () => {
 render() {
         return (
             <>
-            <div className={styles.categoryItem}>
-              <p>{this.props.question}</p> 
-              <EditDelQuestionForm {...this.props}></EditDelQuestionForm>
+            <div >
+                <div>
+                    <p>{this.props.question}</p>
+               
+               <EditDelQuestionForm {...this.props}></EditDelQuestionForm>
               <button onClick={this.deleteQuestion}>Delete</button>
-            </div>
+              </div> 
+              </div> 
             <ToastContainer /> 
             </>
         )

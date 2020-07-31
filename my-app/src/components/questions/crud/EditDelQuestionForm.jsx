@@ -61,7 +61,7 @@ const formik = useFormik({
 return (
     <>
     <form onSubmit={formik.handleSubmit} >
-       <div className={styles.container}>
+        <div className={styles.container}>
             <label htmlFor="category">Category</label>
        <input
             id="category"
@@ -141,7 +141,7 @@ return (
             <div>{formik.errors.correctAnswer}</div>
         ) : null}
         <button type="submit">Edit</button>
-    </div>
+        </div>
     </form>
     <ToastContainer /> 
     </>

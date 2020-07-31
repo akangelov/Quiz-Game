@@ -17,7 +17,12 @@
     margin: 1em;
     font-weight: 550;
     font-size: 25px;
+    font-family:"Times New Roman", Times, serif;
     /* padding: 1em; */
+  }
+
+  .link:hover {
+    text-decoration: underline;
   }
 
   .button {
@@ -25,4 +30,5 @@
     background-color: #553fb6;
     border-radius: 10px;
     padding: 5px;
+    font-family:"Times New Roman", Times, serif;
   }
