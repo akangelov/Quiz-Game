@@ -20,7 +20,7 @@ const AnswerForm = (props) => {
                 },
                 body: JSON.stringify(data),
                 credentials: 'include'
-            })
+            }).then(window.location.reload(false))
         } else { toast("This answer is not correct :/ Please try again! :)") }
     }
 
@@ -35,14 +35,6 @@ const AnswerForm = (props) => {
     return (
         <>
         <div className={styles.container}>
-            <form method="put">
-        <input        
-                id="currentScore"
-                name="currentScore"
-                type="number"
-                value={Number(value.user.score)}
-        />
-        </form>
         <h3>Jokers</h3>
         <section className={styles.jokersContainer}>    
             <button onClick={(e) => { playJoker(e) }} className={styles.jokerItem}>50:50</button>
