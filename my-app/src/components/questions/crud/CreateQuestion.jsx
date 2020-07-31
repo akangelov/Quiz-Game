@@ -20,24 +20,24 @@ const formik = useFormik({
         answerD: '',
         correctAnswer: '',
     },
-    validationSchema: Yup.object({
-        category: Yup.string()
-            .min(3, 'Must be 3 characters or more')
-            .required('Required'),
-        question: Yup.string()
-            .min(10, 'Must be 10 characters or more')
-            .required('Required'),
-        answerA: Yup.string()
-            .required('Required'),
-        answerB: Yup.string()
-            .required('Required'),
-        answerC: Yup.string()
-            .required('Required'),
-        answerD: Yup.string()
-            .required('Required'),
-        correctAnswer: Yup.string()
-            .required('Required'),
-   }),
+//     validationSchema: Yup.object({
+//         category: Yup.string()
+//             .min(3, 'Must be 3 characters or more')
+//             .required('Required'),
+//         question: Yup.string()
+//             .min(10, 'Must be 10 characters or more')
+//             .required('Required'),
+//         answerA: Yup.string()
+//             .required('Required'),
+//         answerB: Yup.string()
+//             .required('Required'),
+//         answerC: Yup.string()
+//             .required('Required'),
+//         answerD: Yup.string()
+//             .required('Required'),
+//         correctAnswer: Yup.string()
+//             .required('Required'),
+//    }),
     onSubmit: values => {
         postService.create(values).then(() => {
             toast("New question added!")
@@ -49,14 +49,19 @@ const formik = useFormik({
         <form onSubmit={formik.handleSubmit} >
             <div className={styles.containerOne}>
                 <label className={styles.label} htmlFor="category">Category</label>
-            <input
+            <select
                 className={styles.item}
                 id="category"
                 name="category"
                 type="text"
                 onChange={formik.handleChange}
                 value={formik.values.category}
-            />
+            >
+                <option value="biology">Biology</option>
+                <option value="history">History</option>
+                <option value="geography">Geography</option>
+                <option value="science">Science</option>
+            </select>
             {formik.touched.category && formik.errors.category ? (
                 <div>{formik.errors.category}</div>
             ) : null}
