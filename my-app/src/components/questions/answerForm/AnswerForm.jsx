@@ -2,12 +2,23 @@ import React from "react";
 import styles from './Answer.module.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import UserContext from '../../../utils/Context';
 
 const AnswerForm = (props) => {
+
+    const value = React.useContext(UserContext);
+    // console.log(value.user.id)
  
     function checkAnswer(e) {     
         if (e.target.innerText === props.correctAnswer) {
             toast("Correct Answer!")
+            return fetch(`http://localhost:9999/api/user/${value.user.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                credentials: 'include'
+            })
         } else { toast("This answer is not correct :/ Please try again! :)") }
     }
 
