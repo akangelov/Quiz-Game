@@ -30,7 +30,7 @@ class App extends React.Component {
 
     login = (values) => {
       userService.login(values).then((res) => {
-          this.context.logIn(res.username)
+          this.context.logIn(res)
       if (res === undefined) {
           toast("Invalid username or password!")
       } else {

@@ -7,9 +7,11 @@ const Navigation = props => {
     // console.log(props)
 
     const value = React.useContext(UserContext);
-    console.log(value)
+    const UserId = value.user.id
+    // console.log(UserId)
   
     const {logout, userId } = props;
+    console.log(userId)
 
     return (
         <nav className={styles.navigation}>
@@ -17,7 +19,7 @@ const Navigation = props => {
                 {value.loggedIn && <Link className={styles.link} to="/">Home</Link>}
                 {<Link className={styles.link} to="/about">About</Link>}
                 {<Link className={styles.link} to="/rules">Rules</Link>}
-                {value.loggedIn && <Link className={styles.link} to={`/userprofile/${userId}`}>Profile</Link>}
+                {value.loggedIn && <Link className={styles.link} to={`/userprofile/${UserId}`}>Profile</Link>}
                 {value.loggedIn && <Link className={styles.link} to="/create">Add Question</Link>}
                 {value.loggedIn && <Link className={styles.link} to="/all">Edit Question</Link>}
                 {value.loggedIn && <button className={styles.button} onClick={logout}>Logout</button>}

@@ -1,18 +1,17 @@
 import React from "react";
+import UserContext from '../../utils/Context';
 
-class UserProfile extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = { username: null }
-    }
-
-    render() {
+const UserProfile = props => {
+   
+    const value = React.useContext(UserContext);
+    // console.log(value)
+    
         return (
             <div>
-                <p>User: {this.props.userName}</p>
+                <p>User: {value.user.username}</p>
             </div>
         )
-    }
 }
+
 
 export default UserProfile;
