@@ -8,7 +8,14 @@
 
 .input {
     margin-left: 10px;
+    border: 2px solid black;
     border-radius: 10px;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
 }
 
 .label {
@@ -23,4 +30,8 @@
 
 .button:hover {
     color: blue;
+}
+
+.h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
