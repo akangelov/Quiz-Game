@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useHistory } from 'react-router'
 import { ToastContainer, toast } from "react-toastify";
-import styles from './CreateEditQuestion.module.css'
+import styles from './CreateQuestion.module.css'
 import postService from '../../../utils/postService';
  
 const CreateQuestion = (props) => {

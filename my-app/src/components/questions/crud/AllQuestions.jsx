@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
-import styles from './CreateEditQuestion.module.css'
-import EditDelQuestion from './EditDelQuestion';
+import styles from './EditQuestion.module.css'
+import EditDelQuestion from './EditQuestion';
 
 class AllQuestions extends React.Component {
     constructor(props) {

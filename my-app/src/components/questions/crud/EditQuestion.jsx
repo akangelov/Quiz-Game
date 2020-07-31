@@ -1,6 +1,6 @@
 import React from 'react'
-import styles from './CreateEditQuestion.module.css'
-import EditDelQuestionForm from './EditDelQuestionForm';
+import styles from './EditQuestion.module.css'
+import EditDelQuestionForm from './EditQuestionForm';
 import { withRouter } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 

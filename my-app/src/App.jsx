@@ -8,7 +8,7 @@ import AllQuestions from "./components/questions/crud/AllQuestions";
 import CreateQuestion from "./components/questions/crud/CreateQuestion";
 import Answer from "./components/questions/answerForm/Answer";
 import HomePage from "./pages/home/Home";
-import EditQuestionForm from "./components/questions/crud/EditDelQuestionForm";
+import EditQuestionForm from "./components/questions/crud/EditQuestionForm";
 import Footer from "./components/common/Footer/Footer";
 import Login from "./pages/user/Login";
 import Navigation from "./components/common/Navigation/Navigation";
