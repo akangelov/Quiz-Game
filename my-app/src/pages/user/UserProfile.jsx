@@ -9,6 +9,7 @@ const UserProfile = props => {
         return (
             <div>
                 <p>User: {value.user.username}</p>
+                <p>Score: {value.user.score}</p>
             </div>
         )
 }

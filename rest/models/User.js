@@ -19,6 +19,10 @@ const userSchema = new Schema({
         require: true
     },
 
+    score: {
+        type: Number
+    },
+
     posts: [{ type: ObjectId, ref: "Origami" }]
 
 });

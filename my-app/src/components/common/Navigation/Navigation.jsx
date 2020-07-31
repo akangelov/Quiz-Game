@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import UserContext from '../../../utils/Context';
 
 const Navigation = props => {
-    // console.log(props)
-
+  
     const value = React.useContext(UserContext);
     console.log(value)
    
