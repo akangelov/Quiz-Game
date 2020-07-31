@@ -2,6 +2,7 @@ import React from "react";
 import styles from './Answer.module.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { withRouter } from 'react-router-dom';
 import UserContext from '../../../utils/Context';
 
 const AnswerForm = (props) => {
@@ -10,9 +11,9 @@ const AnswerForm = (props) => {
     console.log(value.user.score)
  
     function checkAnswer(e) {     
-        if (e.target.innerText === props.correctAnswer) {
-            toast("Correct Answer!")
+        if (e.target.innerText === props.correctAnswer) {          
             const data = {score: value.user.score}
+            
             return fetch(`http://localhost:9999/api/user/${value.user.id}`, {
                 method: 'PUT',
                 headers: {
@@ -20,7 +21,13 @@ const AnswerForm = (props) => {
                 },
                 body: JSON.stringify(data),
                 credentials: 'include'
-            }).then(window.location.reload(false))
+            })
+            .then(toast("Correct Answer!You earned 1 point!Please choose another question!"))
+            .then( setTimeout(() => {
+                window.location.reload(false)
+            }, 4000) )
+            // .then(value.user.score === 1 ?  : console.log("there")) 
+           
         } else { toast("This answer is not correct :/ Please try again! :)") }
     }
 
@@ -54,4 +61,4 @@ const AnswerForm = (props) => {
     )
 }
 
-export default AnswerForm;
+export default withRouter(AnswerForm);
