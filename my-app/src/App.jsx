@@ -21,11 +21,6 @@ import userService from './utils/userService';
 
 class App extends React.Component {
 
-    constructor(props) {
-      super(props);
-      this.state = { userId: "", userName: "" };
-    } 
-
     static contextType = UserContext; 
 
     login = (values) => {
@@ -35,29 +30,24 @@ class App extends React.Component {
           toast("Invalid username or password!")
       } else {
           toast("User succesfully logged in!")
-          this.setState({ userId: res._id });
-          this.setState({ userName: res.username });
           this.props.history.push('/')};
       })
     }
 
     logout = () => {
-      userService.logout().then(() => {
-      this.context.logOut()
-        toast("Logout succesful!")
-        console.log(this.context)
-        this.setState({ isLogged: false });
-        this.props.history.push('/login');
-        return null;
+        userService.logout().then(() => {
+            this.props.history.push('/login');
+            this.context.logOut()
+            toast("Logout succesful!")
+            console.log(this.context)
+            return null;
       });
     }
 
     render() {
         return (
         <Fragment>
-            <Navigation
-             userId={this.state.userId}
-             logout={this.logout} />
+            <Navigation logout={this.logout} />
 
             <Switch>
                 <Route exact path="/" component={HomePage}/>
@@ -80,7 +70,7 @@ class App extends React.Component {
       
         </Fragment>
         )
-      }
     }
+}
 
 export default withRouter(App);
