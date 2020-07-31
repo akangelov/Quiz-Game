@@ -7,16 +7,18 @@ import UserContext from '../../../utils/Context';
 const AnswerForm = (props) => {
 
     const value = React.useContext(UserContext);
-    // console.log(value.user.id)
+    console.log(value.user.score)
  
     function checkAnswer(e) {     
         if (e.target.innerText === props.correctAnswer) {
             toast("Correct Answer!")
+            const data = {score: value.user.score}
             return fetch(`http://localhost:9999/api/user/${value.user.id}`, {
                 method: 'PUT',
                 headers: {
-                    'Content-type': 'application/json'
+                    'Content-type': 'application/json; charset=UTF-8'
                 },
+                body: JSON.stringify(data),
                 credentials: 'include'
             })
         } else { toast("This answer is not correct :/ Please try again! :)") }
@@ -33,6 +35,14 @@ const AnswerForm = (props) => {
     return (
         <>
         <div className={styles.container}>
+            <form method="put">
+        <input        
+                id="currentScore"
+                name="currentScore"
+                type="number"
+                value={Number(value.user.score)}
+        />
+        </form>
         <h3>Jokers</h3>
         <section className={styles.jokersContainer}>    
             <button onClick={(e) => { playJoker(e) }} className={styles.jokerItem}>50:50</button>

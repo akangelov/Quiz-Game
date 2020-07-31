@@ -12,14 +12,14 @@ const EditDelQuestionForm = (props) => {
 
     const editPost = (data) => {
         return fetch(`http://localhost:9999/api/origami/${id}`, {
-    method: 'PUT',
-    headers: {
-        'Content-type': 'application/json'
-    },
-    body: JSON.stringify(data),
-    credentials: 'include'
-})
-}
+        method: 'PUT',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(data),
+        credentials: 'include'
+        })
+    }
 
 const formik = useFormik({
     initialValues: {
@@ -50,6 +50,7 @@ const formik = useFormik({
             .required('Required'),
     }),
     onSubmit: values => {
+        console.log(values)
         editPost(values).then(() => {
             history.push('/all')
             toast("Question editted!")

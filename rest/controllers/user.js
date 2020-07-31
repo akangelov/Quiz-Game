@@ -83,9 +83,10 @@ module.exports = {
 
   put: (req, res, next) => {
       const id = req.params.id;
+    //   console.log(req)
     // const { username, password } = req.body;
-   
-      const score = 2;
+        const score = req.body.score + 1
+        console.log(score)
         models.User.update({ _id: id }, { score })
       .then((updatedUser) => res.send(updatedUser))
       .catch(next)
