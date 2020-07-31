@@ -1,0 +1,37 @@
+.containerOne {
+    display: grid;
+    grid-template-columns: 450px;
+}
+
+.containerTwo {
+    display: grid;
+    grid-template-columns: 250px;
+}
+
+.item {
+    margin-left: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
+.item:focus {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+.label {
+    margin-left: 10px;
+}
+
+.button {
+    margin-left: 10px;
+    border-radius: 10px;
+    padding: 2px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 10px;
+}
+
+.button:hover {
+    color: blue;
+}
