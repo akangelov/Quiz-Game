@@ -34,6 +34,10 @@
     /* margin-bottom: 10px; */
 }
 
+.buttonDelete {
+    margin-bottom:10px;
+}
+
 .button:hover {
     color: blue;
 }
@@ -41,4 +45,10 @@
 .question {
     padding-left: 10px;
     padding-top: 20px;
+}
+
+.h3 {
+    font-size: 25px;
+    margin-bottom: -20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }

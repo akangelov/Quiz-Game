@@ -28,7 +28,7 @@ render() {
                     <p className={styles.question}>{this.props.question}</p>
                
                <EditDelQuestionForm {...this.props}></EditDelQuestionForm>
-              <button className={styles.button} onClick={this.deleteQuestion}>Delete</button>
+              <button className={`${styles.button} ${styles.buttonDelete}`} onClick={this.deleteQuestion}>Delete</button>
               </div> 
               </div> 
             <ToastContainer /> 

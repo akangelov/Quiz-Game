@@ -67,14 +67,20 @@ return (
     <form onSubmit={formik.handleSubmit} >
         <div className={styles.containerOne}>
             <label className={styles.label} htmlFor="category">Category</label>
-       <input
-            className={styles.item}
-            id="category"
-            name="category"
-            type="text"
-            onChange={formik.handleChange}
-            value={formik.values.category}
-       />
+            <select
+                className={styles.item}
+                id="category"
+                name="category"
+                type="text"
+                onChange={formik.handleChange}
+                value={formik.values.category}
+            >   
+                <option value="" label="Select a category" />
+                <option value="biology">Biology</option>
+                <option value="history">History</option>
+                <option value="geography">Geography</option>
+                <option value="science">Science</option>
+            </select>
        {formik.touched.category && formik.errors.category ? (
             <div>{formik.errors.category}</div>
        ) : null}
