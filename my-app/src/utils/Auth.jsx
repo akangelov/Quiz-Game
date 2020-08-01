@@ -48,7 +48,6 @@ class Auth extends Component {
             'Content-Type': 'application/json'
           }
         }).then(promise => {
-          console.log(promise)
           return promise.json()
         }).then(response => {
           if(response.status) {

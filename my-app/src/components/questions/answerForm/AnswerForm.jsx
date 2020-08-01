@@ -1,4 +1,6 @@
 import React from "react";
+import Answers from "./Answers";
+import Answers5050 from "./Answers5050";
 import styles from './Answer.module.css'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
@@ -8,37 +10,33 @@ import UserContext from '../../../utils/Context';
 const AnswerForm = (props) => {
 
     const value = React.useContext(UserContext);
- 
-    function checkAnswer(e) {     
-        if (e.target.innerText === props.correctAnswer) {          
-            const data = {score: value.user.score}
-            
-            return fetch(`http://localhost:9999/api/user/${value.user.id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-type': 'application/json; charset=UTF-8'
-                },
-                body: JSON.stringify(data),
-                credentials: 'include'
-            })
-            .then(toast("Correct Answer!You earned 1 point!Please choose another question!"))
-            .then( setTimeout(() => {
-                props.history.push("/")
-                window.location.reload(false)
-            }, 3000) )
-            // .then(value.user.score === 1 ?  : console.log("there")) 
-           
-        } else { toast("This answer is not correct :/ Please try again! :)") }
+    
+    const wrongAnswers = [];
+    if (props.answerA !== props.correctAnswer) {
+        wrongAnswers.push(props.answerA)
     }
+    if (props.answerB !== props.correctAnswer) {
+        wrongAnswers.push(props.answerB)
+    }
+    if (props.answerC !== props.correctAnswer) {
+        wrongAnswers.push(props.answerC)
+    }
+    if (props.answerD !== props.correctAnswer) {
+        wrongAnswers.push(props.answerD)
+    }
+
+    let isHidden = true;
 
     function playJoker(e) {     
         if (e.target.textContent === "Google") {
             window.open(`http://google.com/search?q=${props.question}`)
-        } else { 
-         
+        } else if (e.target.textContent === "50:50") { 
+            isHidden = true;
+            window.location.reload(false)
+            console.log(isHidden)
         }
     }
-
+    
     return (
         <>
         <div className={styles.container}>
@@ -50,10 +48,10 @@ const AnswerForm = (props) => {
 
         <h3>{props.question}</h3>
         <section className={styles.answersContainer}>
-            <button onClick={(e) => { checkAnswer(e) }} className={styles.answerItem}>{props.answerA}</button>
-            <button onClick={(e) => { checkAnswer(e) }} className={styles.answerItem}>{props.answerB}</button>
-            <button onClick={(e) => { checkAnswer(e) }} className={styles.answerItem}>{props.answerC}</button>
-            <button onClick={(e) => { checkAnswer(e) }} className={styles.answerItem}>{props.answerD}</button>
+            {!isHidden 
+            ? <Answers {...props}></Answers>               
+            : <Answers5050 {...props}></Answers5050>
+            }
         </section>
         </div>
             <ToastContainer />

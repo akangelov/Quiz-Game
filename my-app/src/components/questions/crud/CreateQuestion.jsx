@@ -1,14 +1,11 @@
 import React from "react";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import { useHistory } from 'react-router'
 import { ToastContainer, toast } from "react-toastify";
 import styles from './CrudQuestion.module.css'
 import postService from '../../../utils/postService';
  
 const CreateQuestion = (props) => {
-
-let history = useHistory();
  
 const formik = useFormik({
     initialValues: {
@@ -43,7 +40,6 @@ const formik = useFormik({
             setTimeout(() => {
                 window.location.reload(false)
             }, 4000) 
-            // props.history.push('/create')
             toast("New Question added!")
         })
     }
