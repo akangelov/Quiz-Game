@@ -1,7 +1,8 @@
 import React from "react";
-import wrongAnswers from "./AnswerForm";
+import AnswerFrom from "./AnswerForm";
 import styles from './Answer.module.css'
 import { ToastContainer, toast } from 'react-toastify';
+import { withRouter } from 'react-router-dom';
 import UserContext from '../../../utils/Context';
 
 
@@ -9,7 +10,19 @@ const Answers5050 = (props) => {
 
     const value = React.useContext(UserContext);
 
-    console.log(wrongAnswers)
+    const wrongAnswers = [];
+    if (props.answerA !== props.correctAnswer) {
+        wrongAnswers.push(props.answerA)
+    }
+    if (props.answerB !== props.correctAnswer) {
+        wrongAnswers.push(props.answerB)
+    }
+    if (props.answerC !== props.correctAnswer) {
+        wrongAnswers.push(props.answerC)
+    }
+    if (props.answerD !== props.correctAnswer) {
+        wrongAnswers.push(props.answerD)
+    }
         
     function checkAnswer(e) {     
         if (e.target.innerText === props.correctAnswer) {          
@@ -35,9 +48,9 @@ const Answers5050 = (props) => {
     return (
         <>
         <button onClick={(e) => { checkAnswer(e) }} className={styles.answerItem}>{props.correctAnswer}</button>
-        {/* <button onClick={(e) => { checkAnswer(e) }} className={styles.answerItem}>{props.answerB}</button> */}
+        <button onClick={(e) => { checkAnswer(e) }} className={styles.answerItem}>{wrongAnswers[0]}</button>
         </>   
     )
 }
 
-export default Answers5050;
+export default withRouter(Answers5050);

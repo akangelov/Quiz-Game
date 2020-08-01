@@ -11,19 +11,7 @@ const AnswerForm = (props) => {
 
     const value = React.useContext(UserContext);
     
-    const wrongAnswers = [];
-    if (props.answerA !== props.correctAnswer) {
-        wrongAnswers.push(props.answerA)
-    }
-    if (props.answerB !== props.correctAnswer) {
-        wrongAnswers.push(props.answerB)
-    }
-    if (props.answerC !== props.correctAnswer) {
-        wrongAnswers.push(props.answerC)
-    }
-    if (props.answerD !== props.correctAnswer) {
-        wrongAnswers.push(props.answerD)
-    }
+    const [showResults, setShowResults] = React.useState(false)
 
     let isHidden = true;
 
@@ -31,9 +19,7 @@ const AnswerForm = (props) => {
         if (e.target.textContent === "Google") {
             window.open(`http://google.com/search?q=${props.question}`)
         } else if (e.target.textContent === "50:50") { 
-            isHidden = true;
-            window.location.reload(false)
-            console.log(isHidden)
+            setShowResults(true)
         }
     }
     
@@ -48,7 +34,7 @@ const AnswerForm = (props) => {
 
         <h3>{props.question}</h3>
         <section className={styles.answersContainer}>
-            {!isHidden 
+            {!showResults
             ? <Answers {...props}></Answers>               
             : <Answers5050 {...props}></Answers5050>
             }
@@ -59,4 +45,4 @@ const AnswerForm = (props) => {
     )
 }
 
-export default withRouter(AnswerForm);
+export default AnswerForm;
