@@ -25,7 +25,7 @@ const AnswerForm = (props) => {
             .then( setTimeout(() => {
                 props.history.push("/")
                 window.location.reload(false)
-            }, 4000) )
+            }, 3000) )
             // .then(value.user.score === 1 ?  : console.log("there")) 
            
         } else { toast("This answer is not correct :/ Please try again! :)") }

@@ -8,12 +8,21 @@ import UserContext from '../../utils/Context';
 const HomePage = (props) => {
 
     const value = React.useContext(UserContext);
-    console.log(value.user.score)
-
-
+    
     React.useEffect(() => {
-        if(value.user.score === 14) {
-            toast("You won the game!")
+        if(value.user.score === 3) {
+            toast("Congratulations!You won the game!Your score is reset!")
+            const data = {score: -1}
+            return fetch(`http://localhost:9999/api/user/${value.user.id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                },
+                body: JSON.stringify(data),
+                credentials: 'include'
+            }).then( setTimeout(() => {
+                window.location.reload(false)
+            }, 3000) )
         }
     });
 
