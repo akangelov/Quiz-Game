@@ -1,8 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import styles from './Home.module.css'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import UserContext from '../../utils/Context';
 
-const HomePage = () => {
+const HomePage = (props) => {
+
+    const value = React.useContext(UserContext);
+    console.log(value.user.score)
+
+
+    React.useEffect(() => {
+        if(value.user.score === 14) {
+            toast("You won the game!")
+        }
+    });
 
     return (
         <>
@@ -24,6 +37,7 @@ const HomePage = () => {
                 <Link className={`${styles.categoryItem} ${styles.science}`} to="/questions/science">Science</Link>
             </div>
             </section>
+            <ToastContainer />
         </>    
     )
 }

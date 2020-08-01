@@ -43,7 +43,7 @@ const formik = useFormik({
             setTimeout(() => {
                 window.location.reload(false)
             }, 4000) 
-            props.history.push('/create')
+            // props.history.push('/create')
             toast("New Question added!")
         })
     }
