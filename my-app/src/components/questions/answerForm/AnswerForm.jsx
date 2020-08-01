@@ -24,8 +24,8 @@ const AnswerForm = (props) => {
             })
             .then(toast("Correct Answer!You earned 1 point!Please choose another question!"))
             .then( setTimeout(() => {
-                // window.location.reload(false)
                 props.history.push("/")
+                window.location.reload(false)
             }, 4000) )
             // .then(value.user.score === 1 ?  : console.log("there")) 
            
