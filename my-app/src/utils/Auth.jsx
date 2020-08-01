@@ -54,7 +54,8 @@ class Auth extends Component {
             this.logIn({
               username: response.user.username,
               id: response.user._id,
-              score: response.user.score
+              score: response.user.score,
+              wrongAnswers: response.user.wrongAnswers
             })
           } else {
             this.logOut()

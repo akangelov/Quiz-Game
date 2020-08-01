@@ -10,6 +10,7 @@ import UserContext from '../../../utils/Context';
 const AnswerForm = (props) => {
 
     const value = React.useContext(UserContext);
+    // console.log(value.user)
     
     const [showResults, setShowResults] = React.useState(false)
 

@@ -14,8 +14,9 @@ module.exports = {
   post: {
     register: (req, res, next) => {
       const score = 0;  
+      const wrongAnswers = 0;
       const { username, password } = req.body;
-      models.User.create({ username, password, score })
+      models.User.create({ username, password, score, wrongAnswers })
         .then((createdUser) => res.send(createdUser))
         .catch(next)
     },
@@ -82,14 +83,16 @@ module.exports = {
   },
 
   put: (req, res, next) => {
-      const id = req.params.id;
-    //   console.log(req)
-    // const { username, password } = req.body;
-        const score = req.body.score + 1
-        models.User.update({ _id: id }, { score })
-      .then((updatedUser) => res.send(updatedUser))
-      .catch(next)
-  },
+    const id = req.params.id;
+  //   console.log(req)
+  // const { username, password } = req.body;
+      const score = req.body.score
+      const wrongAnswers = req.body.wrongAnswers
+      console.log(score, wrongAnswers)
+      models.User.update({ _id: id }, { score, wrongAnswers })
+    .then((updatedUser) => res.send(updatedUser))
+    .catch(next)
+},
 
   delete: (req, res, next) => {
     const id = req.params.id;

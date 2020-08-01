@@ -23,6 +23,10 @@ const userSchema = new Schema({
         type: Number
     },
 
+    wrongAnswers: {
+        type: Number
+    },
+
     posts: [{ type: ObjectId, ref: "Origami" }]
 
 });

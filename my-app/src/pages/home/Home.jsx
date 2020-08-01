@@ -12,7 +12,7 @@ const HomePage = (props) => {
     React.useEffect(() => {
         if(value.user.score === 3) {
             toast("Congratulations!You won the game!Your score is reset!")
-            const data = {score: -1}
+            const data = {score: 0, wrongAnswers: 0}
             return fetch(`http://localhost:9999/api/user/${value.user.id}`, {
                 method: 'PUT',
                 headers: {

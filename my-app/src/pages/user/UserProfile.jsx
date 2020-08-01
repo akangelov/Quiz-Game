@@ -10,6 +10,7 @@ const UserProfile = props => {
             <div>
                 <p>User: {value.user.username}</p>
                 <p>Score: {value.user.score}</p>
+                <p>Wrong Answers: {value.user.wrongAnswers}</p>
             </div>
         )
 }
