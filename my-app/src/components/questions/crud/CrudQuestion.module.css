@@ -22,6 +22,7 @@
 
 .label {
     margin-left: 10px;
+    margin-bottom: 1px;
 }
 
 .button {
@@ -30,8 +31,14 @@
     padding: 2px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin-top: 10px;
+    /* margin-bottom: 10px; */
 }
 
 .button:hover {
     color: blue;
+}
+
+.question {
+    padding-left: 10px;
+    padding-top: 20px;
 }

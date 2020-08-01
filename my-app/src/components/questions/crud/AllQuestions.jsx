@@ -1,5 +1,5 @@
 import React, {Fragment} from "react";
-import styles from './EditQuestion.module.css'
+import styles from './CrudQuestion.module.css'
 import EditDelQuestion from './EditQuestion';
 
 class AllQuestions extends React.Component {
@@ -23,7 +23,7 @@ class AllQuestions extends React.Component {
         const { questions } = this.state;
 
         return <Fragment>
-               <h3>You can edit or delete a question below: </h3>
+               <h3 className={styles.h3}>You can edit or delete a question below: </h3>
             {   questions ?           
                  <div >               
                  {questions.map((question) => 

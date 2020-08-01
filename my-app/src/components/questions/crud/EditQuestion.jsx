@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './EditQuestion.module.css'
+import styles from './CrudQuestion.module.css'
 import EditDelQuestionForm from './EditQuestionForm';
 import { withRouter } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
@@ -25,10 +25,10 @@ render() {
             <>
             <div >
                 <div>
-                    <p>{this.props.question}</p>
+                    <p className={styles.question}>{this.props.question}</p>
                
                <EditDelQuestionForm {...this.props}></EditDelQuestionForm>
-              <button onClick={this.deleteQuestion}>Delete</button>
+              <button className={styles.button} onClick={this.deleteQuestion}>Delete</button>
               </div> 
               </div> 
             <ToastContainer /> 

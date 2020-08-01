@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useHistory } from 'react-router'
 import { ToastContainer, toast } from "react-toastify";
-import styles from './CreateQuestion.module.css'
+import styles from './CrudQuestion.module.css'
 import postService from '../../../utils/postService';
  
 const CreateQuestion = (props) => {
@@ -20,24 +20,24 @@ const formik = useFormik({
         answerD: '',
         correctAnswer: '',
     },
-//     validationSchema: Yup.object({
-//         category: Yup.string()
-//             .min(3, 'Must be 3 characters or more')
-//             .required('Required'),
-//         question: Yup.string()
-//             .min(10, 'Must be 10 characters or more')
-//             .required('Required'),
-//         answerA: Yup.string()
-//             .required('Required'),
-//         answerB: Yup.string()
-//             .required('Required'),
-//         answerC: Yup.string()
-//             .required('Required'),
-//         answerD: Yup.string()
-//             .required('Required'),
-//         correctAnswer: Yup.string()
-//             .required('Required'),
-//    }),
+    validationSchema: Yup.object({
+        category: Yup.string()
+            .min(3, 'Must be 3 characters or more')
+            .required('Required'),
+        question: Yup.string()
+            .min(10, 'Must be 10 characters or more')
+            .required('Required'),
+        answerA: Yup.string()
+            .required('Required'),
+        answerB: Yup.string()
+            .required('Required'),
+        answerC: Yup.string()
+            .required('Required'),
+        answerD: Yup.string()
+            .required('Required'),
+        correctAnswer: Yup.string()
+            .required('Required'),
+   }),
     onSubmit: values => {
         postService.create(values).then(() => {
             toast("New question added!")
@@ -56,7 +56,8 @@ const formik = useFormik({
                 type="text"
                 onChange={formik.handleChange}
                 value={formik.values.category}
-            >
+            >   
+                <option value="" label="Select a category" />
                 <option value="biology">Biology</option>
                 <option value="history">History</option>
                 <option value="geography">Geography</option>
