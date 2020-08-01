@@ -15,9 +15,13 @@ deleteQuestion = async () => {
             'Content-type': 'application/json'
         },
         credentials: 'include'
+    }).then(() => {
+        setTimeout(() => {
+            window.location.reload(false)
+        }, 4000) 
+        this.props.history.push('/all')
+        toast("Question deleted!")
     })
-    .then(toast("Question deleted!"))
-    .then(this.props.history.push('/'))
 } 
 
 render() {
