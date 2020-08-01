@@ -38,6 +38,10 @@
     margin-bottom:10px;
 }
 
+.buttonSubmit {
+    margin-bottom: 8px;
+}
+
 .button:hover {
     color: blue;
 }

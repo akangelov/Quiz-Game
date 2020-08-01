@@ -40,9 +40,12 @@ const formik = useFormik({
    }),
     onSubmit: values => {
         postService.create(values).then(() => {
-            toast("New question added!")
-            history.push('/')
-       })
+            setTimeout(() => {
+                window.location.reload(false)
+            }, 4000) 
+            props.history.push('/create')
+            toast("New Question added!")
+        })
     }
 });
     return (
@@ -141,7 +144,7 @@ const formik = useFormik({
                 <div>{formik.errors.correctAnswer}</div>
             ) : null}
             </div>
-            <button className={styles.button} type="submit">Submit</button>
+            <button className={`${styles.button} ${styles.buttonSubmit}`} type="submit">Submit</button>
         
         <ToastContainer />
         </form> 
