@@ -52,6 +52,10 @@ const formik = useFormik({
     onSubmit: values => {
         console.log(values)
         editPost(values).then(() => {
+            setTimeout(() => {
+                window.location.reload(false)
+                // props.history.push("/")
+            }, 4000) 
             history.push('/all')
             toast("Question editted!")
         })
