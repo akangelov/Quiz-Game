@@ -4,23 +4,18 @@ import styles from './Home.module.css'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import UserContext from '../../utils/Context';
+import postService from '../../utils/postService';
 
 const HomePage = (props) => {
 
     const value = React.useContext(UserContext);
-    
+     
     React.useEffect(() => {
-        if(value.user.score === 3) {
-            toast("Congratulations!You won the game!Your score is reset!")
+        if(value.user.score === 1) {
+            toast(`Congratulations ${value.user.username}!You won the game!Your score is reset!`)
             const data = {score: 0, wrongAnswers: 0}
-            return fetch(`http://localhost:9999/api/user/${value.user.id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-type': 'application/json; charset=UTF-8'
-                },
-                body: JSON.stringify(data),
-                credentials: 'include'
-            }).then( setTimeout(() => {
+            const userId = value.user.id
+            postService.put(data, userId).then( setTimeout(() => {
                 window.location.reload(false)
             }, 3000) )
         }
