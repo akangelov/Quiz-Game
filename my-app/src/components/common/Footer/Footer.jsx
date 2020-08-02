@@ -6,7 +6,7 @@ const Footer = () => {
         <footer className={styles.footer}>
             <section>
                 <div>
-                    <p>Quiz Game</p>
+                    <p className={styles.quizgame}>Quiz Game</p>
                 </div>
             </section>
             <section className={styles.author}>

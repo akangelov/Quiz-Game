@@ -9,10 +9,11 @@ const UserProfile = props => {
 
         return (
             <>
-            <div className = {styles.container}>
-                <div className = {styles.imageContainer}>
+            <div className = {styles.userContainer}>
                     <p className={styles.categoryItem}>User: {value.user.username}</p>   
-                </div>
+            </div>
+            <div className = {styles.container}>
+                
                 <div className = {styles.imageContainer}>
                     <p className={`${styles.categoryItem} ${styles.correct}`}>Correct Answers: {value.user.score}</p>
                     <img className= {styles.Image} src ="https://res.cloudinary.com/dq336pwqs/image/upload/v1596382490/true3.png" alt="correct"/>
