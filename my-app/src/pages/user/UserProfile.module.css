@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    padding: 10px;
+}
+
+.imageContainer {
+    margin: 10px;
+}
+
+.categoryItem {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    margin-bottom: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 5px;
+    
+}
+
+.correct {
+    color: green;
+}
+
+.wrong {
+    color: red;
+}
+
+.Image {
+    height: 300px;
+    width: 300px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 50%;
+}
