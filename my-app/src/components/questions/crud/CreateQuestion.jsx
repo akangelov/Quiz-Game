@@ -35,8 +35,8 @@ const formik = useFormik({
         correctAnswer: Yup.string()
             .required('Required'),
    }),
-    onSubmit: values => {
-        postService.create(values).then(() => {
+    onSubmit: data => {
+        postService.create(data).then(() => {
             setTimeout(() => {
                 window.location.reload(false)
             }, 4000) 

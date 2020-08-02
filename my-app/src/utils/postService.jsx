@@ -25,6 +25,16 @@ const postService = {
         body: JSON.stringify(data),
         credentials: 'include'
         })
+    },
+    
+    delete: function(id) {
+        return fetch(`http://localhost:9999/api/origami/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            credentials: 'include'
+        })
     } 
 }
 

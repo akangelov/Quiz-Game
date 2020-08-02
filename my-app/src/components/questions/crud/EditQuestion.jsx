@@ -3,19 +3,15 @@ import styles from './CrudQuestion.module.css'
 import EditDelQuestionForm from './EditQuestionForm';
 import { withRouter } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
+import postService from '../../../utils/postService';
 
 class EditDelQuestion extends React.Component {
 
 deleteQuestion = async () => {
     const id = this.props._id 
     alert("Are you sure you want to delete this question?")
-    return fetch(`http://localhost:9999/api/origami/${id}`, {
-        method: 'DELETE',
-        headers: {
-            'Content-type': 'application/json'
-        },
-        credentials: 'include'
-    }).then(() => {
+    postService.delete(id)
+    .then(() => {
         setTimeout(() => {
             window.location.reload(false)
         }, 4000) 
