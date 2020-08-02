@@ -25,7 +25,7 @@ class AllQuestions extends React.Component {
         return <Fragment>
                <h3 className={styles.h3}>You can edit or delete a question below: </h3>
             {   questions ?           
-                 <div >               
+                 <div className={styles.container}>               
                  {questions.map((question) => 
                   <EditDelQuestion key={question._id} {...question}></EditDelQuestion>)}
                 </div> : <div>Loading...</div>
