@@ -4,14 +4,14 @@ import styles from './Home.module.css'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import UserContext from '../../utils/Context';
-import userService from '../../utils/postService';
+import userService from '../../utils/userService';
 
 const HomePage = (props) => {
 
     const value = React.useContext(UserContext);
      
     React.useEffect(() => {
-        if(value.user.score === 1) {
+        if(value.user.score === 2) {
             toast(`Congratulations ${value.user.username}!You won the game!Your score is reset!`)
             const data = {score: 0, wrongAnswers: 0}
             const userId = value.user.id

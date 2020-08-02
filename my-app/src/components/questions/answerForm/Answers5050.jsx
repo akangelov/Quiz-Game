@@ -4,11 +4,12 @@ import styles from './Answer.module.css'
 import { ToastContainer, toast } from 'react-toastify';
 import { withRouter } from 'react-router-dom';
 import UserContext from '../../../utils/Context';
-
+import userService from '../../../utils/userService';
 
 const Answers5050 = (props) => {
 
     const value = React.useContext(UserContext);
+    const userId = value.user.id
 
     const wrongAnswers = [];
     if (props.answerA !== props.correctAnswer) {
@@ -26,23 +27,25 @@ const Answers5050 = (props) => {
         
     function checkAnswer(e) {     
         if (e.target.innerText === props.correctAnswer) {          
-            const data = {score: value.user.score, wrongAnswers: value.user.wrongAnswers}
-            
-            return fetch(`http://localhost:9999/api/user/${value.user.id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-type': 'application/json'
-                },
-                body: JSON.stringify(data),
-                credentials: 'include'
-            })
+            const data = {score: value.user.score + 1, wrongAnswers: value.user.wrongAnswers}
+           
+            userService.put(data, userId)
             .then(toast("Correct Answer!You earned 1 point!Please choose another question!"))
             .then( setTimeout(() => {
                 props.history.push("/")
                 window.location.reload(false)
             }, 3000) )
            
-        } else { toast("This answer is not correct :/ Please try again! :)") }
+        } else { 
+            const data = {score: value.user.score, wrongAnswers: value.user.wrongAnswers + 1}
+
+            userService.put(data, userId)
+            .then(toast("This answer is not correct :/ Please try again! :)"))
+            .then( setTimeout(() => {
+                // props.history.push("/")
+                window.location.reload(false)
+            }, 3000) )      
+        }
     }
 
     return (
