@@ -4,7 +4,7 @@ import styles from './Home.module.css'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import UserContext from '../../utils/Context';
-import postService from '../../utils/postService';
+import userService from '../../utils/postService';
 
 const HomePage = (props) => {
 
@@ -15,7 +15,7 @@ const HomePage = (props) => {
             toast(`Congratulations ${value.user.username}!You won the game!Your score is reset!`)
             const data = {score: 0, wrongAnswers: 0}
             const userId = value.user.id
-            postService.put(data, userId).then( setTimeout(() => {
+            userService.put(data, userId).then( setTimeout(() => {
                 window.location.reload(false)
             }, 3000) )
         }

@@ -16,8 +16,8 @@ const postService = {
     }).then(res => res.json());
     },
 
-    put: function(data, user) {
-        return fetch(`http://localhost:9999/api/user/${user}`, {
+    put: function(data, id) {
+        return fetch(`http://localhost:9999/api/origami/${id}`, {
         method: 'PUT',
         headers: {
             'Content-type': 'application/json; charset=UTF-8'

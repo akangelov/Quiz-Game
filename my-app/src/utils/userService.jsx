@@ -29,6 +29,17 @@ const userService = {
         method: 'POST',
         credentials: 'include'
       }).then(res => res.text());
+    },
+
+    put: function(data, user) {
+        return fetch(`http://localhost:9999/api/user/${user}`, {
+        method: 'PUT',
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8'
+        },
+        body: JSON.stringify(data),
+        credentials: 'include'
+        })
     }
   
   };

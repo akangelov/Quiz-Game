@@ -4,22 +4,12 @@ import * as Yup from 'yup';
 import { ToastContainer, toast } from "react-toastify";
 import { useHistory } from 'react-router'
 import styles from './CrudQuestion.module.css'
+import postService from '../../../utils/postService';
  
 const EditDelQuestionForm = (props) => {
 
     let history = useHistory();
     const id = props._id
-
-    const editPost = (data) => {
-        return fetch(`http://localhost:9999/api/origami/${id}`, {
-        method: 'PUT',
-        headers: {
-            'Content-type': 'application/json'
-        },
-        body: JSON.stringify(data),
-        credentials: 'include'
-        })
-    }
 
 const formik = useFormik({
     initialValues: {
@@ -49,12 +39,10 @@ const formik = useFormik({
         correctAnswer: Yup.string()
             .required('Required'),
     }),
-    onSubmit: values => {
-        console.log(values)
-        editPost(values).then(() => {
+    onSubmit: data => {
+        postService.put(data, id).then(() => {
             setTimeout(() => {
                 window.location.reload(false)
-                // props.history.push("/")
             }, 4000) 
             history.push('/all')
             toast("Question editted!")
