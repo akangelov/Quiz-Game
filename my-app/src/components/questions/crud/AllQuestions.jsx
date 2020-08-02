@@ -23,7 +23,7 @@ class AllQuestions extends React.Component {
         const { questions } = this.state;
 
         return <Fragment>
-               <h3 className={styles.h3}>You can edit or delete a question below: </h3>
+            <h3 className={styles.h3}>You can edit or delete a question below: </h3>
             {   questions ?           
                  <div className={styles.container}>               
                  {questions.map((question) => 
