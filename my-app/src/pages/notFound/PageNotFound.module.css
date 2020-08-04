@@ -1,0 +1,11 @@
+.notFound {
+    padding: 10px;
+}
+
+.link {
+    color: blue;
+    padding-left: 10px;
+    font-size: 20px;
+    text-decoration: underline;
+    font-weight: bold;
+}
