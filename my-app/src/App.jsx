@@ -31,6 +31,7 @@ class App extends React.Component {
           toast("Invalid username or password!")
       } else {
           toast("User succesfully logged in!")
+          console.log(this.context)
           this.props.history.push('/')};
       })
     }
@@ -54,9 +55,11 @@ class App extends React.Component {
                 <Route exact path="/" component={HomePage}/>
                 <Route path="/about" component={About} />
                 <Route path="/rules" component={Rules} />
-                <Route path="/create" component={CreateQuestion} />
+                <Route path="/create">
+                    {this.context.loggedIn ? <CreateQuestion/> : <Redirect to="/login"/> }     
+                </Route> 
                 <Route path="/all" component={AllQuestions} />
-                <Route path="/edit/:id" component={EditQuestionForm} />
+                 <Route path="/edit/:id" component={EditQuestionForm} /> 
                 <Route path="/questions/:id" component={Questions} />
                 <Route path="/question/:id" component={Answer} />
                 <Route path="/userprofile/:id" component={UserProfile} />
