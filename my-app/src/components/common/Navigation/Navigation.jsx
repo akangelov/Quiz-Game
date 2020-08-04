@@ -6,7 +6,6 @@ import UserContext from '../../../utils/Context';
 const Navigation = props => {
   
     const value = React.useContext(UserContext);
-//    console.log(value)
 
     const {logout } = props;
     

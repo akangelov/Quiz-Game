@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { Route, Switch, withRouter } from 'react-router-dom';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import './App.css';
 
@@ -14,6 +14,7 @@ import Login from "./pages/user/Login";
 import Navigation from "./components/common/Navigation/Navigation";
 import Questions from "./components/questions/questionsbycategory/QuestionsByCategory";
 import Rules from "./pages/rules/Rules";
+import PageNotFound from "./pages/notFound/PageNotFound";
 import Register from "./pages/user/Register";
 import UserContext from './utils/Context';
 import UserProfile from "./pages/user/UserProfile";
@@ -61,11 +62,11 @@ class App extends React.Component {
                 <Route path="/userprofile/:id" component={UserProfile} />
                 <Route path="/register" component={Register} />
                 <Route path="/login" render={()=> (<Login login={this.login} /> )} />
+                <Route path="*" component={PageNotFound} />
             </Switch>
             
             <Footer/>  
-                
-        
+                      
         <ToastContainer />  
       
         </Fragment>
