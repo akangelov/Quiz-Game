@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './QuestionByCategory.module.css'
+import styles from './QuestionsByCategory.module.css'
 import Link from '../../common/Link/Link';
 
 const Question = ({ question, _id }) => {

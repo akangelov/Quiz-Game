@@ -12,7 +12,7 @@ import EditQuestionForm from "./components/questions/crud/EditQuestionForm";
 import Footer from "./components/common/Footer/Footer";
 import Login from "./pages/user/Login";
 import Navigation from "./components/common/Navigation/Navigation";
-import QuestionsByCategory from "./components/questions/questionsbycategory/QuestionsByCategory";
+import GetQuestionsByCategory from "./components/questions/questionsbycategory/GetQuestionsByCategory";
 import Rules from "./pages/rules/Rules";
 import PageNotFound from "./pages/notFound/PageNotFound";
 import Register from "./pages/user/Register";
@@ -64,7 +64,7 @@ class App extends React.Component {
                     {this.context.loggedIn ? <EditQuestions/> : <Redirect to="/login"/> }     
                 </Route> 
                 <Route path="/edit/:id" component={EditQuestionForm} /> 
-                <Route path="/category/:id" component={QuestionsByCategory} />
+                <Route path="/category/:id" component={GetQuestionsByCategory} />
                 <Route path="/question/:id" component={GetQuestion} />
                 <Route path="/userprofile/:id" component={UserProfile} />
                 <Route path="/register">

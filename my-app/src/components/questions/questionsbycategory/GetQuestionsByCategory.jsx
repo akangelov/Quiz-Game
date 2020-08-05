@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
 import styles from './QuestionsByCategory.module.css'
-import Question from './QuestionByCategoryForm';
+import Question from './QuestionsByCategoryForm';
 
-class QuestionsByCategory extends React.Component {
+class GetQuestionsByCategory extends React.Component {
     constructor(props) {
         super(props)
         this.state = { questions: [] }
@@ -31,4 +31,4 @@ class QuestionsByCategory extends React.Component {
     }
 }
 
-export default QuestionsByCategory;
+export default GetQuestionsByCategory;
