@@ -30,8 +30,10 @@ class App extends React.Component {
       if (res === undefined) {
           toast("Invalid username or password!")
       } else {
+          console.log(this.context)
           toast("User succesfully logged in!")
           this.props.history.push('/')};
+          window.location.reload(false)
       })
     }
 
@@ -39,6 +41,7 @@ class App extends React.Component {
         userService.logout().then(() => {
             this.props.history.push('/login');
             this.context.logOut()
+            console.log(this.context)
             toast("Logout succesful!")
             return null;
       });

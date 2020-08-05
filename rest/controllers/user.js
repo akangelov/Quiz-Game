@@ -84,6 +84,7 @@ module.exports = {
 
   put: (req, res, next) => {
     const id = req.params.id;
+    // console.log(id)
   //   console.log(req)
   // const { username, password } = req.body;
       const score = req.body.score

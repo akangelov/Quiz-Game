@@ -38,7 +38,7 @@ const AnswerForm = (props) => {
 
             userService.put(data, userId)
             .then(toast("This answer is not correct :/ Please try again! :)"))
-            .then( setTimeout(() => {
+            .then(setTimeout(() => {
                 props.history.push("/")
                 window.location.reload(false)
             }, 3000) )
