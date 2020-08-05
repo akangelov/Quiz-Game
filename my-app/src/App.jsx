@@ -70,7 +70,9 @@ class App extends React.Component {
                 <Route path="/register">
                     {!this.context.loggedIn ? <Register/> : <Redirect to="/"/> }     
                 </Route> 
-                <Route path="/login" render={()=> (<Login login={this.login} /> )} />
+                <Route path="/login"> 
+                    {!this.context.loggedIn ? <Login login={this.login} /> : <Redirect to="/"/> } 
+                </Route> 
                 <Route path="*" component={PageNotFound} />
             </Switch>
             
