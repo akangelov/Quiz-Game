@@ -4,15 +4,15 @@ import { ToastContainer, toast } from "react-toastify";
 import './App.css';
 
 import About from "./pages/about/About";
-import EditQuestions from "./components/questions/crud/EditQuestions";
+import EditQuestions from "./components/questions/crud/GetQuestions";
 import CreateQuestion from "./components/questions/crud/CreateQuestion";
-import Answer from "./components/questions/answerForm/Answer";
+import GetQuestion from "./components/questions/answerForm/GetQuestion";
 import HomePage from "./pages/home/Home";
 import EditQuestionForm from "./components/questions/crud/EditQuestionForm";
 import Footer from "./components/common/Footer/Footer";
 import Login from "./pages/user/Login";
 import Navigation from "./components/common/Navigation/Navigation";
-import Questions from "./components/questions/questionsbycategory/QuestionsByCategory";
+import QuestionsByCategory from "./components/questions/questionsbycategory/QuestionsByCategory";
 import Rules from "./pages/rules/Rules";
 import PageNotFound from "./pages/notFound/PageNotFound";
 import Register from "./pages/user/Register";
@@ -64,10 +64,12 @@ class App extends React.Component {
                     {this.context.loggedIn ? <EditQuestions/> : <Redirect to="/login"/> }     
                 </Route> 
                 <Route path="/edit/:id" component={EditQuestionForm} /> 
-                <Route path="/questions/:id" component={Questions} />
-                <Route path="/question/:id" component={Answer} />
+                <Route path="/category/:id" component={QuestionsByCategory} />
+                <Route path="/question/:id" component={GetQuestion} />
                 <Route path="/userprofile/:id" component={UserProfile} />
-                <Route path="/register" component={Register} />
+                <Route path="/register">
+                    {!this.context.loggedIn ? <Register/> : <Redirect to="/"/> }     
+                </Route> 
                 <Route path="/login" render={()=> (<Login login={this.login} /> )} />
                 <Route path="*" component={PageNotFound} />
             </Switch>

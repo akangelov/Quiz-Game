@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import postService from '../../../utils/postService';
 
-class EditDelQuestion extends React.Component {
+class DeleteQuestion extends React.Component {
 
 deleteQuestion = async () => {
     const id = this.props._id 
@@ -36,4 +36,4 @@ render() {
     }
 }
 
-export default withRouter(EditDelQuestion);
+export default withRouter(DeleteQuestion);

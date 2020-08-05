@@ -1,8 +1,8 @@
 import React, {Fragment} from "react";
 import styles from './CrudQuestion.module.css'
-import EditQuestionForm from './EditQuestion';
+import EditQuestionForm from './DeleteQuestion';
 
-class EditQuestions extends React.Component {
+class GetQuestions extends React.Component {
     constructor(props) {
         super(props)
         this.state = { questions: [] }
@@ -34,4 +34,4 @@ class EditQuestions extends React.Component {
     }
 }
 
-export default EditQuestions;
+export default GetQuestions;

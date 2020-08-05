@@ -2,7 +2,7 @@ import React from 'react';
 import AnswerForm from './AnswerForm';
 import UserContext from '../../../utils/Context';
 
-class Answer extends React.Component {
+class GetQuestion extends React.Component {
   
     constructor(props) {
         super(props)
@@ -29,4 +29,4 @@ class Answer extends React.Component {
     }
 }
 
-export default Answer;
+export default GetQuestion;
