@@ -17,10 +17,6 @@
     box-sizing: inherit;
 }
 
-/* body > #root > div {
-    height: 100vh;
-  } */
-
 html, body {
     margin: 0;
     padding: 0;
@@ -98,17 +94,4 @@ h5 {
 
 h6 {
     font-size: 1.0em;
-}
-
-.container {
-    position: relative;
-    height: 100vh;
-}
-
-.footer {
-    position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 150%;
-  /* height: 2.5rem; */
 }

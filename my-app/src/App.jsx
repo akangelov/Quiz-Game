@@ -31,7 +31,6 @@ class App extends React.Component {
           toast("Invalid username or password!")
       } else {
           toast("User succesfully logged in!")
-          console.log(this.context)
           this.props.history.push('/')};
       })
     }
@@ -41,7 +40,6 @@ class App extends React.Component {
             this.props.history.push('/login');
             this.context.logOut()
             toast("Logout succesful!")
-            console.log(this.context)
             return null;
       });
     }
