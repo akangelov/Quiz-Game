@@ -44,7 +44,7 @@ const formik = useFormik({
             setTimeout(() => {
                 window.location.reload(false)
             }, 4000) 
-            history.push('/all')
+            history.push('/edit')
             toast("Question editted!")
         })
     }

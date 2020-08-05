@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import UserContext from '../../utils/Context';
 import userService from '../../utils/userService';
 
-const HomePage = (props) => {
+const HomePage = () => {
 
     const value = React.useContext(UserContext);
      

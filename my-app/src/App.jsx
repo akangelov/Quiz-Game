@@ -52,7 +52,9 @@ class App extends React.Component {
             <Navigation logout={this.logout} />
 
             <Switch>
-                <Route exact path="/" component={HomePage}/>
+                <Route exact path="/">
+                    {this.context.loggedIn ? <HomePage/> : <Redirect to="/login"/> }     
+                </Route> 
                 <Route path="/about" component={About} />
                 <Route path="/rules" component={Rules} />
                 <Route path="/create">

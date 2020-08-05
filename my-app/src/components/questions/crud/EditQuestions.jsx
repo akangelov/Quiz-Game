@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 import styles from './CrudQuestion.module.css'
-import EditDelQuestion from './EditQuestion';
+import EditQuestionForm from './EditQuestion';
 
 class EditQuestions extends React.Component {
     constructor(props) {
@@ -27,7 +27,7 @@ class EditQuestions extends React.Component {
             {   questions ?           
                  <div className={styles.container}>               
                  {questions.map((question) => 
-                  <EditDelQuestion key={question._id} {...question}></EditDelQuestion>)}
+                  <EditQuestionForm key={question._id} {...question}></EditQuestionForm>)}
                 </div> : <div>Loading...</div>
             }
             </Fragment>
