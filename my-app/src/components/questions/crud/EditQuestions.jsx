@@ -2,7 +2,7 @@ import React, {Fragment} from "react";
 import styles from './CrudQuestion.module.css'
 import EditDelQuestion from './EditQuestion';
 
-class AllQuestions extends React.Component {
+class EditQuestions extends React.Component {
     constructor(props) {
         super(props)
         this.state = { questions: [] }
@@ -34,4 +34,4 @@ class AllQuestions extends React.Component {
     }
 }
 
-export default AllQuestions;
+export default EditQuestions;

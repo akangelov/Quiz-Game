@@ -4,7 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import './App.css';
 
 import About from "./pages/about/About";
-import AllQuestions from "./components/questions/crud/AllQuestions";
+import EditQuestions from "./components/questions/crud/EditQuestions";
 import CreateQuestion from "./components/questions/crud/CreateQuestion";
 import Answer from "./components/questions/answerForm/Answer";
 import HomePage from "./pages/home/Home";
@@ -58,8 +58,10 @@ class App extends React.Component {
                 <Route path="/create">
                     {this.context.loggedIn ? <CreateQuestion/> : <Redirect to="/login"/> }     
                 </Route> 
-                <Route path="/all" component={AllQuestions} />
-                 <Route path="/edit/:id" component={EditQuestionForm} /> 
+                <Route path="/edit">
+                    {this.context.loggedIn ? <EditQuestions/> : <Redirect to="/login"/> }     
+                </Route> 
+                <Route path="/edit/:id" component={EditQuestionForm} /> 
                 <Route path="/questions/:id" component={Questions} />
                 <Route path="/question/:id" component={Answer} />
                 <Route path="/userprofile/:id" component={UserProfile} />
