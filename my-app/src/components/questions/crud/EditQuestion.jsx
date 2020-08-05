@@ -15,7 +15,7 @@ deleteQuestion = async () => {
         setTimeout(() => {
             window.location.reload(false)
         }, 4000) 
-        this.props.history.push('/all')
+        this.props.history.push('/edit')
         toast("Question deleted!")
     })
 } 

@@ -6,7 +6,7 @@ const Footer = () => {
     const path = window.location.pathname;
 
     return (
-        <footer className={path==="/all" ? styles.footer : styles.footerFixed}>
+        <footer className={path==="/edit" ? styles.footer : styles.footerFixed}>
             <section>
                 <div>
                     <p className={styles.quizgame}>Quiz Game</p>
