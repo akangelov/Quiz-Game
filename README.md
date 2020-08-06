@@ -4,14 +4,18 @@ The game has two levels of access: guest user and registered user.
 The Guest user has access to the /About, /Rules, /Login and /Register pages.
 The registered user can access additionaly the /Home, /Profile, /Add Question and /Edit Question pages.
 
-Upon registration and log in, a registered user can select between four categories of questions - Biology, History, Geography and Science.
-Each category contains subquestions pertaining to it. Each question has four possible answers, with only one correct. 
-If a registered user answers a question correctly, he adds one point to his score, if not the score for his wrong answers increases with one.
+Upon registration and after a succesful Log in, a registered user can select between four categories of questions - Biology, History, Geography and Science.
+Each category contains subquestions pertaining to it. Each question has four possible answers, with only one of them being correct. 
+If a registered user answers a question correctly, he adds one point to his correct answers score. If not the score for his wrong answers increases with one.
+A registered user can check his score in the /Profile page. 
+
+There are two jokers available while playing - 50:50, which eliminates 2 of the wrong answers, and Google help, which opens a Google search for the question.
+
 A registered user wins the game upon 3 correct answers and loses it by giving 3 wrong answers.
 
-A registered user can check his score in the /Profile page. He can additionally create new quesition or edit questions in the /Create Question and /Edit Question pages.
+A registered and succesfully logged in user can additionally create new quesition, edit questions or delete questions in the /Create Question and /Edit Question pages.
 
-The application is built entirely on React.js (client side) and node.js/MongoDB (server side). 
+The application is built entirely on React.js (client side) and node.js/ExpressJS/MongoDB (server side). 
 
 ## REST API and DB
 
