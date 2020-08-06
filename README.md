@@ -1,2 +1,1 @@
-# React.js-Project
-React.js project for the course at SoftUni
+Quiz Game is an interactive game 
