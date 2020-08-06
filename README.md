@@ -13,16 +13,17 @@ A registered user can check his score in the /Profile page. He can additionally 
 
 The application is built entirely on React.js (client side) and node.js/MongoDB (server side). 
 
-#REST API and DB#
+## REST API and DB
 
 The repository of Quiz Game REST API is available at: https://github.com/akangelov/React.js-Project/tree/master/rest. An open connection to MongoDB is required.
 
-#Resolve Dependencies#
+## Resolve Dependencies
+
 When the project is cloned or downloaded, type in the terminal the following in both Server and Client directory:
 
 npm / yarn install
 
-#Run the web server#
+## Run the web server
 To run the web server type in terminal from Server-Celera-Chemie the following:
 
 node index
