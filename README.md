@@ -21,17 +21,17 @@ The repository of Quiz Game REST API is available at: https://github.com/akangel
 
 When the project is cloned or downloaded, type in the terminal the following in both Server and Client directory:
 
-> - npm / yarn install
+`npm / yarn install`
 
 ## Run the web server
 To run the web server type in terminal from Server-Celera-Chemie the following:
 
-> - node index
+`nodemon index`
 
 ## Run the React app
 The app uses React on client side. To run the React app type in terminal from Quiz Game directory the following:
 
-> - npm / yarn start
+`npm / yarn start`
 
 By default, the app is running on:
 
