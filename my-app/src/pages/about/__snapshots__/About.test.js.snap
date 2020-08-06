@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About Page should render About page 1`] = `
+<div
+  className="about"
+>
+  <p
+    className="aboutP"
+  >
+    Quiz game is an interactive game that checks your knowledge in History, Biology, Math or Science.
+  </p>
+  <img
+    alt="quiz"
+    src="https://res.cloudinary.com/dq336pwqs/image/upload/c_scale,w_460/v1596096430/quiz.jpg"
+  />
+</div>
+`;
