@@ -27,10 +27,12 @@ npm / yarn install
 To run the web server type in terminal from Server-Celera-Chemie the following:
 
 node index
-Run the React app
+
+## Run the React app
 The app uses React on client side. To run the React app type in terminal from Quiz Game directory the following:
 
 npm / yarn start
+
 By default, the app is running on:
 
 localhost:3000
