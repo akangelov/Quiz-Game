@@ -25,16 +25,18 @@ class App extends React.Component {
     static contextType = UserContext; 
 
     login = (values) => {
-      userService.login(values).then((res) => {
-          this.context.logIn(res)
-      if (res === undefined) {
-          toast("Invalid username or password!")
-      } else {
-          toast("User succesfully logged in!")
-          this.props.history.push('/')};
-          userService.reset()
-      })
-    }
+        userService.login(values).then((res) => {
+            if (res === undefined) {
+                toast("Invalid username or password!")
+                userService.reset()
+                return;
+            }
+            this.context.logIn(res)
+            toast("User succesfully logged in!")
+            this.props.history.push('/')
+            userService.reset() 
+        })
+   }
 
     logout = () => {
         userService.logout()
