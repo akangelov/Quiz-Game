@@ -15,7 +15,7 @@ const formik = useFormik({
         .min(4, 'Must be 4 characters or more')
         .required('Required'),
     password: Yup.string()
-        .min(3, 'Must be 3 characters or more')
+        .min(4, 'Must be 4 characters or more')
         .required('Required'),
  }),
   onSubmit: values => { props.login(values)}

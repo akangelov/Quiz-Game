@@ -35,7 +35,8 @@ const postService = {
             },
             credentials: 'include'
         })
-    } 
+    },
+ 
 }
 
 export default postService;

@@ -1,4 +1,5 @@
 const userService = {
+
   load: function () {
     return fetch(`http://localhost:9999/api/user`)
     .then(res => res.json());
@@ -40,8 +41,14 @@ const userService = {
         body: JSON.stringify(data),
         credentials: 'include'
         })
+    },
+
+    reset: function() {
+        setTimeout(() => {
+            window.location.reload(false)
+        }, 4000) 
     }
-  
-  };
+
+};
   
   export default userService;
