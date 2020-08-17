@@ -46,7 +46,7 @@ const userService = {
     reset: function() {
         setTimeout(() => {
             window.location.reload(false)
-        }, 4000) 
+        }, 4500) 
     }
 
 };

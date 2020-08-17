@@ -11,13 +11,13 @@ const HomePage = () => {
     const value = React.useContext(UserContext);
      
     React.useEffect(() => {
-        if(value.user.score === 2) {
+        if(value.user.score === 3) {
             toast(`Congratulations ${value.user.username}!You won the game!Your score is reset!`)
             const data = {score: 0, wrongAnswers: 0}
             const userId = value.user.id
             userService.put(data, userId).then( userService.reset())
         }
-        if(value.user.wrongAnswers === 2) {
+        if(value.user.wrongAnswers === 3) {
             toast('Game over! :/ Please try again!Your score is reset!')
             const data = {score: 0, wrongAnswers: 0}
             const userId = value.user.id
