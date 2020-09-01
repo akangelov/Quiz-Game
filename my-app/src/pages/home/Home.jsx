@@ -30,7 +30,7 @@ const HomePage = () => {
         <section className = {styles.categoryContainer}>
             <div className = {styles.imageContainer}>
                 <img className= {styles.Image} src ="https://res.cloudinary.com/dq336pwqs/image/upload/v1595758389/biology_yt6fju.jpg" alt="biology"/>
-                <Link className={`${styles.categoryItem} ${styles.biology}`} to="/category/biology">Biologyy</Link>
+                <Link className={`${styles.categoryItem} ${styles.biology}`} to="/category/biology">Biology</Link>
             </div>
             <div className = {styles.imageContainer}>
                 <img src ="https://res.cloudinary.com/dq336pwqs/image/upload/v1595757954/history_ptn99s.jpg" alt="history"/>

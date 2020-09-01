@@ -11,13 +11,15 @@ module.exports = {
       .catch(next);
       return;
     }
-    if (category) { models.Origami.find({ category: `${category}` }).populate('author')
+    if (category) { models.Origami.find({ category: `${category}` })
       .then((origamies) => res.send(origamies))
       .catch(next);
+      return;
     }
-    models.Origami.find().populate('author')
+    models.Origami.find()
     .then((origamies) => res.send(origamies))
     .catch(next);
+    return;
   },
 
   post: (req, res, next) => {
@@ -46,10 +48,7 @@ module.exports = {
   },
 
   delete: (req, res, next) => {
-    // const id = req.body
     const id = req.params.id;
-    // const id = req.query.id;
-    // console.log(id)
     models.Origami.deleteOne({ _id: id })
       .then((removedOrigami) => res.send(removedOrigami))
       .catch(next)
