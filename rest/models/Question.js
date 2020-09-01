@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Model = mongoose.model;
-const { String, Number, Boolean, ObjectId } = Schema.Types;
+const { String, ObjectId } = Schema.Types;
 
-const origamiSchema = new Schema({
+const questionSchema = new Schema({
 
     category: {
         type: String,
@@ -39,4 +39,4 @@ const origamiSchema = new Schema({
     }
 });
 
-module.exports = new Model('Origami', origamiSchema);
+module.exports = new Model('Question', questionSchema);

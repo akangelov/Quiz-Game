@@ -11,7 +11,7 @@ class GetQuestionsByCategory extends React.Component {
     componentDidMount() { this.getQuestions(this.props.match.params.id)} //vrushta id-to, koeto e biology, science etc.
       
     getQuestions = async (id) => {
-        const response = await fetch(`http://localhost:9999/api/origami?category=${id}`)
+        const response = await fetch(`http://localhost:9999/api/question?category=${id}`)
         const questions = await response.json()
         this.setState({questions})
     }       

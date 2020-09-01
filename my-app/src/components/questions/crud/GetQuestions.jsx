@@ -9,7 +9,7 @@ class GetQuestions extends React.Component {
     }
       
     getQuestions = async () => {
-      const response = await fetch('http://localhost:9999/api/origami')
+      const response = await fetch('http://localhost:9999/api/question')
       const questions = await response.json()
       this.setState({questions})  
     }  

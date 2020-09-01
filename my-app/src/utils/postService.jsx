@@ -1,12 +1,12 @@
 const postService = {
 
     load: function () {
-      return fetch(`http://localhost:9999/api/origami`)
+      return fetch(`http://localhost:9999/api/question`)
       .then(res => res.json());
     },
 
     create: function(data) {
-        return fetch(`http://localhost:9999/api/origami/`, {
+        return fetch(`http://localhost:9999/api/question/`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'
@@ -17,7 +17,7 @@ const postService = {
     },
 
     put: function(data, id) {
-        return fetch(`http://localhost:9999/api/origami/${id}`, {
+        return fetch(`http://localhost:9999/api/question/${id}`, {
         method: 'PUT',
         headers: {
             'Content-type': 'application/json; charset=UTF-8'
@@ -28,7 +28,7 @@ const postService = {
     },
     
     delete: function(id) {
-        return fetch(`http://localhost:9999/api/origami/${id}`, {
+        return fetch(`http://localhost:9999/api/question/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-type': 'application/json'
