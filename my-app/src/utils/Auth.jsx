@@ -26,8 +26,8 @@ class Auth extends Component {
     logOut = () => {
         document.cookie = "x-auth-token= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
         this.setState({
-          loggedIn: false,
-          user: null
+            loggedIn: false,
+            user: null
         })
     }
 
@@ -35,31 +35,31 @@ class Auth extends Component {
         const token = getCookie('x-auth-token')
     
         if(!token) {
-          this.logOut()
-          return
+            this.logOut()
+            return
         }
     
         fetch('http://localhost:9999/api/user/verify', {
-          method: 'POST',
-          body: JSON.stringify({
-            token
-          }),
-          headers: {
-            'Content-Type': 'application/json'
-          }
+            method: 'POST',
+            body: JSON.stringify({
+                token
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         }).then(promise => {
-          return promise.json()
+            return promise.json()
         }).then(response => {
-          if(response.status) {
-            this.logIn({
-              username: response.user.username,
-              id: response.user._id,
-              score: response.user.score,
-              wrongAnswers: response.user.wrongAnswers
+            if(response.status) {
+                this.logIn({
+                    username: response.user.username,
+                    id: response.user._id,
+                    score: response.user.score,
+                    wrongAnswers: response.user.wrongAnswers
             })
-          } else {
-            this.logOut()
-          }
+            } else {
+                this.logOut()
+            }
         })
       }
     
