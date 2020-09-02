@@ -39,7 +39,7 @@ class Auth extends Component {
             return
         }
     
-        fetch('http://localhost:9999/api/user/verify', {
+        fetch('http://localhost:4999/api/user/verify', {
             method: 'POST',
             body: JSON.stringify({
                 token

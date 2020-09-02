@@ -1,5 +1,7 @@
 const config = require('./Server/config/config');
 const dbConnection = require('./Server/config/database');
+const path=require("path");
+const express = require('express');
 
 const app = require('express')();
 
@@ -9,11 +11,11 @@ dbConnection().then(() => {
 
     require('./Server/config/routes')(app);
 
-    // app.use(function (err, req, res, next) {
-    //     console.error(err);
-    //     // res.status(500).send(err.message);
-    //     console.log('*'.repeat(90))
-    // });
+    app.use(function (err, req, res, next) {
+        console.error(err);
+        // res.status(500).send(err.message);
+        console.log('*'.repeat(90))
+    });
 
     // if(process.env.NODE_ENV === 'production') {
     //     app.use(express.static('Client/build'));
