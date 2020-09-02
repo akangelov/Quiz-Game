@@ -15,6 +15,14 @@ dbConnection().then(() => {
         console.log('*'.repeat(90))
     });
 
+    if(process.env.NODE_ENV === 'production') {
+        app.use(express.static('Client/build'));
+  
+        app.get('*', (req, res) => {
+            res.sendFile(path.resolve(__dirname, 'Client', 'build', 'index.html'))
+        })
+    }
+
     app.listen(config.port, console.log(`Listening on port ${config.port}!`))
 
 }).catch(console.error);
