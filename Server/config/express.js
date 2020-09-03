@@ -1,6 +1,6 @@
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const cors = require('cors');
+import cors from 'cors';
 const secret = 'secret';
 const path = require('path');
 
@@ -9,6 +9,8 @@ module.exports = (app) => {
 //     origin: 'http://localhost:3000',
 //     credentials: true
 //   }));
+
+  app.use(cors());
 
   app.use(bodyParser.urlencoded({
     extended: true
