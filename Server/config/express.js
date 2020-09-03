@@ -1,6 +1,6 @@
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-import cors from 'cors';
+const cors = require('cors');
 const secret = 'secret';
 const path = require('path');
 
