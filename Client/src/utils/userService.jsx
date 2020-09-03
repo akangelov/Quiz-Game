@@ -16,7 +16,7 @@ const userService = {
     },
   
     login: function (data) {
-      return fetch(`http://localhost:4999/api/user/login`, {
+      return fetch(`https://obscure-stream-49000.herokuapp.com/api/user/login`, {
         body: JSON.stringify(data),
         method: 'POST',
         headers: {'Content-type': 'application/json'},
