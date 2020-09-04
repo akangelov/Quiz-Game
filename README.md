@@ -1,5 +1,7 @@
 Quiz Game is an interactive game built for the ReactJS course at SoftUni.
 
+#### Link: [Quiz Game](https://quiz-game-new.herokuapp.com/)
+
 The game has two levels of access: guest user and registered user.
 The Guest user has access to the /About, /Rules, /Login and /Register pages.
 The registered user can access additionaly the /Home, /Profile, /Add Question and /Edit Question pages.
@@ -15,7 +17,7 @@ A registered user wins the game upon 3 correct answers and loses it by giving 3 
 
 A registered and succesfully logged in user can additionally create new quesition, edit questions or delete questions in the /Create Question and /Edit Question pages.
 
-The application is built entirely on React.js (client side) and node.js/ExpressJS/MongoDB (server side). 
+The application is built entirely on React.js (client side) and node.js/ExpressJS/MongoDB (server side) and deployed on Heroku. 
 
 ## REST API and DB
 
