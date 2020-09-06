@@ -9,7 +9,7 @@ const Rules = () => {
             <ul className={styles.lists}>
                 <li><span>A player can choose a question from one of the four categories - Biology, History, Geography or Science</span></li>
                 <li><span>Each correct answer earns one point</span></li>
-                <li><span>A player wins the game if he gathers 5 points</span></li>
+                <li><span>A player wins the game if he gathers 3 points</span></li>
                 <li><span>A game is lost by giving 3 wrong answers</span></li>
             </ul>
         
