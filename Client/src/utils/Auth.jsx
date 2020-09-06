@@ -39,7 +39,7 @@ class Auth extends Component {
             return
         }
     
-        fetch('https://obscure-stream-49000.herokuapp.com/api/user/verify', {
+        fetch('https://quiz-game-new.herokuapp.com/api/user/verify', {
             method: 'POST',
             body: JSON.stringify({
                 token
