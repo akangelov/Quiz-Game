@@ -9,7 +9,7 @@ class GetQuestions extends React.Component {
     }
       
     getQuestions = async () => {
-      const response = await fetch('https://obscure-stream-49000.herokuapp.com/api/question')
+      const response = await fetch('https://quiz-game-new.herokuapp.com/api/question')
       const questions = await response.json()
       this.setState({questions})  
     }  
