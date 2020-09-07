@@ -13,10 +13,12 @@ ul  {
 .rulesParagraph {
     padding: 10px;
     font-size: 26px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 li span {
     position: relative;
     left: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
 

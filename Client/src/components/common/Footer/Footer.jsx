@@ -13,7 +13,7 @@ const Footer = () => {
                 </div>
             </section>
             <section className={styles.author}>
-                <p>&copy; 2020 Angel Angelov</p>
+                <p className={styles.quizgame}>&copy; 2020 Angel Angelov</p>
             </section>
         </footer>
   );

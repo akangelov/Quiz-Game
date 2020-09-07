@@ -2,10 +2,12 @@ const userService = {
 
   load: function () {
     return fetch(`https://quiz-game-new.herokuapp.com/api/user`)
+    // return fetch(`https://localhost:9999/api/user`)
     .then(res => res.json());
   },
     register: function (data) {
       return fetch(`https://quiz-game-new.herokuapp.com/api/user/register`, {
+    //   return fetch(`http://localhost:9999/api/user/register`, {
         body: JSON.stringify(data),
         method: 'POST',
         headers: {
@@ -17,6 +19,7 @@ const userService = {
   
     login: function (data) {
       return fetch(`https://quiz-game-new.herokuapp.com/api/user/login`, {
+    //   return fetch(`http://localhost:9999/api/user/login`, {
         body: JSON.stringify(data),
         method: 'POST',
         headers: {'Content-type': 'application/json'},
@@ -27,6 +30,7 @@ const userService = {
   
     logout: function () {
       return fetch(`https://quiz-game-new.herokuapp.com/api/user/logout`, {
+    //   return fetch(`http://localhost:9999/api/user/logout`, {
         method: 'POST',
         credentials: 'include'
       }).then(res => res.text());
@@ -34,6 +38,7 @@ const userService = {
 
     put: function(data, user) {
         return fetch(`https://quiz-game-new.herokuapp.com/api/user/${user}`, {
+        // return fetch(`http://localhost:9999/api/user/${user}`, {
         method: 'PUT',
         headers: {
             'Content-type': 'application/json; charset=UTF-8'
@@ -43,10 +48,10 @@ const userService = {
         })
     },
 
-    reset: function() {
+    reset: function(secs) {
         setTimeout(() => {
             window.location.reload(false)
-        }, 4500) 
+        }, secs) 
     }
 
 };

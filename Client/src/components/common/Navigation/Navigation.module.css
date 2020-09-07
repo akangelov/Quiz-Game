@@ -8,16 +8,16 @@
     border-top: 2px solid #ffa000;
   }
   
-  ul {
+  /* ul {
     padding: 1.2em;
-  }
+  } */
 
   .link {
     color: black;
-    margin: 1em;
+    margin-right: 1em;
     font-weight: 550;
     font-size: 25px;
-    font-family:"Times New Roman", Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
   }
 
   .link:hover {

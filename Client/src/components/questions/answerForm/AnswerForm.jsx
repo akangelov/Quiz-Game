@@ -27,21 +27,21 @@ const AnswerForm = (props) => {
             const data = {score: value.user.score + 1, wrongAnswers: value.user.wrongAnswers}
            
             userService.put(data, userId)
-            .then(toast("Correct Answer!You earned 1 point!Please choose another question!"))
+            .then(toast("Correct!1 point earned!Please choose another question!"))
             .then( setTimeout(() => {
                 props.history.push("/")
                 window.location.reload(false)
-            }, 3000) )
+            }, 4000) )
            
         } else { 
             const data = {score: value.user.score, wrongAnswers: value.user.wrongAnswers + 1}
 
             userService.put(data, userId)
-            .then(toast("This answer is not correct :/ Please try again! :)"))
+            .then(toast("Wrong answer! :( Try again! :)"))
             .then(setTimeout(() => {
                 props.history.push("/")
                 window.location.reload(false)
-            }, 3000) )
+            }, 4000) )
         
         }
     }

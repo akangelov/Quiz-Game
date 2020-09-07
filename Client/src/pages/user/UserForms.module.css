@@ -20,12 +20,15 @@
 
 .label {
     margin-left: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
 }
 
 .button {
     margin-left: 10px;
     border-radius: 10px;
     padding: 2px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .button:hover {

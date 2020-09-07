@@ -26,6 +26,8 @@ dbConnection().then(() => {
     // }
 
     // app.use(express.static(path.join(__dirname, 'build')));
+
+
     app.use(express.static('Client/build'));
     
     app.get('/*', function (req, res) {

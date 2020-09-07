@@ -2,11 +2,13 @@ const postService = {
 
     load: function () {
       return fetch(`https://quiz-game-new.herokuapp.com/api/question`)
+    //   return fetch(`http://localhost:9999/api/question`)
       .then(res => res.json());
     },
 
     create: function(data) {
         return fetch(`https://quiz-game-new.herokuapp.com/api/question/`, {
+        // return fetch(`http://localhost:9999/api/question/`, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'
@@ -18,6 +20,7 @@ const postService = {
 
     put: function(data, id) {
         return fetch(`https://quiz-game-new.herokuapp.com/api/question/${id}`, {
+        // return fetch(`http://localhost:9999/api/question/${id}`, {
         method: 'PUT',
         headers: {
             'Content-type': 'application/json; charset=UTF-8'
@@ -29,6 +32,7 @@ const postService = {
     
     delete: function(id) {
         return fetch(`https://quiz-game-new.herokuapp.com/api/question/${id}`, {
+        // return fetch(`http://localhost:9999/api/question/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-type': 'application/json'

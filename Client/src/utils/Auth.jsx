@@ -40,6 +40,7 @@ class Auth extends Component {
         }
     
         fetch('https://quiz-game-new.herokuapp.com/api/user/verify', {
+        // fetch('http://localhost:9999/api/user/verify', {
             method: 'POST',
             body: JSON.stringify({
                 token

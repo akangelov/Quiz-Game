@@ -6,6 +6,11 @@
     border-radius: 10px;
 }
 
-.aboutP {
+.aboutA {
     padding-bottom: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.imgA {
+    padding-top: 20px;
 }

@@ -12,6 +12,7 @@ class GetQuestionsByCategory extends React.Component {
       
     getQuestions = async (id) => {
         const response = await fetch(`https://quiz-game-new.herokuapp.com/api/question?category=${id}`)
+        // const response = await fetch(`http://localhost:9999/api/question?category=${id}`)
         const questions = await response.json()
         this.setState({questions})
     }       

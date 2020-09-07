@@ -34,7 +34,7 @@ class App extends React.Component {
             this.context.logIn(res)
             toast("User succesfully logged in!")
             this.props.history.push('/')
-            userService.reset() 
+            userService.reset(6000) 
         })
    }
 
@@ -55,15 +55,15 @@ class App extends React.Component {
 
             <Switch>
                 <Route exact path="/">
-                    {this.context.loggedIn ? <HomePage/> : <Redirect to="/login"/> }     
+                    {this.context.loggedIn ? <HomePage/> : <Redirect to="/register"/> }     
                 </Route> 
                 <Route path="/about" component={About} />
                 <Route path="/rules" component={Rules} />
                 <Route path="/create">
-                    {this.context.loggedIn ? <CreateQuestion/> : <Redirect to="/login"/> }     
+                    {this.context.loggedIn ? <CreateQuestion/> : <Redirect to="/register"/> }     
                 </Route> 
                 <Route path="/edit">
-                    {this.context.loggedIn ? <EditQuestions/> : <Redirect to="/login"/> }     
+                    {this.context.loggedIn ? <EditQuestions/> : <Redirect to="/register"/> }     
                 </Route> 
                 <Route path="/edit/:id" component={EditQuestionForm} /> 
                 <Route path="/category/:id" component={GetQuestionsByCategory} />
