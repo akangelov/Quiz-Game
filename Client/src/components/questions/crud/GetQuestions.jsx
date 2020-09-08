@@ -10,6 +10,7 @@ class GetQuestions extends React.Component {
       
     getQuestions = async () => {
       const response = await fetch('https://quiz-game-new.herokuapp.com/api/question')
+    //   const response = await fetch('http://localhost:9999/api/question')
       const questions = await response.json()
       this.setState({questions})  
     }  
@@ -23,7 +24,7 @@ class GetQuestions extends React.Component {
         const { questions } = this.state;
 
         return <Fragment>
-            <h3 className={styles.h3}>You can edit or delete a question below: </h3>
+            <h3 className={styles.h3}>N.B. A question can be editted/deleted only by its author. </h3>
             {   questions ?           
                  <div className={styles.container}>               
                  {questions.map((question) => 

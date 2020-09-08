@@ -5,8 +5,17 @@ import { ToastContainer, toast } from "react-toastify";
 import { useHistory } from 'react-router'
 import styles from './CrudQuestion.module.css'
 import postService from '../../../utils/postService';
+import UserContext from '../../../utils/Context';
  
 const EditDelQuestionForm = (props) => {
+
+    const value = React.useContext(UserContext);
+    const loggedUserId =  value.user.id;
+
+    const questionAuthorId = props.author
+
+    let author = (loggedUserId === questionAuthorId)
+    // console.log(author)
 
     let history = useHistory();
     const id = props._id
@@ -148,8 +157,11 @@ return (
             <div>{formik.errors.correctAnswer}</div>
         ) : null}
         </div>
-        <button className={styles.button} type="submit">Edit</button>
-       
+        {
+            author
+            ? <button className={styles.button} type="submit">Edit</button>
+            : <p></p>
+        }
     </form>
     <ToastContainer /> 
     </>

@@ -4,36 +4,49 @@ import EditQuestionForm from './EditQuestionForm';
 import { withRouter } from 'react-router-dom';
 import { ToastContainer, toast } from "react-toastify";
 import postService from '../../../utils/postService';
+import UserContext from '../../../utils/Context';
 
 class DeleteQuestion extends React.Component {
 
-deleteQuestion = async () => {
-    const id = this.props._id 
-    alert("Are you sure you want to delete this question?")
-    postService.delete(id)
-    .then(() => {
-        setTimeout(() => {
-            window.location.reload(false)
-        }, 4000) 
-        this.props.history.push('/edit')
-        toast("Question deleted!")
-    })
-} 
+    static contextType = UserContext;
 
-render() {
-        return (
-            <>
-            <div >
-                <div>
-                    <p className={styles.question}>{this.props.question}</p>
-                    <EditQuestionForm {...this.props}></EditQuestionForm>
-                    <button className={`${styles.button} ${styles.buttonDelete}`} onClick={this.deleteQuestion}>Delete</button>
+    deleteQuestion = async () => {
+        const id = this.props._id 
+        console.log(this.context)
+        alert("Are you sure you want to delete this question?")
+        postService.delete(id)
+        .then(() => {
+            setTimeout(() => {
+                window.location.reload(false)
+            }, 4000) 
+            this.props.history.push('/edit')
+            toast("Question deleted!")
+        })
+    } 
+
+    render() {
+        const loggedUserId =  this.context.user.id;
+        const questionAuthorId = this.props.author;
+        const author = (loggedUserId === questionAuthorId)
+        // console.log(author)
+
+            return (
+                <>
+                <div >
+                    <div>
+                        
+                        <EditQuestionForm {...this.props}></EditQuestionForm>
+                       {
+                            author
+                            ? <button className={`${styles.button} ${styles.buttonDelete}`} onClick={this.deleteQuestion}>Delete</button>
+                            : <p className={styles.p}></p>
+                        }
+                        </div> 
                 </div> 
-            </div> 
-            <ToastContainer /> 
-            </>
-        )
+                <ToastContainer /> 
+                </>
+            )
+        }
     }
-}
 
 export default withRouter(DeleteQuestion);
