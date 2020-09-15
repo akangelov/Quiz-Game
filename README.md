@@ -1,15 +1,7 @@
 Quiz Game is an interactive game built for the ReactJS course at SoftUni.
 
-<<<<<<< HEAD
 Link: Quiz Game
 The game has two levels of access: guest user and registered user. The Guest user has access to the /About, /Rules, /Login and /Register pages. The registered user can access additionaly the /Home, /Profile, /Add Question and /Edit Question pages.
-=======
-#### Link: [Quiz Game](https://quiz-game-new.herokuapp.com/)
-
-The game has two levels of access: guest user and registered user.
-The Guest user has access to the /About, /Rules, /Login and /Register pages.
-The registered user can access additionaly the /Home, /Profile, /Add Question and /Edit Question pages.
->>>>>>> 0af6f2bcb408ac7464b27ea81ede7265101f4509
 
 Upon registration and after a succesful Log in, a registered user can select between four categories of questions - Biology, History, Geography and Science. Each category contains subquestions pertaining to it. Each question has four possible answers, with only one of them being correct. If a registered user answers a question correctly, he adds one point to his correct answers score. If not the score for his wrong answers increases with one. A registered user can check his score in the /Profile page.
 
@@ -19,13 +11,7 @@ A registered user wins the game upon 3 correct answers and loses it by giving 3 
 
 A registered and succesfully logged in user can additionally create new quesition, edit questions or delete questions in the /Create Question and /Edit Question pages.
 
-<<<<<<< HEAD
 The application is built entirely on React.js (client side) and node.js/ExpressJS/MongoDB (server side) and deployed on Heroku.
-=======
-The application is built entirely on React.js (client side) and node.js/ExpressJS/MongoDB (server side) and deployed on Heroku. 
-
-## REST API and DB
->>>>>>> 0af6f2bcb408ac7464b27ea81ede7265101f4509
 
 REST API and DB
 The repository of Quiz Game REST API is available at: https://github.com/akangelov/React.js-Project/tree/master/rest. An open connection to MongoDB is required.
