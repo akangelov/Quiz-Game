@@ -1,4 +1,4 @@
-aaa Quiz Game is an interactive game built for the ReactJS course at SoftUni.
+Quiz Game is an interactive game built for the ReactJS course at SoftUni.
 
 The application is built entirely on React.js (client side), node.js/ExpressJS (server side), MongoDB (database), and deployed on Heroku.
 
