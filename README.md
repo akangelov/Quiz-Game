@@ -28,7 +28,7 @@ When the project is cloned or downloaded, type in the terminal the following in 
 ### npm / yarn install
 
 ## Run the web server
-To run the web server type in the terminal from the Server Side Directory the following:
+To run the web server type in the terminal from the current directory the following:
 
 ### nodemon server.js
 
